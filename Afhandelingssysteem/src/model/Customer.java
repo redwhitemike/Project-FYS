@@ -14,17 +14,16 @@ public class Customer {
     CustomerManager manager = new CustomerManager();
     ResultSet data;
     
+    private int id;
+    
     public Customer(int customerId) {
         data = manager.getCustomer(customerId);
+        id = customerId;
+    }
+
+    public int getId() {
+        return id;
     }
     
-    public int getId() {
-        try {
-            return data.getInt("customerid");
-        } catch (SQLException e) {
-            System.err.println("Customer.getId: Customer id could not be retrieved.");
-        }
-        
-        return -1;
-    }
+    
 }
