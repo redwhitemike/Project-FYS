@@ -1,6 +1,6 @@
 package model;
 
-import afhandelingssysteem.Afhandelingssysteem;
+import Main.Main;
 import connection.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import javax.swing.JPanel;
  *
  * @author Team 2
  */
-public class Employee extends Afhandelingssysteem {
+public class Employee extends Main {
     EmployeeManager manager = new EmployeeManager();
     ResultSet data;
     

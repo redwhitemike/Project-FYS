@@ -1,7 +1,7 @@
 package model;
 
 
-import afhandelingssysteem.Afhandelingssysteem;
+import Main.Main;
 import connection.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;

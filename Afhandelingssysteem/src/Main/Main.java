@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Main;
+import view.login;
+import view.topMenu;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -11,6 +13,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import model.*;
 
         
 /**
@@ -20,13 +23,23 @@ import javax.swing.SwingUtilities;
 
 
 public class Main {
+    //het frame
     public static final int FRAME_WIDTH = 1024;
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "bagagge systeem";
     private JFrame mainWindow;
-    private static final login login = new login();
+    private final login login = new login();
+    private final topMenu tm = new topMenu();
     private static Main instance = new Main();
     
+    
+    //afhandel systeem
+    public static final int FUNCTION_CUSTOMER = 0;
+    public static final int FUNCTION_EMPLOYEE = 1;
+    public static final int FUNCTION_MANAGER = 2;
+    public static final int FUNCTION_APP_MANAGER = 3;
+    
+    //starting of the application
     public void startup() {
         mainWindow = new JFrame(NAME);
         mainWindow.setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -41,11 +54,11 @@ public class Main {
         });
 
         mainWindow.getContentPane().setLayout(new BorderLayout());
-        showPanel(new login());
+        showPanel(new view.login());
 
         mainWindow.setVisible(true);
     }
-
+    //methode that is used to view a new jpanel
     public void showPanel(JPanel panel) {
         mainWindow.getContentPane().removeAll();
         mainWindow.getContentPane().add(panel, BorderLayout.CENTER);

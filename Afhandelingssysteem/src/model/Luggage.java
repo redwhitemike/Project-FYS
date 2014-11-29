@@ -2,7 +2,7 @@ package model;
 
 import java.sql.ResultSet;
 
-import afhandelingssysteem.Afhandelingssysteem;
+import Main.Main;
 import connection.*;
 import java.sql.SQLException;
 
@@ -10,7 +10,7 @@ import java.sql.SQLException;
  *
  * @author Team 2
  */
-public class Luggage extends Afhandelingssysteem {
+public class Luggage extends Main {
     LuggageManager manager = new LuggageManager();
     ResultSet data;
     
