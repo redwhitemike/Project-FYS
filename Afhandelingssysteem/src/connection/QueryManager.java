@@ -8,7 +8,7 @@ import java.sql.*;
  */
 public class QueryManager {
     DatabaseManager Database = new DatabaseManager();
-    Connection Connection;
+    public Connection Connection;
 
     public QueryManager() {
         Connection = Database.getConnection();
