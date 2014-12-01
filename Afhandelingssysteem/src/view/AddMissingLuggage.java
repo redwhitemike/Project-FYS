@@ -5,6 +5,7 @@
  */
 package view;
 import Main.Main;
+import connection.*;
 /**
  *
  * @author Laura
@@ -14,7 +15,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
-    private static final AddMissingLuggageEx aml2 = new AddMissingLuggageEx();
+    
     /**
      * Creates new form addmissingluggage
      */
@@ -32,21 +33,26 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        submit = new javax.swing.JButton();
+        FirstName = new javax.swing.JTextField();
+        LastName = new javax.swing.JTextField();
+        Address = new javax.swing.JTextField();
+        Country = new javax.swing.JTextField();
+        City = new javax.swing.JTextField();
+        ZipCode = new javax.swing.JTextField();
+        Destination = new javax.swing.JTextField();
+        DepartedFrom = new javax.swing.JTextField();
+        FlightNumber = new javax.swing.JTextField();
+        eMail = new javax.swing.JTextField();
+        PhoneNumber = new javax.swing.JTextField();
+        LabelNumber = new javax.swing.JTextField();
+        TypeLuggage = new javax.swing.JTextField();
+        Weight = new javax.swing.JTextField();
+        Colour = new javax.swing.JTextField();
+        OtherThings = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -57,16 +63,9 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
@@ -79,132 +78,183 @@ public class AddMissingLuggage extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add_button.png"))); // NOI18N
+        submit.setText("Submit");
+        submit.setToolTipText("");
+        submit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add_button.png"))); // NOI18N
-        jButton3.setText("Submit");
-        jButton3.setToolTipText("");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        FirstName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        FirstName.setForeground(new java.awt.Color(51, 51, 51));
+        FirstName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        FirstName.setPreferredSize(new java.awt.Dimension(135, 20));
+        FirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                FirstNameActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel7.setText("First name:");
+        LastName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        LastName.setForeground(new java.awt.Color(51, 51, 51));
+        LastName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        LastName.setToolTipText("");
+        LastName.setPreferredSize(new java.awt.Dimension(135, 20));
+        LastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LastNameActionPerformed(evt);
+            }
+        });
+
+        Address.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Address.setForeground(new java.awt.Color(51, 51, 51));
+        Address.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Address.setPreferredSize(new java.awt.Dimension(135, 20));
+        Address.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddressActionPerformed(evt);
+            }
+        });
+
+        Country.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Country.setForeground(new java.awt.Color(51, 51, 51));
+        Country.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Country.setPreferredSize(new java.awt.Dimension(135, 20));
+        Country.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CountryActionPerformed(evt);
+            }
+        });
+
+        City.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        City.setForeground(new java.awt.Color(51, 51, 51));
+        City.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        City.setPreferredSize(new java.awt.Dimension(135, 20));
+        City.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CityActionPerformed(evt);
+            }
+        });
+
+        ZipCode.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        ZipCode.setForeground(new java.awt.Color(51, 51, 51));
+        ZipCode.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ZipCode.setPreferredSize(new java.awt.Dimension(135, 20));
+        ZipCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZipCodeActionPerformed(evt);
+            }
+        });
+
+        Destination.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Destination.setForeground(new java.awt.Color(51, 51, 51));
+        Destination.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Destination.setPreferredSize(new java.awt.Dimension(135, 20));
+        Destination.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DestinationActionPerformed(evt);
+            }
+        });
+
+        DepartedFrom.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        DepartedFrom.setForeground(new java.awt.Color(51, 51, 51));
+        DepartedFrom.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        DepartedFrom.setPreferredSize(new java.awt.Dimension(135, 20));
+        DepartedFrom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DepartedFromActionPerformed(evt);
+            }
+        });
+
+        FlightNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        FlightNumber.setForeground(new java.awt.Color(51, 51, 51));
+        FlightNumber.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        FlightNumber.setPreferredSize(new java.awt.Dimension(135, 20));
+        FlightNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FlightNumberActionPerformed(evt);
+            }
+        });
+
+        eMail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        eMail.setForeground(new java.awt.Color(51, 51, 51));
+        eMail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        eMail.setPreferredSize(new java.awt.Dimension(135, 20));
+        eMail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eMailActionPerformed(evt);
+            }
+        });
+
+        PhoneNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        PhoneNumber.setForeground(new java.awt.Color(51, 51, 51));
+        PhoneNumber.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        PhoneNumber.setPreferredSize(new java.awt.Dimension(135, 20));
+        PhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PhoneNumberActionPerformed(evt);
+            }
+        });
+
+        LabelNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        LabelNumber.setForeground(new java.awt.Color(51, 51, 51));
+        LabelNumber.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        LabelNumber.setToolTipText("");
+        LabelNumber.setPreferredSize(new java.awt.Dimension(135, 20));
+        LabelNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LabelNumberActionPerformed(evt);
+            }
+        });
+
+        TypeLuggage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TypeLuggage.setForeground(new java.awt.Color(51, 51, 51));
+        TypeLuggage.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        TypeLuggage.setPreferredSize(new java.awt.Dimension(135, 20));
+        TypeLuggage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TypeLuggageActionPerformed(evt);
+            }
+        });
+
+        Weight.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Weight.setForeground(new java.awt.Color(51, 51, 51));
+        Weight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Weight.setPreferredSize(new java.awt.Dimension(135, 20));
+        Weight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WeightActionPerformed(evt);
+            }
+        });
+
+        Colour.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Colour.setForeground(new java.awt.Color(51, 51, 51));
+        Colour.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Colour.setPreferredSize(new java.awt.Dimension(135, 20));
+        Colour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ColourActionPerformed(evt);
+            }
+        });
+
+        OtherThings.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        OtherThings.setForeground(new java.awt.Color(51, 51, 51));
+        OtherThings.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        OtherThings.setPreferredSize(new java.awt.Dimension(135, 20));
+        OtherThings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OtherThingsActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText("Last name:");
 
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField4.setToolTipText("");
-        jTextField4.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField8.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField9.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField10.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField3.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-
-        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField11.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField11.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
-
-        jTextField13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField13.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
-            }
-        });
-
-        jTextField14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField14.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
-            }
-        });
-
-        jTextField15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField15.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
-            }
-        });
-
-        jTextField16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField16.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField16.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField16.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
-            }
-        });
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel7.setText("First name:");
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Zip code:");
@@ -236,61 +286,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Label number:");
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setText("Flight number:");
-
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField5.setToolTipText("");
-        jTextField5.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField6.setToolTipText("");
-        jTextField6.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField12.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
-            }
-        });
-
-        jTextField17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField17.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField17.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField17.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
-            }
-        });
-
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField7.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Colour:");
 
@@ -299,16 +294,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText("Type of luggage:");
-
-        jTextField18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField18.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField18.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField18.setPreferredSize(new java.awt.Dimension(135, 20));
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
-            }
-        });
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel19.setText("Other thinks to declare:");
@@ -334,7 +319,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                     .addComponent(jLabel16)
                     .addComponent(jLabel17)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
@@ -342,26 +326,25 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                     .addComponent(jLabel19))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(City, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ZipCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Country, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DepartedFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(OtherThings, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eMail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PhoneNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FlightNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Destination, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Colour, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TypeLuggage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(38, 38, 38))
         );
@@ -371,75 +354,74 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ZipCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Country, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DepartedFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Colour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TypeLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(OtherThings, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(86, Short.MAX_VALUE))))
         );
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
@@ -588,59 +570,64 @@ public class AddMissingLuggage extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_FirstNameActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Main.getInstance().showPanel(aml2);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        addmissingluggage aml = new addmissingluggage(FirstName.getText(),
+                LastName.getText(),Address.getText(),ZipCode.getText(),
+                City.getText(),Country.getText(),PhoneNumber.getText(),
+                eMail.getText(),FlightNumber.getText(),DepartedFrom.getText(),
+                Destination.getText(),LabelNumber.getText(),Colour.getText(),
+                Weight.getText(),TypeLuggage.getText(),OtherThings.getText());
+    }//GEN-LAST:event_submitActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_LastNameActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_AddressActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void CountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_CountryActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_CityActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void ZipCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZipCodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_ZipCodeActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void DestinationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_DestinationActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void DepartedFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepartedFromActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_DepartedFromActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void FlightNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FlightNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_FlightNumberActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void eMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eMailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_eMailActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void PhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_PhoneNumberActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
         Main.getInstance().showPanel(afl);
@@ -666,33 +653,44 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton65ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void LabelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LabelNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_LabelNumberActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void TypeLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeLuggageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_TypeLuggageActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void WeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_WeightActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void ColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    }//GEN-LAST:event_ColourActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void OtherThingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtherThingsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_OtherThingsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTextField Address;
+    private javax.swing.JTextField City;
+    private javax.swing.JTextField Colour;
+    private javax.swing.JTextField Country;
+    private javax.swing.JTextField DepartedFrom;
+    private javax.swing.JTextField Destination;
+    private javax.swing.JTextField FirstName;
+    private javax.swing.JTextField FlightNumber;
+    private javax.swing.JTextField LabelNumber;
+    private javax.swing.JTextField LastName;
+    private javax.swing.JTextField OtherThings;
+    private javax.swing.JTextField PhoneNumber;
+    private javax.swing.JTextField TypeLuggage;
+    private javax.swing.JTextField Weight;
+    private javax.swing.JTextField ZipCode;
+    private javax.swing.JTextField eMail;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
@@ -710,7 +708,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -719,23 +716,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private java.awt.Panel panel12;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }
