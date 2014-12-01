@@ -26,9 +26,6 @@ public class Main {
     public static final int FRAME_WIDTH = 1024;
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "bagagge systeem";
-    private JFrame mainWindow;
-    private final LoginPanel login = new LoginPanel();
-    private final topMenu tm = new topMenu();
     private static Main instance = new Main();
     
     
@@ -38,6 +35,27 @@ public class Main {
     public static final int FUNCTION_MANAGER = 2;
     public static final int FUNCTION_APP_MANAGER = 3;
     
+    public static Main getInstance() {    
+        return instance;
+    }
+    public static void main(String args[]) {
+        final Main applicatie = Main.getInstance();
+        SwingUtilities.invokeLater(new Runnable() {
+            
+            @Override
+            public void run() {
+                try {
+                    
+                    applicatie.startup();
+                } catch (Exception e) {
+                    System.out.println("Application" + applicatie.getClass().getName() + "failed to launch");
+                }
+            }
+        });
+    }
+    private JFrame mainWindow;
+    private final LoginPanel login = new LoginPanel();
+    private final topMenu tm = new topMenu();
     //starting of the application
     public void startup() {
         mainWindow = new JFrame(NAME);
@@ -57,6 +75,7 @@ public class Main {
 
         mainWindow.setVisible(true);
     }
+    
     //methode that is used to view a new jpanel
     public void showPanel(JPanel panel) {
         mainWindow.getContentPane().removeAll();
@@ -66,25 +85,6 @@ public class Main {
     }
     private void shutdown() {
         mainWindow.dispose();
-    }
-    
-    public static Main getInstance() {
-        return instance;
-    }
-    public static void main(String args[]) {
-        final Main applicatie = Main.getInstance();
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    
-                    applicatie.startup();
-                } catch (Exception e) {
-                    System.out.println("Application" + applicatie.getClass().getName() + "failed to launch");
-                }
-            }
-        });
     }
 
 }

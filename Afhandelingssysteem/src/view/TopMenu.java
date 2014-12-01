@@ -7,17 +7,17 @@ package view;
 import Main.Main;
 /**
  *
- * @author Laura
+ * @author Mika
  */
-public class findcostumer extends javax.swing.JPanel {
- private static final usermenu um = new usermenu();
-    private static final addfoundluggage afl = new addfoundluggage();
-    private static final addmissingluggage aml =  new addmissingluggage();
-    private static final findcostumer fc = new findcostumer();
+public class TopMenu extends javax.swing.JPanel {
+    private static final UserMenu um = new UserMenu();
+    private static final AddFoundLuggage afl = new AddFoundLuggage();
+    private static final AddMissingLuggage aml =  new AddMissingLuggage();
+    private static final FindCustomer fc = new FindCustomer();
     /**
-     * Creates new form findcostumer
+     * Creates new form topMenu
      */
-    public findcostumer() {
+    public TopMenu() {
         initComponents();
     }
 
@@ -30,23 +30,6 @@ public class findcostumer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jList8 = new javax.swing.JList();
-        jButton5 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jList10 = new javax.swing.JList();
         jPanel1 = new javax.swing.JPanel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
@@ -56,122 +39,6 @@ public class findcostumer extends javax.swing.JPanel {
         jButton64 = new javax.swing.JButton();
         jButton65 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-
-        setLayout(null);
-
-        jButton4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton4.setText("First name");
-        jButton4.setAlignmentY(0.0F);
-        jButton4.setIconTextGap(0);
-        add(jButton4);
-        jButton4.setBounds(210, 170, 200, 38);
-
-        jButton2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton2.setText("Last name");
-        jButton2.setAlignmentY(0.0F);
-        jButton2.setIconTextGap(0);
-        add(jButton2);
-        jButton2.setBounds(410, 170, 200, 38);
-
-        jButton1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton1.setText("Address");
-        jButton1.setAlignmentY(0.0F);
-        jButton1.setIconTextGap(0);
-        add(jButton1);
-        jButton1.setBounds(610, 170, 200, 38);
-
-        jButton3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton3.setText("Flight number");
-        jButton3.setAlignmentY(0.0F);
-        jButton3.setIconTextGap(0);
-        add(jButton3);
-        jButton3.setBounds(810, 170, 200, 38);
-
-        jList9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jList9.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList9.setPreferredSize(new java.awt.Dimension(30, 90));
-        jScrollPane10.setViewportView(jList9);
-
-        add(jScrollPane10);
-        jScrollPane10.setBounds(610, 210, 200, 530);
-
-        jList7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jList7.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList7.setPreferredSize(new java.awt.Dimension(30, 90));
-        jScrollPane8.setViewportView(jList7);
-
-        add(jScrollPane8);
-        jScrollPane8.setBounds(410, 210, 200, 530);
-
-        jList6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jList6.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList6.setPreferredSize(new java.awt.Dimension(30, 90));
-        jScrollPane7.setViewportView(jList6);
-
-        add(jScrollPane7);
-        jScrollPane7.setBounds(210, 210, 200, 530);
-
-        jList8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jList8.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList8.setPreferredSize(new java.awt.Dimension(30, 90));
-        jList8.setVisibleRowCount(0);
-        jScrollPane9.setViewportView(jList8);
-
-        add(jScrollPane9);
-        jScrollPane9.setBounds(10, 210, 200, 530);
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(jButton5);
-        jButton5.setBounds(370, 120, 34, 30);
-
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setText("Search");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        add(jTextField1);
-        jTextField1.setBounds(10, 110, 400, 42);
-
-        jButton6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton6.setText("Flight number");
-        jButton6.setAlignmentY(0.0F);
-        jButton6.setIconTextGap(0);
-        add(jButton6);
-        jButton6.setBounds(10, 170, 200, 38);
-
-        jList10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jList10.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList10.setPreferredSize(new java.awt.Dimension(30, 90));
-        jScrollPane11.setViewportView(jList10);
-
-        add(jScrollPane11);
-        jScrollPane11.setBounds(810, 210, 200, 530);
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -282,7 +149,7 @@ public class findcostumer extends javax.swing.JPanel {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,13 +183,27 @@ public class findcostumer extends javax.swing.JPanel {
             .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        add(jPanel1);
-        jPanel1.setBounds(0, 0, 1120, 55);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1056, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 67, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
         Main.getInstance().showPanel(afl);
@@ -350,12 +231,54 @@ public class findcostumer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
+    private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
+    private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JButton jButton47;
+    private javax.swing.JButton jButton48;
+    private javax.swing.JButton jButton49;
+    private javax.swing.JButton jButton50;
+    private javax.swing.JButton jButton51;
+    private javax.swing.JButton jButton52;
+    private javax.swing.JButton jButton53;
+    private javax.swing.JButton jButton54;
+    private javax.swing.JButton jButton55;
+    private javax.swing.JButton jButton56;
+    private javax.swing.JButton jButton57;
+    private javax.swing.JButton jButton58;
+    private javax.swing.JButton jButton59;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
@@ -363,18 +286,23 @@ public class findcostumer extends javax.swing.JPanel {
     private javax.swing.JButton jButton64;
     private javax.swing.JButton jButton65;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JList jList10;
-    private javax.swing.JList jList6;
-    private javax.swing.JList jList7;
-    private javax.swing.JList jList8;
-    private javax.swing.JList jList9;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField1;
+    private java.awt.Panel panel10;
+    private java.awt.Panel panel11;
     private java.awt.Panel panel12;
+    private java.awt.Panel panel4;
+    private java.awt.Panel panel5;
+    private java.awt.Panel panel6;
+    private java.awt.Panel panel7;
+    private java.awt.Panel panel8;
+    private java.awt.Panel panel9;
     // End of variables declaration//GEN-END:variables
 }

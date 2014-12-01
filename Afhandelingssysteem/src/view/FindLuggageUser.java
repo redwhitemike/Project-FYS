@@ -9,15 +9,15 @@ import Main.Main;
  *
  * @author Laura
  */
-public class findluggageuser extends javax.swing.JPanel {
- private static final usermenu um = new usermenu();
-    private static final addfoundluggage afl = new addfoundluggage();
-    private static final addmissingluggage aml =  new addmissingluggage();
-    private static final findcostumer fc = new findcostumer();
+public class FindLuggageUser extends javax.swing.JPanel {
+    private static final UserMenu um = new UserMenu();
+    private static final AddFoundLuggage afl = new AddFoundLuggage();
+    private static final AddMissingLuggage aml =  new AddMissingLuggage();
+    private static final FindCustomer fc = new FindCustomer();
     /**
      * Creates new form findluggageuser
      */
-    public findluggageuser() {
+    public FindLuggageUser() {
         initComponents();
     }
 
