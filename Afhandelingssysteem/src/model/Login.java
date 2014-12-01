@@ -52,7 +52,6 @@ public class Login {
         try {
             PreparedStatement statement = manager.Connection.prepareStatement(query);
             statement.setString(1, username);
-            statement.setString(2, password);
             statement.execute();
             
             result = statement.getResultSet();
