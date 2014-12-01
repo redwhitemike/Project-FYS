@@ -22,14 +22,15 @@ import model.*;
 
 
 public class Main {
-    //het frame
+    // Frame Constants
     public static final int FRAME_WIDTH = 1024;
     public static final int FRAME_HEIGHT = 740;
-    public static final String NAME = "bagagge systeem";
-    private static Main instance = new Main();
+    public static final String NAME = "Corendon - Luggage System";
+    private static final Main instance = new Main();
     
+   public static int userType = -1;
     
-    //afhandel systeem
+    // Class Constants
     public static final int FUNCTION_CUSTOMER = 0;
     public static final int FUNCTION_EMPLOYEE = 1;
     public static final int FUNCTION_MANAGER = 2;
@@ -38,6 +39,7 @@ public class Main {
     public static Main getInstance() {    
         return instance;
     }
+    
     public static void main(String args[]) {
         final Main applicatie = Main.getInstance();
         SwingUtilities.invokeLater(new Runnable() {
@@ -45,7 +47,6 @@ public class Main {
             @Override
             public void run() {
                 try {
-                    
                     applicatie.startup();
                 } catch (Exception e) {
                     System.out.println("Application" + applicatie.getClass().getName() + "failed to launch");
@@ -54,13 +55,14 @@ public class Main {
         });
     }
     private JFrame mainWindow;
-    private final LoginPanel login = new LoginPanel();
-    private final topMenu tm = new topMenu();
+
     //starting of the application
     public void startup() {
         mainWindow = new JFrame(NAME);
         mainWindow.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         mainWindow.setBackground(Color.white);
+        mainWindow.setResizable(false);
+        
         /** Make the window closing [x] button on the frame active */
         mainWindow.addWindowListener(new WindowAdapter() {
 

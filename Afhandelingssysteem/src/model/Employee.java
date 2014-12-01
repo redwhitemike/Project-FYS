@@ -8,62 +8,25 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class Employee extends Main {
     EmployeeManager manager = new EmployeeManager();
     ResultSet data;
     
+    private int id = -1;
+    
     public Employee(int userId) {
         data = manager.getEmployee(userId);
+        id = userId;
     }
     
     public int getId() {
-        try {
-            return data.getInt("userid");
-        } catch (SQLException e) {
-            System.err.println("Employee.getId: Employee id could not be retrieved.");
-        }
-        
-        return -1;
+        return id;
+    }
+
+    public int getFunction() throws Exception {
+        return data.getInt("function");
     }
     
-    /**
-     * Returns the proper window for the function.
-     * @return 
-     */
-    public JPanel getWindow() {
-        int function = -1;
-        JPanel functionPanel = null;
-        
-        try {
-            function = data.getInt("function");
-        } catch (SQLException e) {
-            System.err.println("Employee.showWindow: Error retrieving function");
-        }
-        
-        switch (function) {
-            case FUNCTION_CUSTOMER:
-                // functionPanel = new CustomerView();
-                break;
-                
-            case FUNCTION_EMPLOYEE:
-                // functionPanel = new EmployeeView();
-                break;
-                
-            case FUNCTION_MANAGER:
-                // functionPanel = new ManagerView();
-                break;
-                
-            case FUNCTION_APP_MANAGER:
-                // functionPanel = new AppManagerView();
-                break;
-                    
-            default:
-                System.err.println("Employee.showWindow: Invalid function (-1)");
-                break;
-        }
-        
-        return functionPanel;
-    }
 }
