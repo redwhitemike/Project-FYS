@@ -33,23 +33,24 @@ public class CustomerManager extends QueryManager {
      * @param destination 
      */
     public void addCustomer(String firstName, String lastName, String address, String zipcode, String city, 
-                            String country, String phone, String email, String departedFrom, String destination) {
+                            String country, String phone, String email, int flightNumber, String departedFrom, String destination) {
         try {
-            String query = "INSERT INTO Customer VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Customer VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setString(3, address);
             statement.setString(4, zipcode);
-            statement.setString(5, city);
-            statement.setString(6, country);
+            statement.setString(5, country);
+            statement.setString(6, city);
             statement.setString(7, phone);
             statement.setString(8, email);
-            statement.setString(9, departedFrom);
-            statement.setString(10, destination);
+            statement.setInt(9, flightNumber);
+            statement.setString(10, departedFrom);
+            statement.setString(11, destination);
             statement.execute();
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("addCustomer: " + e);
         }
     }
     

@@ -38,23 +38,22 @@ public class LuggageManager extends QueryManager {
      * @param TypeLuggage
      * @param OtherThings
      */
-    public void addLuggage(int flightNumber, double weight, String color, int type, String description, int status) {
-        String query = "INSERT INTO Luggage VALUES(null, ?, ?, ?, ?, ?, ?)";
+    public void addLuggage(int labelNumber, int flightNumber, double weight, String color, int type, String description, int status) {
+        String query = "INSERT INTO Luggage VALUES(?, ?, ?, ?, ?, ?, ?)";
 
-
-        
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, flightNumber);
-            statement.setDouble(2, weight);
-            statement.setString(3, color);
-            statement.setInt(4, type);
-            statement.setString(5, description);
-            statement.setInt(6, status);
+            statement.setInt(1, labelNumber);
+            statement.setInt(2, flightNumber);
+            statement.setDouble(3, weight);
+            statement.setString(4, color);
+            statement.setInt(5, type);
+            statement.setString(6, description);
+            statement.setInt(7, status);
 
             statement.execute();
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("addLuggage:" + e);
         }
     }
     

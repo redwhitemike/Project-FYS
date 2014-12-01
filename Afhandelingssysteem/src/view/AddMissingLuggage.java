@@ -584,11 +584,13 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         CustomerManager cm = new CustomerManager();
         
         try {
-            lm.addLuggage(Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()), 
+            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()), 
                         Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
             
             cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(), 
-                        PhoneNumber.getText(), eMail.getText(), DepartedFrom.getText(), Destination.getText());
+                        PhoneNumber.getText(), eMail.getText(), Integer.parseInt(FlightNumber.getText()), DepartedFrom.getText(), Destination.getText());
+            
+            JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
