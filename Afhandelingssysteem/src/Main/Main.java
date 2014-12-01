@@ -30,11 +30,14 @@ public class Main {
     
    public static int userType = -1;
     
-    // Class Constants
+    // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
     public static final int FUNCTION_EMPLOYEE = 1;
     public static final int FUNCTION_MANAGER = 2;
     public static final int FUNCTION_APP_MANAGER = 3;
+    
+    // Status Constants
+    public static final int LUGGAGE_MISSING = 0;
     
     public static Main getInstance() {    
         return instance;

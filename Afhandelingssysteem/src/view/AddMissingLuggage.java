@@ -1,12 +1,10 @@
 package view;
 
 import Main.Main;
-//<<<<<<< HEAD
+
 import connection.*;
 import javax.swing.JOptionPane;
-//=======
 
-//>>>>>>> 5135bc9f296b095088957b29445bba5fc53906dd
 /**
  *
  * @author IS104_2
@@ -583,14 +581,14 @@ public class AddMissingLuggage extends javax.swing.JPanel {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         LuggageManager lm = new LuggageManager();
-        try{
+        CustomerManager cm = new CustomerManager();
+        
+        try {
+            lm.addLuggage(Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()), 
+                        Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
             
-        lm.addLuggage(FirstName.getText(),
-                LastName.getText(),Address.getText(),ZipCode.getText(),
-                City.getText(),Country.getText(),PhoneNumber.getText(),
-                eMail.getText(),FlightNumber.getText(),DepartedFrom.getText(),
-                Destination.getText(),LabelNumber.getText(),Colour.getText(),
-                Weight.getText(),TypeLuggage.getText(),OtherThings.getText());
+            cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(), 
+                        PhoneNumber.getText(), eMail.getText(), DepartedFrom.getText(), Destination.getText());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
