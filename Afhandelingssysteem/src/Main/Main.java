@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package Main;
-import view.login;
-import view.topMenu;
+import view.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -28,7 +27,7 @@ public class Main {
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "bagagge systeem";
     private JFrame mainWindow;
-    private final login login = new login();
+    private final LoginPanel login = new LoginPanel();
     private final topMenu tm = new topMenu();
     private static Main instance = new Main();
     
@@ -54,7 +53,7 @@ public class Main {
         });
 
         mainWindow.getContentPane().setLayout(new BorderLayout());
-        showPanel(new view.login());
+        showPanel(new view.LoginPanel());
 
         mainWindow.setVisible(true);
     }

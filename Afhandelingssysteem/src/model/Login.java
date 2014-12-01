@@ -21,7 +21,7 @@ public class Login {
     }
     
     public boolean isFound() {
-        String query = "SELECT COUNT(*) FROM User WHERE username = ? AND password = ?";
+        String query = "SELECT COUNT(*) as count FROM User WHERE username = ? AND password = ?";
         ResultSet result = null;
         
         try {
@@ -29,7 +29,11 @@ public class Login {
             statement.setString(1, username);
             statement.setString(2, password);
             statement.execute();
-            return statement.getFetchSize() > 0;
+            
+            result = statement.getResultSet();
+            result.next();
+            
+            return result.getInt("count") > 0;
         } catch (SQLException e) {
             System.err.println(e);
         }
