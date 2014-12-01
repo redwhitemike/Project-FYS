@@ -21,24 +21,50 @@ public class LuggageManager extends QueryManager {
     
     /**
      * Adds luggage to the database.
-     * @param flightNumber
-     * @param weight
-     * @param color
-     * @param type
-     * @param description
-     * @param status 
+     * @param FirstName
+     * @param LastName
+     * @param Address
+     * @param ZipCode
+     * @param City
+     * @param Country 
+     * @param PhoneNumber
+     * @param eMail
+     * @param FlightNumber
+     * @param DepartedFrom
+     * @param Destination
+     * @param LabelNumber 
+     * @param Colour
+     * @param Weight
+     * @param TypeLuggage
+     * @param OtherThings
      */
-    public void addLuggage(int flightNumber, double weight, String color, int type, String description, int status) {
-        String query = "INSERT INTO Luggage VALUES(null, ?, ?, ?, ?, ?, ?)";
+    public void addLuggage(String FirstName,
+                String LastName,String Address,String ZipCode,
+                String City,String Country,String PhoneNumber,
+                String eMail,String FlightNumber,String DepartedFrom,
+                String Destination,String LabelNumber,String Colour,
+                String Weight,String TypeLuggage,String OtherThings) {
+        String query = "INSERT INTO Luggage VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, flightNumber);
-            statement.setDouble(2, weight);
-            statement.setString(3, color);
-            statement.setInt(4, type);
-            statement.setString(5, description);
-            statement.setInt(6, status);
+            statement.setString(1, FirstName);
+            statement.setString(2, LastName);
+            statement.setString(3, Address);
+            statement.setString(4, ZipCode);
+            statement.setString(5, City);
+            statement.setString(6, Country);
+            statement.setString(7, PhoneNumber);
+            statement.setString(8, eMail);
+            statement.setString(9, FlightNumber);
+            statement.setString(10, DepartedFrom);
+            statement.setString(11, Destination);
+            statement.setString(12, LabelNumber);
+            statement.setString(13, Colour);
+            statement.setString(14, Weight);
+            statement.setString(15, TypeLuggage);
+            statement.setString(16, OtherThings);
             statement.execute();
         } catch (SQLException e) {
             System.err.println(e);

@@ -582,12 +582,18 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_FirstNameActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        addmissingluggage aml = new addmissingluggage(FirstName.getText(),
+        LuggageManager lm = new LuggageManager();
+        try{
+            
+        lm.addLuggage(FirstName.getText(),
                 LastName.getText(),Address.getText(),ZipCode.getText(),
                 City.getText(),Country.getText(),PhoneNumber.getText(),
                 eMail.getText(),FlightNumber.getText(),DepartedFrom.getText(),
                 Destination.getText(),LabelNumber.getText(),Colour.getText(),
                 Weight.getText(),TypeLuggage.getText(),OtherThings.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         
     }//GEN-LAST:event_submitActionPerformed
 
