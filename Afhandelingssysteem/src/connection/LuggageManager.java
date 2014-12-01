@@ -72,7 +72,7 @@ public class LuggageManager extends QueryManager {
      * @return 
      */
     public ResultSet getLuggages() {
-        String query = "SELECT * FROM User";
+        String query = "SELECT * FROM Luggage";
         ResultSet result = Database.execute(query);
         return result;
     }

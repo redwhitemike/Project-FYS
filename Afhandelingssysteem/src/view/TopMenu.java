@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
-import Main.Main;
+
+import Main.*;
+
 /**
  *
- * @author Mika
+ * @author IS104_2
  */
 public class TopMenu extends javax.swing.JPanel {
     private static final UserMenu um = new UserMenu();

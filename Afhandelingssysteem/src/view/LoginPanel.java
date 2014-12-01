@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 import Main.Main;
-import java.util.Scanner;
+
 import model.Login;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Laura
+ * @author IS104_2
  */
 public class LoginPanel extends javax.swing.JPanel {
-    private static final usermenu um = new usermenu();
-    Scanner in = new Scanner(System.in);
+    private static final UserMenu um = new UserMenu();
+
     /**
      * Creates new form login
      */
@@ -314,14 +311,13 @@ public class LoginPanel extends javax.swing.JPanel {
         
         try {
             if (login.doLogin()) {
+                Main.userType = login.getFunction();
                 Main.getInstance().showPanel(um);
             } else {
                 System.err.println("login.doLogin: Unhandled error");
             }
         } catch (Exception e) {
-            // Error found (alert box?)
-            // message = e.getMessage()
-            System.err.println("get rekt: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
