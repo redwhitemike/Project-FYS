@@ -1,11 +1,12 @@
 package view;
 
 import Main.Main;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import connection.*;
-=======
+import javax.swing.JOptionPane;
+//=======
 
->>>>>>> 5135bc9f296b095088957b29445bba5fc53906dd
+//>>>>>>> 5135bc9f296b095088957b29445bba5fc53906dd
 /**
  *
  * @author IS104_2
@@ -587,6 +588,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                 eMail.getText(),FlightNumber.getText(),DepartedFrom.getText(),
                 Destination.getText(),LabelNumber.getText(),Colour.getText(),
                 Weight.getText(),TypeLuggage.getText(),OtherThings.getText());
+        
     }//GEN-LAST:event_submitActionPerformed
 
     private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
