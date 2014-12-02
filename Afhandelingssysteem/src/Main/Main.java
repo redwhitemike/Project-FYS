@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Main;
-import view.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -12,7 +11,6 @@ import java.awt.event.WindowEvent;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import model.*;
 
         
 /**
@@ -76,7 +74,7 @@ public class Main {
         });
 
         mainWindow.getContentPane().setLayout(new BorderLayout());
-        showPanel(new view.LoginPanel());
+        showPanel(new view.desk.LoginPanel());
 
         mainWindow.setVisible(true);
     }
@@ -87,6 +85,7 @@ public class Main {
         mainWindow.getContentPane().add(panel, BorderLayout.CENTER);
         mainWindow.getContentPane().validate();
         mainWindow.getContentPane().repaint();
+        
     }
     private void shutdown() {
         mainWindow.dispose();
