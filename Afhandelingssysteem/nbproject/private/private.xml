@@ -4,9 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/AddMissingLuggage.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/UserMenu.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/model/Login.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/FindLuggageUser.java</file>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/connection/LuggageManager.java</file>
-            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/LoginPanel.java</file>
-            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/Main/Main.java</file>
         </group>
     </open-files>
 </project-private>

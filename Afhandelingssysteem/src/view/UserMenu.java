@@ -12,11 +12,11 @@ import Main.Main;
  * @author Laura
  */
 public class UserMenu extends javax.swing.JPanel {
-    private static final UserMenu um = new UserMenu();
+    private static final UserMenu userM = new UserMenu();
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
-    
+    private static final FindLuggageUser findL = new FindLuggageUser();
     /**
      * Creates new form usermenu
      */
@@ -267,7 +267,7 @@ public class UserMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton60ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
-        Main.getInstance().showPanel(um);
+        Main.getInstance().showPanel(userM);
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
@@ -279,7 +279,7 @@ public class UserMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-
+        Main.getInstance().showPanel(findL);
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed

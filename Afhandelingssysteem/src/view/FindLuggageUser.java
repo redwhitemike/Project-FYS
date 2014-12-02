@@ -11,6 +11,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
+    private static final FindLuggageUser findL = new FindLuggageUser();
     /**
      * Creates new form findluggageuser
      */
@@ -200,8 +201,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
         });
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/search.png"))); // NOI18N
-        jButton5.setBorder(null);
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
         jButton5.setBorderPainted(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -526,7 +526,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-
+        Main.getInstance().showPanel(findL);
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed

@@ -11,6 +11,7 @@ public class FindCustomer extends javax.swing.JPanel {
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
+    private static final FindLuggageUser findL = new FindLuggageUser();
     /**
      * Creates new form findcostumer
      */
@@ -338,6 +339,7 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
+        Main.getInstance().showPanel(findL);
 
     }//GEN-LAST:event_jButton64ActionPerformed
 
