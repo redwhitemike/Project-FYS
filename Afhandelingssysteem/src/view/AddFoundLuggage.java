@@ -11,7 +11,6 @@ public class AddFoundLuggage extends javax.swing.JPanel {
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
-    private static final FindLuggageUser findL = new FindLuggageUser();
     /**
      * Creates new form addfoundluggage
      */
@@ -46,6 +45,7 @@ public class AddFoundLuggage extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jComboBox4 = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
         jButton61 = new javax.swing.JButton();
@@ -221,6 +221,17 @@ public class AddFoundLuggage extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1024, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
+        );
+
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panel12.setName(""); // NOI18N
@@ -336,7 +347,7 @@ public class AddFoundLuggage extends javax.swing.JPanel {
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel12Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton62, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -361,6 +372,11 @@ public class AddFoundLuggage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,6 +385,11 @@ public class AddFoundLuggage extends javax.swing.JPanel {
                 .addGap(112, 112, 112)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(144, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(337, 337, 337)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(337, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -417,7 +438,7 @@ public class AddFoundLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-         Main.getInstance().showPanel(findL);
+
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
@@ -446,6 +467,7 @@ public class AddFoundLuggage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;

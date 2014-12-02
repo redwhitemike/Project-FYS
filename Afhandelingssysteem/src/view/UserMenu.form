@@ -37,7 +37,7 @@
               </Group>
               <EmptySpace pref="257" max="32767" attributes="0"/>
           </Group>
-          <Component id="panel12" alignment="0" max="32767" attributes="0"/>
+          <Component id="panel12" alignment="0" pref="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">

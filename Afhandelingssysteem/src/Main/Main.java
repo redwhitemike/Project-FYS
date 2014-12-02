@@ -23,7 +23,7 @@ import model.*;
 
 public class Main {
     // Frame Constants
-    public static final int FRAME_WIDTH = 1024;
+    public static final int FRAME_WIDTH = 1044;
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "Corendon - Luggage System";
     private static final Main instance = new Main();
