@@ -5,9 +5,12 @@
         <group>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/AddMissingLuggage.java</file>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/UserMenu.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/panels/managermenu.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/FindCustomer.java</file>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/model/Login.java</file>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/view/FindLuggageUser.java</file>
             <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/connection/LuggageManager.java</file>
+            <file>file:/Users/Mika/Project-FYS/Afhandelingssysteem/src/panels/adminmenu.java</file>
         </group>
     </open-files>
 </project-private>
