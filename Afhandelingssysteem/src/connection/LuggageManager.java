@@ -39,7 +39,8 @@ public class LuggageManager extends QueryManager {
      * @param OtherThings
      */
     public void addLuggage(int labelNumber, int flightNumber, double weight, String color, int type, String description, int status) {
-        String query = "INSERT INTO Luggage VALUES(?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Luggage (label_number, flight_number, weight, color, type, description, status) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = Connection.prepareStatement(query);

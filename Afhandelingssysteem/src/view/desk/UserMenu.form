@@ -26,14 +26,14 @@
               <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="MissingLuggageBlock" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="FoundLuggageBlock" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="FindLuggageBlock" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="FindCustomerBlock" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -46,13 +46,13 @@
               <Component id="panel12" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="174" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
-                  <Component id="jLabel8" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="FoundLuggageBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="MissingLuggageBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel7" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
-                  <Component id="jLabel10" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="FindLuggageBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Component id="FindCustomerBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
           </Group>
@@ -60,7 +60,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="FoundLuggageBlock">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="18" style="0"/>
@@ -76,8 +76,11 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FoundLuggageBlockMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="MissingLuggageBlock">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="cc" type="rgb"/>
@@ -97,8 +100,11 @@
         <Property name="focusable" type="boolean" value="false"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MissingLuggageBlockMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="FindLuggageBlock">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="18" style="0"/>
@@ -113,8 +119,11 @@
         <Property name="text" type="java.lang.String" value="Find luggage"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FindLuggageBlockMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="FindCustomerBlock">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="18" style="0"/>
@@ -129,6 +138,9 @@
         <Property name="text" type="java.lang.String" value="Find costumer"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FindCustomerBlockMouseClicked"/>
+      </Events>
     </Component>
     <Container class="java.awt.Panel" name="panel12">
       <Properties>

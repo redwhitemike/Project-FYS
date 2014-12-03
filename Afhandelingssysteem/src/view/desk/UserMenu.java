@@ -34,10 +34,10 @@ public class UserMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        FoundLuggageBlock = new javax.swing.JLabel();
+        MissingLuggageBlock = new javax.swing.JLabel();
+        FindLuggageBlock = new javax.swing.JLabel();
+        FindCustomerBlock = new javax.swing.JLabel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
         jButton61 = new javax.swing.JButton();
@@ -50,37 +50,57 @@ public class UserMenu extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel4.setText("Add found luggage");
-        jLabel4.setToolTipText("");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FoundLuggageBlock.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        FoundLuggageBlock.setForeground(new java.awt.Color(255, 255, 255));
+        FoundLuggageBlock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FoundLuggageBlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
+        FoundLuggageBlock.setText("Add found luggage");
+        FoundLuggageBlock.setToolTipText("");
+        FoundLuggageBlock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FoundLuggageBlock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FoundLuggageBlockMouseClicked(evt);
+            }
+        });
 
-        jLabel8.setBackground(new java.awt.Color(204, 51, 0));
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel8.setText("Add missing luggage");
-        jLabel8.setToolTipText("");
-        jLabel8.setFocusable(false);
-        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MissingLuggageBlock.setBackground(new java.awt.Color(204, 51, 0));
+        MissingLuggageBlock.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        MissingLuggageBlock.setForeground(new java.awt.Color(255, 255, 255));
+        MissingLuggageBlock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MissingLuggageBlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
+        MissingLuggageBlock.setText("Add missing luggage");
+        MissingLuggageBlock.setToolTipText("");
+        MissingLuggageBlock.setFocusable(false);
+        MissingLuggageBlock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MissingLuggageBlock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MissingLuggageBlockMouseClicked(evt);
+            }
+        });
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel7.setText("Find luggage");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FindLuggageBlock.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        FindLuggageBlock.setForeground(new java.awt.Color(255, 255, 255));
+        FindLuggageBlock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FindLuggageBlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
+        FindLuggageBlock.setText("Find luggage");
+        FindLuggageBlock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FindLuggageBlock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FindLuggageBlockMouseClicked(evt);
+            }
+        });
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel10.setText("Find costumer");
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FindCustomerBlock.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        FindCustomerBlock.setForeground(new java.awt.Color(255, 255, 255));
+        FindCustomerBlock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FindCustomerBlock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
+        FindCustomerBlock.setText("Find costumer");
+        FindCustomerBlock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FindCustomerBlock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FindCustomerBlockMouseClicked(evt);
+            }
+        });
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -237,13 +257,13 @@ public class UserMenu extends javax.swing.JPanel {
                 .addGap(252, 252, 252)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addComponent(MissingLuggageBlock)
                         .addGap(85, 85, 85)
-                        .addComponent(jLabel4))
+                        .addComponent(FoundLuggageBlock))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
+                        .addComponent(FindLuggageBlock)
                         .addGap(85, 85, 85)
-                        .addComponent(jLabel10)))
+                        .addComponent(FindCustomerBlock)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -252,12 +272,12 @@ public class UserMenu extends javax.swing.JPanel {
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FoundLuggageBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MissingLuggageBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FindLuggageBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindCustomerBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(149, 149, 149))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -290,19 +310,35 @@ public class UserMenu extends javax.swing.JPanel {
         Main.getInstance().showPanel(login);
     }//GEN-LAST:event_logOutActionPerformed
 
+    private void MissingLuggageBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MissingLuggageBlockMouseClicked
+        Main.getInstance().showPanel(aml);
+    }//GEN-LAST:event_MissingLuggageBlockMouseClicked
+
+    private void FoundLuggageBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FoundLuggageBlockMouseClicked
+        Main.getInstance().showPanel(afl);
+    }//GEN-LAST:event_FoundLuggageBlockMouseClicked
+
+    private void FindLuggageBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FindLuggageBlockMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FindLuggageBlockMouseClicked
+
+    private void FindCustomerBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FindCustomerBlockMouseClicked
+        Main.getInstance().showPanel(fc);
+    }//GEN-LAST:event_FindCustomerBlockMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FindCustomerBlock;
+    private javax.swing.JLabel FindLuggageBlock;
+    private javax.swing.JLabel FoundLuggageBlock;
+    private javax.swing.JLabel MissingLuggageBlock;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
     private javax.swing.JButton jButton63;
     private javax.swing.JButton jButton64;
     private javax.swing.JButton jButton65;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JButton logOut;
     private java.awt.Panel panel12;
     // End of variables declaration//GEN-END:variables

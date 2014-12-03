@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -27,7 +23,7 @@ public class Main {
     private static final Main instance = new Main();
     
    public static int userType = -1;
-    
+   
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
     public static final int FUNCTION_EMPLOYEE = 1;
@@ -85,8 +81,8 @@ public class Main {
         mainWindow.getContentPane().add(panel, BorderLayout.CENTER);
         mainWindow.getContentPane().validate();
         mainWindow.getContentPane().repaint();
-        
     }
+    
     private void shutdown() {
         mainWindow.dispose();
     }

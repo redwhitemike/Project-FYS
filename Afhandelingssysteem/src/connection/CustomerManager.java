@@ -29,13 +29,15 @@ public class CustomerManager extends QueryManager {
      * @param country
      * @param phone
      * @param email
+     * @param flightNumber
      * @param departedFrom
      * @param destination 
      */
     public void addCustomer(String firstName, String lastName, String address, String zipcode, String city, 
                             String country, String phone, String email, int flightNumber, String departedFrom, String destination) {
         try {
-            String query = "INSERT INTO Customer VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Customer (first_name, last_name, home_address, postcode, coutnry, city, phone_number, `e-mail`, flight_number, departed_from, destination) "
+                    + "VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, firstName);
             statement.setString(2, lastName);
