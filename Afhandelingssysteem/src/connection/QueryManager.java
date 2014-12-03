@@ -33,15 +33,13 @@ public class QueryManager {
         return result;
     }
     
-    public ResultSet searchLuggage(String query) {
+    public ResultSet searchLuggage(int labelNumber) {
         ResultSet result = null;
-        String sql = "SELECT * FROM Luggage WHERE username LIKE ?";
-        
-        query = "%" + query + "%";
+        String sql = "SELECT * FROM Luggage WHERE label_number = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(sql);
-            statement.setString(1, query);
+            statement.setInt(1, labelNumber);
             statement.execute();
             
             result = statement.getResultSet();
