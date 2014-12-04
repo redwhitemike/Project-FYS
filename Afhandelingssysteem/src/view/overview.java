@@ -40,6 +40,8 @@ public class overview extends javax.swing.JPanel {
         deletebutton = new javax.swing.JButton();
         editbutton = new javax.swing.JButton();
         overviewbackground = new javax.swing.JLabel();
+        searchbutton = new javax.swing.JButton();
+        search = new javax.swing.JTextField();
 
         setLayout(null);
 
@@ -123,17 +125,16 @@ public class overview extends javax.swing.JPanel {
         );
         menuoverviewLayout.setVerticalGroup(
             menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuoverviewLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(loggedinas)
                         .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(help, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createSequentialGroup()
-                        .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
         );
 
         add(menuoverview);
@@ -173,6 +174,21 @@ public class overview extends javax.swing.JPanel {
         overviewbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/overviewbackground.png"))); // NOI18N
         add(overviewbackground);
         overviewbackground.setBounds(170, 150, 200, 95);
+
+        searchbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/view.png"))); // NOI18N
+        searchbutton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(searchbutton);
+        searchbutton.setBounds(890, 100, 30, 25);
+
+        search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        add(search);
+        search.setBounds(720, 90, 210, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
@@ -191,6 +207,10 @@ public class overview extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_helpActionPerformed
 
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Functiondummytext;
@@ -206,5 +226,7 @@ public class overview extends javax.swing.JPanel {
     private javax.swing.JLabel namedummytext;
     private javax.swing.JLabel overviewbackground;
     private javax.swing.JButton overviewusers;
+    private javax.swing.JTextField search;
+    private javax.swing.JButton searchbutton;
     // End of variables declaration//GEN-END:variables
 }
