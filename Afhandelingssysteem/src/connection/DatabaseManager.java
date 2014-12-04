@@ -53,7 +53,7 @@ public class DatabaseManager {
             Statement statement = Connection.createStatement();
             result = statement.executeQuery(sql);
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("DatabaseManager.execute: " + e);
         }
         
         return result;

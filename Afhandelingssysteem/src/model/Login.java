@@ -3,6 +3,8 @@ package model;
 import connection.*;
 import java.sql.*;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  * 
  * @author IS104_2
@@ -14,9 +16,15 @@ public class Login {
     
     QueryManager manager;
 
-    public Login(String inputUser, String inputPass) {
+    public Login() {
         manager = new QueryManager();
+    }
+    
+    public void setUsername(String inputUser) {
         username = inputUser;
+    }
+    
+    public void setPassword(String inputPass) {
         password = inputPass;
     }
     
@@ -31,7 +39,8 @@ public class Login {
         try {
             PreparedStatement statement = manager.Connection.prepareStatement(query);
             statement.setString(1, username);
-            statement.setString(2, password);
+            statement.setString(2, DigestUtils.sha512Hex(password));
+
             statement.execute();
             
             result = statement.getResultSet();
@@ -72,7 +81,6 @@ public class Login {
         try {
             PreparedStatement statement = manager.Connection.prepareStatement(query);
             statement.setString(1, username);
-            statement.setString(2, password);
             statement.execute();
             
             result = statement.getResultSet();

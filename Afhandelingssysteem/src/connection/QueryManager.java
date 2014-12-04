@@ -13,10 +13,10 @@ public class QueryManager {
     public QueryManager() {
         Connection = Database.getConnection();
     }
-    
-    public ResultSet searchIn(String table, String column, String query) {
+
+    public ResultSet searchCustomer(String query) {
         ResultSet result = null;
-        String sql = "SELECT * FROM " + table + " WHERE " + column + " LIKE ?";
+        String sql = "SELECT * FROM Customer WHERE username LIKE ?";
         
         query = "%" + query + "%";
         
@@ -27,10 +27,27 @@ public class QueryManager {
             
             result = statement.getResultSet();
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("searchCustomer: " + e);
         }
         
         return result;
+    }
+    
+    public ResultSet searchLuggage(int labelNumber) {
+        ResultSet result = null;
+        String sql = "SELECT * FROM Luggage WHERE label_number = ?";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(sql);
+            statement.setInt(1, labelNumber);
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println("searchLuggage: " + e);
+        }
+        
+        return result;        
     }
 }
 

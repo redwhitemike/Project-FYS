@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main;
-import view.*;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -12,7 +7,6 @@ import java.awt.event.WindowEvent;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import model.*;
 
         
 /**
@@ -23,13 +17,13 @@ import model.*;
 
 public class Main {
     // Frame Constants
-    public static final int FRAME_WIDTH = 1024;
+    public static final int FRAME_WIDTH = 1044;
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "Corendon - Luggage System";
     private static final Main instance = new Main();
     
    public static int userType = -1;
-    
+   
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
     public static final int FUNCTION_EMPLOYEE = 1;
@@ -76,7 +70,7 @@ public class Main {
         });
 
         mainWindow.getContentPane().setLayout(new BorderLayout());
-        showPanel(new view.LoginPanel());
+        showPanel(new view.desk.LoginPanel());
 
         mainWindow.setVisible(true);
     }
@@ -88,6 +82,7 @@ public class Main {
         mainWindow.getContentPane().validate();
         mainWindow.getContentPane().repaint();
     }
+    
     private void shutdown() {
         mainWindow.dispose();
     }
