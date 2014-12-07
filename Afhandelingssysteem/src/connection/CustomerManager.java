@@ -108,6 +108,30 @@ public class CustomerManager extends QueryManager {
     }
     
     /**
+     * Get all customers, filtering to a specific group.
+     * @param filter
+     * @return 
+     */
+    public ResultSet getCustomers(String filter) {
+        String query = "SELECT * FROM Customer WHERE first_name LIKE ?";
+        ResultSet result = null;
+        
+        filter = "%" + filter + "%";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setString(1, filter);
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
+    /**
      * Deletes a customer from the database.
      * @param customerid 
      */

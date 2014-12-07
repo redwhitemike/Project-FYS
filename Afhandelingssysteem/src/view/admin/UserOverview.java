@@ -1,24 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.admin;
 
 import Main.Main;
 
 /**
  *
- * @author Laura
+ * @author IS104_2
  */
-public class overview extends javax.swing.JPanel {
-    private static final adduser adduser = new adduser();
-    private static final overview overview = new overview();
+public class UserOverview extends javax.swing.JPanel {
+    private static final AddUser adduser = new AddUser();
+    private static final UserOverview overview = new UserOverview();
     private static final AdminMenu adminMenu = new AdminMenu();
     /**
      * Creates new form overview
      */
-    public overview() {
+    public UserOverview() {
         initComponents();
     }
 
