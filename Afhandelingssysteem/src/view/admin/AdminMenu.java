@@ -1,17 +1,11 @@
 package view.admin;
 
-import Main.Main;
-import view.desk.LoginPanel;
-
 /**
  *
  * @author IS104_2
  */
 public class AdminMenu extends javax.swing.JPanel {
-    private static final adduser adduser = new adduser();
-    private static final overview overview = new overview();
-    private static final AdminMenu adminMenu = new AdminMenu();
-    private static final view.desk.LoginPanel login = new LoginPanel();
+
     /**
      * Creates new form adminmenu1
      */
@@ -36,7 +30,6 @@ public class AdminMenu extends javax.swing.JPanel {
         overviewUsers = new javax.swing.JButton();
         Help = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -117,13 +110,6 @@ public class AdminMenu extends javax.swing.JPanel {
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel10.setMaximumSize(null);
 
-        jButton1.setText("Log off");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
         panel12Layout.setHorizontalGroup(
@@ -132,34 +118,29 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(176, 176, 176)
                 .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(overviewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(231, 231, 231)
-                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(12, 12, 12)
-                .addComponent(Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(overviewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel12Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(overviewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel12Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -171,7 +152,7 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addGap(85, 85, 85)
                 .addComponent(jLabel4)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
             .addComponent(panel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -186,32 +167,27 @@ public class AdminMenu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
+        
+    }//GEN-LAST:event_addUserActionPerformed
+
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+        
+    }//GEN-LAST:event_HomeActionPerformed
+
+    private void overviewUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewUsersActionPerformed
+
+    }//GEN-LAST:event_overviewUsersActionPerformed
+
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HelpActionPerformed
-
-    private void overviewUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewUsersActionPerformed
-        Main.getInstance().showPanel(overview);
-    }//GEN-LAST:event_overviewUsersActionPerformed
-
-    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-        Main.getInstance().showPanel(adminMenu);
-    }//GEN-LAST:event_HomeActionPerformed
-
-    private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
-        Main.getInstance().showPanel(adduser);
-    }//GEN-LAST:event_addUserActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(login);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Help;
     private javax.swing.JButton Home;
     private javax.swing.JButton addUser;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;

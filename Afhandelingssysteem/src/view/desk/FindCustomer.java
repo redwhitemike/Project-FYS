@@ -50,6 +50,7 @@ public class FindCustomer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton5 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         panel12 = new java.awt.Panel();
@@ -62,9 +63,16 @@ public class FindCustomer extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         FindCustomerTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
 
         setLayout(null);
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
+        jButton5.setBorderPainted(false);
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(jButton5);
+        jButton5.setBounds(370, 120, 34, 30);
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.setText("Search");
@@ -74,7 +82,7 @@ public class FindCustomer extends javax.swing.JPanel {
             }
         });
         add(jTextField1);
-        jTextField1.setBounds(10, 112, 400, 40);
+        jTextField1.setBounds(10, 110, 400, 42);
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -248,10 +256,6 @@ public class FindCustomer extends javax.swing.JPanel {
 
         add(jScrollPane1);
         jScrollPane1.setBounds(20, 200, 1060, 350);
-
-        jButton1.setText("Search");
-        add(jButton1);
-        jButton1.setBounds(420, 120, 85, 29);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -285,7 +289,7 @@ public class FindCustomer extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable FindCustomerTable;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
