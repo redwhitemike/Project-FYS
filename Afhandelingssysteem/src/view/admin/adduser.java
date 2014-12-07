@@ -7,10 +7,7 @@ package view.admin;
 import Main.Main;
 import connection.*;
 import javax.swing.JOptionPane;
-import view.desk.AddFoundLuggage;
-import view.desk.AddMissingLuggage;
-import view.desk.FindCustomer;
-import view.desk.UserMenu;
+
 
 /**
  *
@@ -84,6 +81,7 @@ public class adduser extends javax.swing.JPanel {
         Lastname = new javax.swing.JTextField();
         Name = new javax.swing.JTextField();
         Employeenumber = new javax.swing.JTextField();
+        Insertion = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -96,11 +94,12 @@ public class adduser extends javax.swing.JPanel {
         jLabel28 = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
         Repeatpassword = new javax.swing.JPasswordField();
-        User = new java.awt.Checkbox();
-        Admin = new java.awt.Checkbox();
-        Manager = new java.awt.Checkbox();
         Addpicture = new javax.swing.JLabel();
         Browse = new javax.swing.JButton();
+        Admin = new javax.swing.JRadioButton();
+        Manager = new javax.swing.JRadioButton();
+        Balie = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -604,6 +603,16 @@ public class adduser extends javax.swing.JPanel {
             }
         });
 
+        Insertion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Insertion.setForeground(new java.awt.Color(51, 51, 51));
+        Insertion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Insertion.setPreferredSize(new java.awt.Dimension(135, 20));
+        Insertion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InsertionActionPerformed(evt);
+            }
+        });
+
         jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel18.setText("Password:");
 
@@ -631,12 +640,6 @@ public class adduser extends javax.swing.JPanel {
         jLabel28.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel28.setText("Add profile picture");
 
-        User.setLabel("User");
-
-        Admin.setLabel("Admin");
-
-        Manager.setLabel("Manager");
-
         Addpicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/exampleprofilepicture.png"))); // NOI18N
 
         Browse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add_button.png"))); // NOI18N
@@ -647,6 +650,14 @@ public class adduser extends javax.swing.JPanel {
                 BrowseActionPerformed(evt);
             }
         });
+
+        Admin.setText("Admin");
+
+        Manager.setText("Manager");
+
+        Balie.setText("Balie");
+
+        jLabel2.setText("Insertion");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -666,37 +677,39 @@ public class adduser extends javax.swing.JPanel {
                     .addComponent(jLabel26)
                     .addComponent(jLabel27)
                     .addComponent(jLabel28)
-                    .addComponent(jLabel23))
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel2))
                 .addGap(62, 62, 62)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lastname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Password)
-                            .addComponent(Repeatpassword)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(Admin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Manager)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Balie)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Employeenumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Lastname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Location, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Repeatpassword, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(22, 22, 22)
-                                        .addComponent(Manager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(125, 125, 125))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                         .addComponent(Addpicture, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Browse, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(38, 38, 38))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Employeenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(Browse, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(125, 125, 125)))
+                                .addGap(0, 4, Short.MAX_VALUE))
+                            .addComponent(Insertion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(38, 38, 38))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -724,24 +737,27 @@ public class adduser extends javax.swing.JPanel {
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Insertion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Employeenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Manager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(65, 65, 65)
                         .addComponent(Browse, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Admin)
+                            .addComponent(Manager)
+                            .addComponent(Balie))
+                        .addGap(13, 13, 13)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28)
                             .addComponent(Addpicture, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -768,7 +784,7 @@ public class adduser extends javax.swing.JPanel {
                 .addComponent(menuoverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 247, Short.MAX_VALUE))
+                .addGap(0, 225, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -789,21 +805,7 @@ public class adduser extends javax.swing.JPanel {
     }//GEN-LAST:event_helpActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        LuggageManager lm = new LuggageManager();
-        CustomerManager cm = new CustomerManager();
-
-        try {
-            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()),
-                Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
-
-            cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(),
-                PhoneNumber.getText(), eMail.getText(), Integer.parseInt(FlightNumber.getText()), DepartedFrom.getText(), Destination.getText());
-
-            JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-
+        
     }//GEN-LAST:event_submitActionPerformed
 
     private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
@@ -871,17 +873,28 @@ public class adduser extends javax.swing.JPanel {
     }//GEN-LAST:event_OtherThingsActionPerformed
 
     private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
-        LuggageManager lm = new LuggageManager();
-        CustomerManager cm = new CustomerManager();
+        EmployeeManager em = new EmployeeManager();
 
         try {
-            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()),
-                Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
-
-            cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(),
-                PhoneNumber.getText(), eMail.getText(), Integer.parseInt(FlightNumber.getText()), DepartedFrom.getText(), Destination.getText());
-
-            JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
+            int function = 0;
+            switch (function){
+                case 1:  Admin.isSelected();
+                    function = 1;
+                    break;
+                case 2 : Manager.isSelected();
+                    function = 2;
+                    break;
+                case 3 : Balie.isSelected();
+                    function = 3;
+                    break;
+            }
+            if(Password.getText().equals(Repeatpassword.getText())){
+            em.addEmployee(Username.getText(), Password.getText(), Name.getText(),Insertion.getText(), Lastname.getText(), Location.getText(), Integer.parseInt(Employeenumber.getText()), function);
+            JOptionPane.showMessageDialog(null, "Employee has been added.");
+            }
+            else
+                System.out.print("Password was not the same");
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -912,11 +925,16 @@ public class adduser extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_BrowseActionPerformed
 
+    private void InsertionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InsertionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Addpicture;
     private javax.swing.JTextField Address;
-    private java.awt.Checkbox Admin;
+    private javax.swing.JRadioButton Admin;
+    private javax.swing.JRadioButton Balie;
     private javax.swing.JButton Browse;
     private javax.swing.JTextField City;
     private javax.swing.JTextField Colour;
@@ -926,18 +944,18 @@ public class adduser extends javax.swing.JPanel {
     private javax.swing.JTextField Employeenumber;
     private javax.swing.JTextField FirstName;
     private javax.swing.JTextField FlightNumber;
+    private javax.swing.JTextField Insertion;
     private javax.swing.JTextField LabelNumber;
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField Lastname;
     private javax.swing.JTextField Location;
-    private java.awt.Checkbox Manager;
+    private javax.swing.JRadioButton Manager;
     private javax.swing.JTextField Name;
     private javax.swing.JTextField OtherThings;
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField PhoneNumber;
     private javax.swing.JPasswordField Repeatpassword;
     private javax.swing.JTextField TypeLuggage;
-    private java.awt.Checkbox User;
     private javax.swing.JTextField Username;
     private javax.swing.JTextField Weight;
     private javax.swing.JTextField ZipCode;
@@ -955,6 +973,7 @@ public class adduser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;

@@ -1,11 +1,15 @@
 package view.admin;
 
+import Main.Main;
+
 /**
  *
  * @author IS104_2
  */
 public class AdminMenu extends javax.swing.JPanel {
-
+    private static final adduser adduser = new adduser();
+    private static final overview overview = new overview();
+    private static final AdminMenu adminMenu = new AdminMenu();
     /**
      * Creates new form adminmenu1
      */
@@ -168,15 +172,15 @@ public class AdminMenu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
-        
+    Main.getInstance().showPanel(adduser);
     }//GEN-LAST:event_addUserActionPerformed
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-        
+    Main.getInstance().showPanel(adminMenu);
     }//GEN-LAST:event_HomeActionPerformed
 
     private void overviewUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewUsersActionPerformed
-
+    Main.getInstance().showPanel(overview);
     }//GEN-LAST:event_overviewUsersActionPerformed
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
