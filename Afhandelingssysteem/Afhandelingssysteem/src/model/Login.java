@@ -13,6 +13,7 @@ public class Login {
    
     String username;
     String password;
+    int employeeId;
     
     QueryManager manager;
 
@@ -74,8 +75,8 @@ public class Login {
         return false;
     }
     
-    public int getFunction() {
-        String query = "SELECT function FROM User WHERE username = ?";
+    public Employee getEmployee() {
+        String query = "SELECT userid FROM User WHERE username = ?";
         ResultSet result = null;
         
         try {
@@ -86,12 +87,12 @@ public class Login {
             result = statement.getResultSet();
             result.next();
             
-            return result.getInt("function");
+            return new Employee(result.getInt("userid"));
         } catch (SQLException e) {
             System.err.println(e);
-        }
+        }     
         
-        return -1;
+        return null;
     }
     
     public boolean doLogin() throws Exception {

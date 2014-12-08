@@ -3,6 +3,7 @@ package view.desk;
 import Main.Main;
 
 import connection.*;
+import java.awt.HeadlessException;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 
@@ -579,8 +580,8 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_FirstNameActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        LuggageManager lm = new LuggageManager();
-        CustomerManager cm = new CustomerManager();
+        LuggageManager luggageManager = new LuggageManager();
+        CustomerManager customerManager = new CustomerManager();
         
         try {
             HashMap<String, Object> customerValues = new HashMap<>();
@@ -597,13 +598,20 @@ public class AddMissingLuggage extends javax.swing.JPanel {
             customerValues.put("LostAt", "");
             customerValues.put("Destination", Destination.getText());
             
-            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()), 
-                        Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
+            HashMap<String, Object> luggageValues = new HashMap<>();
+            luggageValues.put("LabelNumber", LabelNumber.getText());
+            luggageValues.put("FlightNumber", FlightNumber.getText());
+            luggageValues.put("Weight", Weight.getText());
+            luggageValues.put("Colour", Colour.getText());
+            luggageValues.put("Type", TypeLuggage.getText());
+            luggageValues.put("Description", OtherThings.getText());
+            luggageValues.put("Status", Main.LUGGAGE_MISSING);
             
-            cm.addCustomer(customerValues);
+            luggageManager.addLuggage(luggageValues);
+            customerManager.addCustomer(customerValues);
             
             JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
-        } catch (Exception e) {
+        } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         

@@ -313,7 +313,9 @@ public class LoginPanel extends javax.swing.JPanel {
         try {
             if (login.doLogin()) {
                 
-                switch (login.getFunction()) {                        
+                Main.Employee = login.getEmployee();
+                
+                switch (Main.Employee.getFunction()) {                        
                     case Main.FUNCTION_EMPLOYEE:
                         Main.getInstance().showPanel(new view.desk.UserMenu());
                         break;
