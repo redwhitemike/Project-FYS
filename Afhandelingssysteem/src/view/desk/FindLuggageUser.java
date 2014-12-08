@@ -35,7 +35,12 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jTextField1 = new javax.swing.JTextField();
+=======
+        SearchButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
         jButton61 = new javax.swing.JButton();
@@ -44,8 +49,14 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jButton64 = new javax.swing.JButton();
         jButton65 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+=======
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        SearchQuery = new javax.swing.JTextField();
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
 
         panel4.setBackground(new java.awt.Color(187, 29, 20));
         panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -179,6 +190,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
                         .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+<<<<<<< HEAD
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +198,37 @@ public class FindLuggageUser extends javax.swing.JPanel {
             }
         });
 
+=======
+        setLayout(null);
+
+        SearchButton.setBackground(new java.awt.Color(255, 255, 255));
+        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
+        SearchButton.setBorderPainted(false);
+        SearchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        SearchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
+        add(SearchButton);
+        SearchButton.setBounds(370, 120, 34, 30);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1044, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
+        );
+
+        add(jPanel1);
+        jPanel1.setBounds(12, 342, 1044, 55);
+
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panel12.setName(""); // NOI18N
@@ -295,7 +338,11 @@ public class FindLuggageUser extends javax.swing.JPanel {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(48, Short.MAX_VALUE))
+=======
+                .addContainerGap(55, Short.MAX_VALUE))
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,6 +365,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
                         .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+<<<<<<< HEAD
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -362,10 +410,38 @@ public class FindLuggageUser extends javax.swing.JPanel {
                 .addGap(160, 160, 160))
         );
     }// </editor-fold>//GEN-END:initComponents
+=======
+        add(panel12);
+        panel12.setBounds(0, 0, 1068, 55);
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "First name", "Last name", "Address", "Flight number"
+            }
+        ));
+        jTable1.setToolTipText("");
+        jTable1.setColumnSelectionAllowed(true);
+        jScrollPane2.setViewportView(jTable1);
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
+
+        add(jScrollPane2);
+        jScrollPane2.setBounds(10, 200, 970, 360);
+
+        SearchQuery.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SearchQuery.setText("Search");
+        SearchQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchQueryActionPerformed(evt);
+            }
+        });
+        add(SearchQuery);
+        SearchQuery.setBounds(10, 110, 400, 42);
+    }// </editor-fold>//GEN-END:initComponents
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
@@ -415,8 +491,21 @@ public class FindLuggageUser extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton65ActionPerformed
 
+    private void SearchQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQueryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchQueryActionPerformed
+
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        this.fillTableQuery(SearchQuery.getText());
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchQuery;
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -431,9 +520,15 @@ public class FindLuggageUser extends javax.swing.JPanel {
     private javax.swing.JButton jButton65;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+=======
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+>>>>>>> c4d38c4b7ed3740084023980cbd0aa8d6ad0917b
     private java.awt.Panel panel12;
     private java.awt.Panel panel4;
     // End of variables declaration//GEN-END:variables
