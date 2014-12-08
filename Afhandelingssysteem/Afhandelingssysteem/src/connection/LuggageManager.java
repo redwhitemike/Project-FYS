@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package connection;
+
+import Main.Main;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import java.util.HashMap;
 
 /**
  *
@@ -38,23 +37,23 @@ public class LuggageManager extends QueryManager {
      * @param TypeLuggage
      * @param OtherThings
      */
-    public void addLuggage(int labelNumber, int flightNumber, double weight, String color, int type, String description, int status) {
+    public void addLuggage(HashMap<String, Object> values) {
         String query = "INSERT INTO Luggage (label_number, flight_number, weight, color, type, description, status) "
                 + "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, labelNumber);
-            statement.setInt(2, flightNumber);
-            statement.setDouble(3, weight);
-            statement.setString(4, color);
-            statement.setInt(5, type);
-            statement.setString(6, description);
-            statement.setInt(7, status);
+            statement.setInt(1, Integer.parseInt(values.get("LabelNumber").toString()));
+            statement.setString(2, values.get("FlightNumber").toString());
+            statement.setDouble(3, Double.parseDouble(values.get("Weight").toString()));
+            statement.setString(4, values.get("Colour").toString());
+            statement.setInt(5, Integer.parseInt(values.get("Type").toString()));
+            statement.setString(6, values.get("Description").toString());
+            statement.setInt(7, Integer.parseInt(values.get("Status").toString()));
 
             statement.execute();
         } catch (SQLException e) {
-            System.err.println("addLuggage:" + e);
+            Main.exceptionPrint(e);
         }
     }
     

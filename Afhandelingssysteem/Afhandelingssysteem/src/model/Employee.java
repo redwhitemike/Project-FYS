@@ -33,6 +33,10 @@ public class Employee extends Main {
         return data.getInt("function");
     }
     
+    public String getUsername() throws Exception {
+        return data.getString("username");
+    }
+    
     public boolean usernameInUse(String username) {
         return manager.findUsername(username);
     }

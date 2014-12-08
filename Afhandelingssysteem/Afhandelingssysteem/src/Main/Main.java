@@ -1,5 +1,7 @@
 package Main;
 
+import model.Employee;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -11,15 +13,19 @@ import javax.swing.SwingUtilities;
         
 /**
  *
- * @author Mika
+ * @author IS104_1
  */
 
 
 public class Main {
+    // Static Variables
+    public static Employee Employee;
+    
     // Frame Variables
     public static final int FRAME_WIDTH = 1044;
     public static final int FRAME_HEIGHT = 740;
     public static final String NAME = "Corendon - Luggage System";
+    
     private static final Main instance = new Main();
     private JFrame mainWindow;
    
@@ -31,6 +37,7 @@ public class Main {
     
     // Status Constants
     public static final int LUGGAGE_MISSING = 0;
+    public static final int LUGGAGE_FOUND = 1;
     
     public static Main getInstance() {    
         return instance;
@@ -55,6 +62,16 @@ public class Main {
         System.err.println("-- Exception catched --");
         System.err.println("Name: " + exception.getClass().getName());
         System.err.println("Message: " + exception.getMessage());
+    }
+    
+    public static String getLoggedLabel() {
+        try {
+            return "Logged in as " + Main.Employee.getUsername();
+        } catch (Exception e) {
+            Main.exceptionPrint(null);
+        }
+        
+        return null;
     }
     
     /**

@@ -108,7 +108,7 @@ public class CustomerManager extends QueryManager {
      * @return 
      */
     public ResultSet getCustomers(String filter) {
-        String query = "SELECT * FROM Customer WHERE first_name LIKE ? OR last_name LIKE ? OR label_number = ?";
+        String query = "SELECT * FROM Customer WHERE first_name LIKE ? OR last_name LIKE ?";
         ResultSet result = null;
         
         filter = "%" + filter + "%";
@@ -117,7 +117,6 @@ public class CustomerManager extends QueryManager {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, filter);
             statement.setString(2, filter);
-            statement.setInt(3, Integer.parseInt(filter));
             statement.execute();
             
             result = statement.getResultSet();
