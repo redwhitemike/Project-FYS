@@ -296,7 +296,7 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        Main.getInstance().showPanel(aml);ih
+        Main.getInstance().showPanel(aml);
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
