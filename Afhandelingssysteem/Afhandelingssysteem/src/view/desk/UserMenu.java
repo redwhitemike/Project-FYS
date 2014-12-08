@@ -169,6 +169,11 @@ public class UserMenu extends javax.swing.JPanel {
         jButton64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton64.setInheritsPopupMenu(true);
         jButton64.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton64.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton64MouseClicked(evt);
+            }
+        });
         jButton64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton64ActionPerformed(evt);
@@ -300,7 +305,7 @@ public class UserMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-        Main.getInstance().showPanel(flu);
+        
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
@@ -326,6 +331,10 @@ public class UserMenu extends javax.swing.JPanel {
     private void FindCustomerBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FindCustomerBlockMouseClicked
         Main.getInstance().showPanel(fc);
     }//GEN-LAST:event_FindCustomerBlockMouseClicked
+
+    private void jButton64MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton64MouseClicked
+        Main.getInstance().showPanel(new view.desk.FindLuggageUser());
+    }//GEN-LAST:event_jButton64MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
