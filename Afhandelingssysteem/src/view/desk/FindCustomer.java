@@ -25,20 +25,40 @@ public class FindCustomer extends javax.swing.JPanel {
         fillTable();
     }
     
-    public void fillTable() {
+    private void fillTable() {
         DefaultTableModel tableModel = (DefaultTableModel) FindCustomerTable.getModel();
         
         CustomerManager manager = new CustomerManager();
         ResultSet customers = manager.getCustomers();
         
         try {
+            tableModel.setRowCount(0);
+            
             while (customers.next()) {
                 tableModel.addRow(
-                        new Object[]{customers.getString("first_name"), customers.getString("last_name"), customers.getString("address"), customers.getInt("flight_number")});
+                        new Object[]{customers.getString("first_name"), customers.getString("last_name"), customers.getString("home_address"), customers.getInt("label_number")});
             }
         } catch (SQLException e) {
             System.err.println("FindCustomer.fillTable: " + e);
         }
+    }
+    
+    private void fillTableQuery(String filter) {
+        DefaultTableModel tableModel = (DefaultTableModel) FindCustomerTable.getModel();
+        
+        CustomerManager manager = new CustomerManager();
+        ResultSet customers = manager.getCustomers(filter);
+        
+        try {
+            tableModel.setRowCount(0);
+            
+            while (customers.next()) {
+                tableModel.addRow(
+                        new Object[]{customers.getString("first_name"), customers.getString("last_name"), customers.getString("home_address"), customers.getInt("label_number")});
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e);
+        }        
     }
 
     /**
@@ -50,8 +70,8 @@ public class FindCustomer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton5 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        SearchButton = new javax.swing.JButton();
+        SearchQuery = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
@@ -66,23 +86,28 @@ public class FindCustomer extends javax.swing.JPanel {
 
         setLayout(null);
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(jButton5);
-        jButton5.setBounds(370, 120, 34, 30);
-
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setText("Search");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        SearchButton.setBackground(new java.awt.Color(255, 255, 255));
+        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/search.png"))); // NOI18N
+        SearchButton.setBorderPainted(false);
+        SearchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        SearchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                SearchButtonActionPerformed(evt);
             }
         });
-        add(jTextField1);
-        jTextField1.setBounds(10, 110, 400, 42);
+        add(SearchButton);
+        SearchButton.setBounds(370, 120, 34, 30);
+
+        SearchQuery.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SearchQuery.setText("Search");
+        SearchQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchQueryActionPerformed(evt);
+            }
+        });
+        add(SearchQuery);
+        SearchQuery.setBounds(10, 110, 400, 42);
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -235,7 +260,7 @@ public class FindCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "First Name", "Last Name", "Address", "Flight Number"
+                "First Name", "Last Name", "Address", "Luggage Label Number"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -258,9 +283,9 @@ public class FindCustomer extends javax.swing.JPanel {
         jScrollPane1.setBounds(20, 200, 1060, 350);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void SearchQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQueryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_SearchQueryActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
         Main.getInstance().showPanel(afl);
@@ -271,7 +296,7 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        Main.getInstance().showPanel(aml);
+        Main.getInstance().showPanel(aml);ih
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
@@ -286,10 +311,15 @@ public class FindCustomer extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton65ActionPerformed
 
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        this.fillTableQuery(SearchQuery.getText());
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable FindCustomerTable;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchQuery;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
@@ -299,7 +329,6 @@ public class FindCustomer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Panel panel12;
     // End of variables declaration//GEN-END:variables
 }

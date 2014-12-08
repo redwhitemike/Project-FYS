@@ -192,15 +192,15 @@ public class overview extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(afl);
+
     }//GEN-LAST:event_overviewusersActionPerformed
 
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(um);
+
     }//GEN-LAST:event_logocorendonActionPerformed
 
     private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(aml);
+
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed

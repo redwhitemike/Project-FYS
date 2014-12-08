@@ -763,15 +763,15 @@ public class adduser extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(afl);
+
     }//GEN-LAST:event_overviewusersActionPerformed
 
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(um);
+
     }//GEN-LAST:event_logocorendonActionPerformed
 
     private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(aml);
+
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
@@ -779,20 +779,6 @@ public class adduser extends javax.swing.JPanel {
     }//GEN-LAST:event_helpActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        LuggageManager lm = new LuggageManager();
-        CustomerManager cm = new CustomerManager();
-
-        try {
-            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()),
-                Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
-
-            cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(),
-                PhoneNumber.getText(), eMail.getText(), Integer.parseInt(FlightNumber.getText()), DepartedFrom.getText(), Destination.getText());
-
-            JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
 
     }//GEN-LAST:event_submitActionPerformed
 
@@ -861,20 +847,6 @@ public class adduser extends javax.swing.JPanel {
     }//GEN-LAST:event_OtherThingsActionPerformed
 
     private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
-        LuggageManager lm = new LuggageManager();
-        CustomerManager cm = new CustomerManager();
-
-        try {
-            lm.addLuggage(Integer.parseInt(LabelNumber.getText()), Integer.parseInt(FlightNumber.getText()), Double.parseDouble(Weight.getText()),
-                Colour.getText(), Integer.parseInt(TypeLuggage.getText()), "", Main.LUGGAGE_MISSING);
-
-            cm.addCustomer(FirstName.getText(), LastName.getText(), Address.getText(), ZipCode.getText(), City.getText(), Country.getText(),
-                PhoneNumber.getText(), eMail.getText(), Integer.parseInt(FlightNumber.getText()), DepartedFrom.getText(), Destination.getText());
-
-            JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
 
     }//GEN-LAST:event_submit1ActionPerformed
 
