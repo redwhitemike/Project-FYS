@@ -5,12 +5,18 @@
  */
 package view.manager;
 
+import Main.Main;
 /**
  *
  * @author Laura
  */
 public class ManagerGraphs extends javax.swing.JPanel {
 
+    private static final ManagerMenu mm = new ManagerMenu();
+    private static final ManagerGraphs mg = new ManagerGraphs();
+    private static final ManagerListFound mlf = new ManagerListFound();
+    private static final ManagerListHandled mlh = new ManagerListHandled();
+    private static final ManagerListMissing mlm = new ManagerListMissing();
     /**
      * Creates new form ManagerGraphs
      */
@@ -180,23 +186,23 @@ public class ManagerGraphs extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listMissingLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listMissingLuggageActionPerformed
-
+        Main.getInstance().showPanel(mlm);
     }//GEN-LAST:event_listMissingLuggageActionPerformed
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-
+        Main.getInstance().showPanel(mm);
     }//GEN-LAST:event_HomeActionPerformed
 
     private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
-
+        Main.getInstance().showPanel(mg);
     }//GEN-LAST:event_GraphsActionPerformed
 
     private void listHandeldLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listHandeldLuggageActionPerformed
-
+        Main.getInstance().showPanel(mlh);
     }//GEN-LAST:event_listHandeldLuggageActionPerformed
 
     private void listFoundLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listFoundLuggageActionPerformed
-
+        Main.getInstance().showPanel(mlf);
     }//GEN-LAST:event_listFoundLuggageActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
