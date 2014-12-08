@@ -81,8 +81,8 @@ public class FindCustomer extends javax.swing.JPanel {
         jButton64 = new javax.swing.JButton();
         jButton65 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        FindCustomerTable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setLayout(null);
 
@@ -255,32 +255,23 @@ public class FindCustomer extends javax.swing.JPanel {
         add(jPanel1);
         jPanel1.setBounds(0, 0, 1120, 55);
 
-        FindCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "Address", "Luggage Label Number"
+                "First name", "Last name", "Address", "Flight number"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
+        ));
+        jTable1.setToolTipText("");
+        jTable1.setColumnSelectionAllowed(true);
+        jScrollPane2.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(FindCustomerTable);
-        if (FindCustomerTable.getColumnModel().getColumnCount() > 0) {
-            FindCustomerTable.getColumnModel().getColumn(0).setResizable(false);
-            FindCustomerTable.getColumnModel().getColumn(1).setResizable(false);
-            FindCustomerTable.getColumnModel().getColumn(2).setResizable(false);
-            FindCustomerTable.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        add(jScrollPane1);
-        jScrollPane1.setBounds(20, 200, 1060, 350);
+        add(jScrollPane2);
+        jScrollPane2.setBounds(10, 200, 1070, 360);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SearchQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQueryActionPerformed
@@ -317,7 +308,6 @@ public class FindCustomer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable FindCustomerTable;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchQuery;
     private javax.swing.JButton jButton60;
@@ -328,7 +318,8 @@ public class FindCustomer extends javax.swing.JPanel {
     private javax.swing.JButton jButton65;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private java.awt.Panel panel12;
     // End of variables declaration//GEN-END:variables
 }
