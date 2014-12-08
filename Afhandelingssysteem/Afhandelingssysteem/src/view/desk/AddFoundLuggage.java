@@ -1,6 +1,9 @@
 package view.desk;
 
 import Main.Main;
+
+import java.sql.SQLException;
+
 import connection.LuggageManager;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
@@ -34,21 +37,8 @@ public class AddFoundLuggage extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         LabelNumber = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        submit = new javax.swing.JButton();
+        UpdateLuggageButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        FlightNumber = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        OtherStuff = new javax.swing.JTextArea();
-        Colour = new javax.swing.JTextField();
-        Weight = new javax.swing.JTextField();
-        TypeLuggage = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
         jButton61 = new javax.swing.JButton();
@@ -70,165 +60,48 @@ public class AddFoundLuggage extends javax.swing.JPanel {
             }
         });
 
-        submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/login_button.PNG"))); // NOI18N
-        submit.setText("Submit");
-        submit.setToolTipText("");
-        submit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        UpdateLuggageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/login_button.PNG"))); // NOI18N
+        UpdateLuggageButton.setText("Submit");
+        UpdateLuggageButton.setToolTipText("");
+        UpdateLuggageButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        UpdateLuggageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                UpdateLuggageButtonActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("Label number");
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel8.setText("Flight number");
-
-        FlightNumber.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        FlightNumber.setForeground(new java.awt.Color(51, 51, 51));
-        FlightNumber.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        FlightNumber.setToolTipText("");
-        FlightNumber.setPreferredSize(new java.awt.Dimension(135, 20));
-        FlightNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FlightNumberActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel9.setText("Type of  luggage");
-
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel10.setText("Weight");
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel11.setText("Description");
-
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel15.setText("Profile picture");
-
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel12.setText("Color");
-
-        jScrollPane2.setHorizontalScrollBar(null);
-
-        OtherStuff.setColumns(20);
-        OtherStuff.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        OtherStuff.setRows(5);
-        OtherStuff.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        OtherStuff.setMaximumSize(new java.awt.Dimension(214, 214));
-        OtherStuff.setName(""); // NOI18N
-        jScrollPane2.setViewportView(OtherStuff);
-
-        Colour.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Colour.setForeground(new java.awt.Color(51, 51, 51));
-        Colour.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Colour.setPreferredSize(new java.awt.Dimension(120, 20));
-        Colour.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColourActionPerformed(evt);
-            }
-        });
-
-        Weight.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Weight.setForeground(new java.awt.Color(51, 51, 51));
-        Weight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Weight.setPreferredSize(new java.awt.Dimension(120, 20));
-        Weight.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WeightActionPerformed(evt);
-            }
-        });
-
-        TypeLuggage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        TypeLuggage.setForeground(new java.awt.Color(51, 51, 51));
-        TypeLuggage.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        TypeLuggage.setPreferredSize(new java.awt.Dimension(120, 20));
-        TypeLuggage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TypeLuggageActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("KG");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel15)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel12))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(14, 14, 14)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FlightNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Weight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TypeLuggage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(Colour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel6)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UpdateLuggageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 18, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(LabelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FlightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(Colour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(TypeLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel15))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                            .addComponent(LabelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addComponent(UpdateLuggageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(379, Short.MAX_VALUE))
         );
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
@@ -367,7 +240,7 @@ public class AddFoundLuggage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(266, 266, 266)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap(431, Short.MAX_VALUE))
             .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -404,76 +277,39 @@ public class AddFoundLuggage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton65ActionPerformed
 
-    private void WeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_WeightActionPerformed
-
-    private void ColourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColourActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ColourActionPerformed
-
-    private void FlightNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FlightNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FlightNumberActionPerformed
-
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+    private void UpdateLuggageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateLuggageButtonActionPerformed
         LuggageManager luggageManager = new LuggageManager();
 
         try {
-            
-            HashMap<String, Object> luggageValues = new HashMap<>();
-            
-            luggageValues.put("LabelNumber", LabelNumber.getText());
-            luggageValues.put("FlightNumber", FlightNumber.getText());
-            luggageValues.put("Weight", Weight.getText());
-            luggageValues.put("Colour", Colour.getText());
-            luggageValues.put("Type", TypeLuggage.getText());
-            luggageValues.put("Description", OtherStuff.getText());
-            luggageValues.put("Status", Main.LUGGAGE_FOUND);
-            
-            luggageManager.addLuggage(luggageValues);
-            
-            JOptionPane.showMessageDialog(null, "Luggage data has been added.");
-        } catch (NumberFormatException | HeadlessException e){
-        JOptionPane.showMessageDialog(null, e.getMessage());
-    }
-    }//GEN-LAST:event_submitActionPerformed
+            if (luggageManager.getLuggage(Integer.parseInt(LabelNumber.getText())).first()) {
+                luggageManager.setStatus(Integer.parseInt(LabelNumber.getText()), Main.LUGGAGE_FOUND);
+                JOptionPane.showMessageDialog(null, "The luggage with this label number has been updated to found.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No luggage with this label number has been found.");
+            }
+        } catch (NumberFormatException | HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_UpdateLuggageButtonActionPerformed
 
     private void LabelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LabelNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LabelNumberActionPerformed
 
-    private void TypeLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeLuggageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TypeLuggageActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Colour;
-    private javax.swing.JTextField FlightNumber;
     private javax.swing.JTextField LabelNumber;
-    private javax.swing.JTextArea OtherStuff;
-    private javax.swing.JTextField TypeLuggage;
-    private javax.swing.JTextField Weight;
+    private javax.swing.JButton UpdateLuggageButton;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
     private javax.swing.JButton jButton62;
     private javax.swing.JButton jButton63;
     private javax.swing.JButton jButton64;
     private javax.swing.JButton jButton65;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Panel panel12;
-    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

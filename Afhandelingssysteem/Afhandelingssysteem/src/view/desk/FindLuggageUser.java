@@ -21,30 +21,47 @@ public class FindLuggageUser extends javax.swing.JPanel {
      */
     public FindLuggageUser() {
         initComponents();
+        fillTable(null);
     }
     
     private void fillTable(String filter) {
         DefaultTableModel tableModel = (DefaultTableModel) LuggageTable.getModel();
         
         LuggageManager manager = new LuggageManager();
-        ResultSet luggage;
+        ResultSet luggages;
         
         if (filter == null || filter.isEmpty()) {
-            luggage = manager.getLuggages();
+            luggages = manager.getLuggages();
         } else {
-            luggage = manager.getLuggage(filter);
+            luggages = manager.getLuggages(filter);
         }
         
        try {
             tableModel.setRowCount(0);
             
-            while (luggage.next()) {
+            while (luggages.next()) {
+                String luggageText = null;
+                
+                switch (luggages.getInt("status")) {
+                    case Main.LUGGAGE_MISSING:
+                        luggageText = "Missing";
+                        break;
+                        
+                    case Main.LUGGAGE_FOUND:
+                        luggageText = "Found";
+                        break;
+                        
+                    default:
+                        luggageText = "Unknown status";
+                        break;
+                }
+                
                 tableModel.addRow(
-                        new Object[] {
-                            luggage.getInt("label_number"), 
-                            luggage.getInt("flight_number"), 
-                            luggage.getString("type"), 
-                            luggage.getInt("status")
+                    new Object[] {
+                        luggages.getInt("label_number"), 
+                        luggages.getString("flight_number"), 
+                        luggages.getString("type"), 
+                        luggageText
                     }
                 );
             }
@@ -357,16 +374,27 @@ public class FindLuggageUser extends javax.swing.JPanel {
 
         LuggageTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Label number", "Flight number", "Type", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(LuggageTable);
+        if (LuggageTable.getColumnModel().getColumnCount() > 0) {
+            LuggageTable.getColumnModel().getColumn(0).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(1).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(2).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         Search.setText("Search");
         Search.addActionListener(new java.awt.event.ActionListener() {
