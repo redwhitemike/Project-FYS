@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.admin;
-
-import Main.Main;
+package view;
 
 /**
  *
  * @author Laura
  */
 public class overview extends javax.swing.JPanel {
-    private static final adduser adduser = new adduser();
-    private static final overview overview = new overview();
-    private static final AdminMenu adminMenu = new AdminMenu();
+
     /**
      * Creates new form overview
      */
@@ -196,15 +192,15 @@ public class overview extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(overview);
+
     }//GEN-LAST:event_overviewusersActionPerformed
 
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(adminMenu);
+
     }//GEN-LAST:event_logocorendonActionPerformed
 
     private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(adduser);
+
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed

@@ -1,15 +1,11 @@
 package view.admin;
 
-import Main.Main;
-
 /**
  *
  * @author IS104_2
  */
 public class AdminMenu extends javax.swing.JPanel {
-    private static final adduser adduser = new adduser();
-    private static final overview overview = new overview();
-    private static final AdminMenu adminMenu = new AdminMenu();
+
     /**
      * Creates new form adminmenu1
      */
@@ -123,12 +119,12 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addGap(176, 176, 176)
                 .addComponent(addUser, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(overviewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(231, 231, 231)
+                .addComponent(overviewUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(216, 216, 216)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,15 +168,15 @@ public class AdminMenu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
-    Main.getInstance().showPanel(adduser);
+        
     }//GEN-LAST:event_addUserActionPerformed
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-    Main.getInstance().showPanel(adminMenu);
+        
     }//GEN-LAST:event_HomeActionPerformed
 
     private void overviewUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewUsersActionPerformed
-    Main.getInstance().showPanel(overview);
+
     }//GEN-LAST:event_overviewUsersActionPerformed
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
