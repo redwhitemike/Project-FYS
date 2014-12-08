@@ -16,6 +16,7 @@ public class UserMenu extends javax.swing.JPanel {
     private static final AddFoundLuggage afl = new AddFoundLuggage();
     private static final AddMissingLuggage aml =  new AddMissingLuggage();
     private static final FindCustomer fc = new FindCustomer();
+    private static final FindLuggageUser flu = new FindLuggageUser();
     private static final LoginPanel login = new LoginPanel();
     
     /**
@@ -299,7 +300,7 @@ public class UserMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
-
+        Main.getInstance().showPanel(flu);
     }//GEN-LAST:event_jButton64ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed

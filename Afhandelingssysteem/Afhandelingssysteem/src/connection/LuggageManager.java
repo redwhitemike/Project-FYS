@@ -90,6 +90,28 @@ public class LuggageManager extends QueryManager {
         return result;
     }
     
+    public ResultSet getLuggage(String filter) {
+        String query = "SELECT * FROM Luggage WHERE label_number = ? OR flight_number = ? OR type LIKE ? OR status = ?";
+        ResultSet result = null;
+        
+        filter = "%" + filter + "%";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, Integer.parseInt(filter));
+            statement.setInt(2, Integer.parseInt(filter));
+            statement.setString(3, filter);
+            statement.setInt(4, Integer.parseInt(filter));
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
     /**
      * Updates the status of the luggage.
      * @param labelNumber
