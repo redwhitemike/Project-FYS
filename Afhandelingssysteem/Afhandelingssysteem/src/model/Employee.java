@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  */
 public class Employee extends Main {
     EmployeeManager manager = new EmployeeManager();
-    ResultSet data;
+    public ResultSet data;
     
     private int id = -1;
     
@@ -20,21 +20,45 @@ public class Employee extends Main {
         
     }
     
-    public Employee(int userId) {
-        data = manager.getEmployee(userId);
-        id = userId;
+    public Employee(int employeeNumber) {
+        data = manager.getEmployee(employeeNumber);
+        id = employeeNumber;
     }
     
     public int getId() {
         return id;
     }
 
-    public int getFunction() throws Exception {
-        return data.getInt("function");
+    public String getPassword() throws SQLException {
+        return data.getString("password");
     }
     
-    public String getUsername() throws Exception {
+    public String getUsername() throws SQLException {
         return data.getString("username");
+    }
+    
+    public String getName() throws SQLException {
+        return data.getString("name");
+    }
+    
+    public String getInsertion() throws SQLException {
+        return data.getString("instertion");
+    }
+    
+    public String getLastName() throws SQLException {
+        return data.getString("last_name");
+    }
+    
+    public String getLocation() throws SQLException {
+        return data.getString("location");
+    }
+    
+    public int getEmployeeNumber() throws SQLException { 
+        return data.getInt("employee_number");
+    }
+    
+    public int getFunction() throws SQLException {
+        return data.getInt("function");
     }
     
     public boolean usernameInUse(String username) {

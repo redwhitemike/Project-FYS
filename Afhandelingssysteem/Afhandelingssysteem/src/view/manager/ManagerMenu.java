@@ -74,6 +74,7 @@ public class ManagerMenu extends javax.swing.JPanel {
         listMissingLuggage.setForeground(new java.awt.Color(255, 255, 255));
         listMissingLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         listMissingLuggage.setText("List missing luggage");
+        listMissingLuggage.setBorder(null);
         listMissingLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         listMissingLuggage.setInheritsPopupMenu(true);
         listMissingLuggage.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -98,6 +99,7 @@ public class ManagerMenu extends javax.swing.JPanel {
         Graphs.setForeground(new java.awt.Color(255, 255, 255));
         Graphs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         Graphs.setText("Graphs");
+        Graphs.setBorder(null);
         Graphs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Graphs.setInheritsPopupMenu(true);
         Graphs.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -112,6 +114,7 @@ public class ManagerMenu extends javax.swing.JPanel {
         listHandeldLuggage.setForeground(new java.awt.Color(255, 255, 255));
         listHandeldLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         listHandeldLuggage.setText("List handeld luggage");
+        listHandeldLuggage.setBorder(null);
         listHandeldLuggage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         listHandeldLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         listHandeldLuggage.setInheritsPopupMenu(true);
@@ -127,6 +130,7 @@ public class ManagerMenu extends javax.swing.JPanel {
         listFoundLuggage.setForeground(new java.awt.Color(255, 255, 255));
         listFoundLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         listFoundLuggage.setText("List found luggage");
+        listFoundLuggage.setBorder(null);
         listFoundLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         listFoundLuggage.setInheritsPopupMenu(true);
         listFoundLuggage.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -160,8 +164,9 @@ public class ManagerMenu extends javax.swing.JPanel {
         panel12Layout.setHorizontalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel12Layout.createSequentialGroup()
+                .addGap(3, 3, 3)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(listMissingLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,14 +178,14 @@ public class ManagerMenu extends javax.swing.JPanel {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
                 .addGap(0, 20, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panel12Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

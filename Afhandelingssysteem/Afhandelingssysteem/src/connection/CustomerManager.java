@@ -29,22 +29,19 @@ public class CustomerManager extends QueryManager {
     public void addCustomer(HashMap<String, Object> values) {
 
         try {
-            String query = "INSERT INTO Customer (first_name, last_name, home_address, postcode, coutnry, city, phone_number, `e-mail`, flight_number, departed_from, lost_at, destination) "
+            String query = 
+                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, zipcode, city, country, phone_number, `e-mail`) "
                     + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());
             statement.setString(2, values.get("LastName").toString());
-            statement.setString(3, values.get("Address").toString());
-            statement.setString(4, values.get("Zipcode").toString());
-            statement.setString(5, values.get("Country").toString());
+            statement.setString(3, values.get("HomeAddress").toString());
+            statement.setString(4, values.get("StayAddress").toString());
+            statement.setString(5, values.get("Zipcode").toString());
             statement.setString(6, values.get("City").toString());
-            statement.setString(7, values.get("Phone").toString());
-            statement.setString(8, values.get("Email").toString());
-            statement.setInt(9, Integer.parseInt(values.get("Email").toString()));
-            statement.setString(10, values.get("FlightNumber").toString());
-            statement.setString(11, values.get("DepartedFrom").toString());
-            statement.setString(12, values.get("LostAt").toString());
-            statement.setString(13, values.get("Destination").toString());
+            statement.setString(7, values.get("Country").toString());
+            statement.setString(8, values.get("Phone").toString());
+            statement.setString(9, values.get("Email").toString());
             statement.execute();
         } catch (SQLException e) {
             Main.exceptionPrint(e);

@@ -5,6 +5,7 @@ import connection.*;
 import java.awt.HeadlessException;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -98,7 +99,7 @@ public class AddUser extends javax.swing.JPanel {
         Admin = new javax.swing.JRadioButton();
         Manager = new javax.swing.JRadioButton();
         Balie = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -458,6 +459,7 @@ public class AddUser extends javax.swing.JPanel {
         overviewusers.setForeground(new java.awt.Color(255, 255, 255));
         overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
         overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         overviewusers.setInheritsPopupMenu(true);
         overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -468,6 +470,7 @@ public class AddUser extends javax.swing.JPanel {
         });
 
         logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
         logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         logocorendon.setInheritsPopupMenu(true);
@@ -482,6 +485,7 @@ public class AddUser extends javax.swing.JPanel {
         addusers.setForeground(new java.awt.Color(255, 255, 255));
         addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         addusers.setText("Add user");
+        addusers.setBorder(null);
         addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addusers.setInheritsPopupMenu(true);
         addusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -493,6 +497,7 @@ public class AddUser extends javax.swing.JPanel {
 
         help.setBackground(new java.awt.Color(187, 29, 20));
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
         help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         help.setInheritsPopupMenu(true);
@@ -506,7 +511,7 @@ public class AddUser extends javax.swing.JPanel {
         loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loggedinas.setForeground(new java.awt.Color(255, 255, 255));
         loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loggedinas.setText("Logged in as admin");
+        loggedinas.setText(Main.getLoggedLabel());
         loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout menuoverviewLayout = new javax.swing.GroupLayout(menuoverview);
@@ -524,7 +529,7 @@ public class AddUser extends javax.swing.JPanel {
                 .addComponent(loggedinas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         menuoverviewLayout.setVerticalGroup(
             menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,7 +676,8 @@ public class AddUser extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Insertion");
+        jLabel29.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel29.setText("Insertion:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -683,17 +689,17 @@ public class AddUser extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel2))
-                .addGap(69, 69, 69)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(Admin)
@@ -730,25 +736,26 @@ public class AddUser extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel21)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(Repeatpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Insertion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(Repeatpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Insertion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
@@ -766,12 +773,13 @@ public class AddUser extends javax.swing.JPanel {
                         .addGap(65, 65, 65)
                         .addComponent(Browse, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
                             .addComponent(Admin)
                             .addComponent(Manager)
-                            .addComponent(Balie))
-                        .addGap(13, 13, 13)
+                            .addComponent(Balie)
+                            .addComponent(jLabel27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28)
                             .addComponent(Addpicture, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -798,7 +806,7 @@ public class AddUser extends javax.swing.JPanel {
                 .addComponent(menuoverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 225, Short.MAX_VALUE))
+                .addGap(0, 228, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -890,7 +898,7 @@ public class AddUser extends javax.swing.JPanel {
         EmployeeManager employeeManager = new EmployeeManager();
 
         try {
-            int function;
+            int function = -1;
 
             if (Admin.isSelected()) {
                 function = Main.FUNCTION_APP_MANAGER;
@@ -898,8 +906,6 @@ public class AddUser extends javax.swing.JPanel {
                 function = Main.FUNCTION_MANAGER;
             } else if (Balie.isSelected()) {
                 function = Main.FUNCTION_EMPLOYEE;
-            } else {
-                function = -1;
             }
             
             if (function != -1) {
@@ -907,7 +913,7 @@ public class AddUser extends javax.swing.JPanel {
                     if (Password.getText().equals(Repeatpassword.getText())) {
                             HashMap<String, Object> values = new HashMap<>();
                             values.put("Username", Username.getText());
-                            values.put("Password", Password.getText());
+                            values.put("Password", DigestUtils.sha512Hex(Password.getText()));
                             values.put("FirstName", Name.getText());
                             values.put("Insertion", Insertion.getText());
                             values.put("LastName", Lastname.getText());
@@ -964,16 +970,28 @@ public class AddUser extends javax.swing.JPanel {
     }//GEN-LAST:event_InsertionActionPerformed
 
     private void AdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdminMouseClicked
+        if (!Admin.isSelected()) {
+            Admin.setSelected(true);
+        }
+        
         Manager.setSelected(false);
         Balie.setSelected(false);
     }//GEN-LAST:event_AdminMouseClicked
 
     private void ManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManagerMouseClicked
+        if (!Manager.isSelected()) {
+            Manager.setSelected(true);
+        }
+        
         Admin.setSelected(false);
         Balie.setSelected(false);
     }//GEN-LAST:event_ManagerMouseClicked
 
     private void BalieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BalieMouseClicked
+       if (!Balie.isSelected()) {
+            Balie.setSelected(true);
+        }
+        
         Admin.setSelected(false);
         Manager.setSelected(false);
     }//GEN-LAST:event_BalieMouseClicked
@@ -1022,7 +1040,6 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1032,6 +1049,7 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -14,39 +14,64 @@ public class Customer {
     CustomerManager manager = new CustomerManager();
     ResultSet data;
     
-    private final int id;
-    
     public Customer(int customerId) {
         data = manager.getCustomer(customerId);
-        id = customerId;
     }
 
-    public int getId() {
-        return id;
+    public int getId() throws SQLException {
+        return data.getInt("customer_id");
     }
     
-    public String getFirstName() throws Exception {
+    public String getFirstName() throws SQLException {
         return data.getString("first_name");
     }
     
-    public String getLastName() throws Exception {
+    public String getLastName() throws SQLException {
         return data.getString("last_name");
     }
     
-    public String getEmail() throws Exception {
-        return data.getString("e-mail");
+    public String getHomeAddress() throws SQLException {
+        return data.getString("home_address");
     }
     
-    public String getCountry() throws Exception {
+    public String getStayAddress() throws SQLException {
+        return data.getString("stay_address");
+    }
+    
+    public String getZipcode() throws SQLException {
+        return data.getString("zipcode");
+    }
+    
+    public String getCountry() throws SQLException {
         return data.getString("country");
     }
     
-    public String getCity() throws Exception {
+    public String getCity() throws SQLException {
         return data.getString("city");
     }
     
-    public int getFlightNumber() throws Exception {
+    public String getPhone() throws SQLException {
+        return data.getString("phone_number");
+    }
+
+    public String getEmail() throws SQLException {
+        return data.getString("e-mail");
+    }
+    
+    public int getLabelNumber() throws SQLException {
         return data.getInt("flight_number");
+    }
+    
+    public String getDepartedFrom() throws SQLException {
+        return data.getString("departed_from");
+    }
+    
+    public String getLostAt() throws SQLException {
+        return data.getString("lost_at");
+    }
+    
+    public String getDestination() throws SQLException {
+        return data.getString("destination");
     }
     
 }

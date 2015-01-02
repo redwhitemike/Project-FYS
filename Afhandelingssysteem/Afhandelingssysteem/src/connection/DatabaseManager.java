@@ -1,5 +1,6 @@
 package connection;
 
+import Main.*;
 import java.sql.*;
 
 /**
@@ -23,7 +24,7 @@ public class DatabaseManager {
 
             Connection = DriverManager.getConnection(link, user, pass);
         } catch (SQLException | ClassNotFoundException e) {
-            System.err.println(e);
+            Main.exceptionPrint(e);
         }
         
         return Connection;
@@ -36,7 +37,7 @@ public class DatabaseManager {
         try {
             Connection.close();
         } catch (SQLException e) {
-            System.err.println("Exception: " + e.getMessage());
+            Main.exceptionPrint(e);
         }
     }
     
@@ -72,7 +73,7 @@ public class DatabaseManager {
             statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             result = statement.getGeneratedKeys();
         } catch (SQLException e) {
-            System.err.println(e);
+            Main.exceptionPrint(e);
         }
         
         return result;

@@ -28,7 +28,7 @@ public class EmployeeManager extends QueryManager {
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("Username").toString());
-            statement.setString(2, DigestUtils.sha512Hex(values.get("Password").toString()));
+            statement.setString(2, values.get("Password").toString());
             statement.setString(3, values.get("FirstName").toString());
             statement.setString(4, values.get("Insertion").toString());
             statement.setString(5, values.get("LastName").toString());
@@ -42,17 +42,41 @@ public class EmployeeManager extends QueryManager {
     }
     
     /**
-     * Get employee from the database.
-     * @param userid
-     * @return 
+     * Edits an existing employee based on employee number.
+     * @param employeeNumber
+     * @param values
      */
-    public ResultSet getEmployee(int userid) {
-        ResultSet result = null;
-        String query = "SELECT * FROM User WHERE userid = ?";
+    public void editEmployee(int employeeNumber, HashMap<String, Object> values) {
+        String query = "UPDATE User SET username = ?, password = ?, name = ?, instertion = ?, last_name = ?, location = ?, function = ? WHERE employee_number = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, userid);
+            statement.setString(1, values.get("Username").toString());
+            statement.setString(2, values.get("Password").toString());
+            statement.setString(3, values.get("FirstName").toString());
+            statement.setString(4, values.get("Insertion").toString());
+            statement.setString(5, values.get("LastName").toString());
+            statement.setString(6, values.get("Location").toString());
+            statement.setInt(7, Integer.parseInt(values.get("Function").toString()));
+            statement.setInt(8, employeeNumber);
+            statement.execute();
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+    }
+    
+    /**
+     * Get employee from the database.
+     * @param employeeNumber
+     * @return 
+     */
+    public ResultSet getEmployee(int employeeNumber) {
+        ResultSet result = null;
+        String query = "SELECT * FROM User WHERE employee_number = ?";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, employeeNumber);
             statement.execute();
             result = statement.getResultSet();
             result.next();

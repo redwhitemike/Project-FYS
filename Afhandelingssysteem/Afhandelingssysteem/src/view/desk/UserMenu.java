@@ -47,7 +47,6 @@ public class UserMenu extends javax.swing.JPanel {
         jButton64 = new javax.swing.JButton();
         jButton65 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        logOut = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -113,6 +112,7 @@ public class UserMenu extends javax.swing.JPanel {
         jButton60.setForeground(new java.awt.Color(255, 255, 255));
         jButton60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton60.setText("Add found luggage");
+        jButton60.setBorder(null);
         jButton60.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton60.setInheritsPopupMenu(true);
         jButton60.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -123,6 +123,7 @@ public class UserMenu extends javax.swing.JPanel {
         });
 
         jButton61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        jButton61.setBorder(null);
         jButton61.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton61.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton61.setInheritsPopupMenu(true);
@@ -137,6 +138,7 @@ public class UserMenu extends javax.swing.JPanel {
         jButton62.setForeground(new java.awt.Color(255, 255, 255));
         jButton62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton62.setText("Add missing luggage");
+        jButton62.setBorder(null);
         jButton62.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton62.setInheritsPopupMenu(true);
         jButton62.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -150,7 +152,8 @@ public class UserMenu extends javax.swing.JPanel {
         jButton63.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton63.setForeground(new java.awt.Color(255, 255, 255));
         jButton63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton63.setText("Find costumer");
+        jButton63.setText("Find customer");
+        jButton63.setBorder(null);
         jButton63.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton63.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton63.setInheritsPopupMenu(true);
@@ -166,6 +169,7 @@ public class UserMenu extends javax.swing.JPanel {
         jButton64.setForeground(new java.awt.Color(255, 255, 255));
         jButton64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton64.setText("Find luggage");
+        jButton64.setBorder(null);
         jButton64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton64.setInheritsPopupMenu(true);
         jButton64.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -195,16 +199,8 @@ public class UserMenu extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Logged in as user");
+        jLabel11.setText(Main.getLoggedLabel());
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel11.setMaximumSize(null);
-
-        logOut.setText("jButton2");
-        logOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logOutActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
@@ -213,45 +209,37 @@ public class UserMenu extends javax.swing.JPanel {
             .addGroup(panel12Layout.createSequentialGroup()
                 .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel12Layout.createSequentialGroup()
-                        .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(logOut))
+                .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101)
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(panel12Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel12Layout.createSequentialGroup()
-                        .addComponent(logOut)
-                        .addGap(1, 1, 1)
-                        .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panel12Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel12Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panel12Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panel12Layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panel12Layout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -312,10 +300,6 @@ public class UserMenu extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton65ActionPerformed
 
-    private void logOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutActionPerformed
-        Main.getInstance().showPanel(login);
-    }//GEN-LAST:event_logOutActionPerformed
-
     private void MissingLuggageBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MissingLuggageBlockMouseClicked
         Main.getInstance().showPanel(aml);
     }//GEN-LAST:event_MissingLuggageBlockMouseClicked
@@ -349,7 +333,6 @@ public class UserMenu extends javax.swing.JPanel {
     private javax.swing.JButton jButton64;
     private javax.swing.JButton jButton65;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JButton logOut;
     private java.awt.Panel panel12;
     // End of variables declaration//GEN-END:variables
 }

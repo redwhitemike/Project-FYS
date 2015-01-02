@@ -2,10 +2,12 @@ package Main;
 
 import model.Employee;
 
+import java.util.HashMap;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.SQLException;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -38,6 +40,14 @@ public class Main {
     // Status Constants
     public static final int LUGGAGE_MISSING = 0;
     public static final int LUGGAGE_FOUND = 1;
+    public static final int LUGGAGE_HANDLED = 2;
+    public static final int LUGGAGE_INSURANCE = 3;
+    
+    // Luggage types
+    public static final int TYPE_BAG = 0;
+    public static final int TYPE_CASE = 1;
+    public static final int TYPE_HAND_LUGGAGE = 2;
+    public static final int TYPE_OTHER = 3;
     
     public static Main getInstance() {    
         return instance;
@@ -67,11 +77,35 @@ public class Main {
     public static String getLoggedLabel() {
         try {
             return "Logged in as " + Main.Employee.getUsername();
-        } catch (Exception e) {
-            Main.exceptionPrint(null);
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
         }
         
         return null;
+    }
+    
+    public static void showHelpMenu() {
+        
+    }
+    
+    public boolean onlyNumbers(String text) {
+        for (char c : text.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public boolean hasText(String text) {
+        for (char c : text.toCharArray()) {
+            if (Character.isAlphabetic(c)) {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
     /**

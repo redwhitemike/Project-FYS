@@ -6,17 +6,18 @@ import connection.*;
 import java.awt.HeadlessException;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import model.Luggage;
 
 /**
  *
  * @author IS104_2
  */
 public class AddMissingLuggage extends javax.swing.JPanel {
-    private static final UserMenu um = new UserMenu();
-    private static final AddFoundLuggage afl = new AddFoundLuggage();
-    private static final AddMissingLuggage aml =  new AddMissingLuggage();
-    private static final FindCustomer fc = new FindCustomer();
-    
+
+    LuggageManager luggageManager = new LuggageManager();
+    CustomerManager customerManager = new CustomerManager();
+    Luggage luggageModel = new Luggage();
+
     /**
      * Creates new form addmissingluggage
      */
@@ -47,7 +48,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         eMail = new javax.swing.JTextField();
         PhoneNumber = new javax.swing.JTextField();
         LabelNumber = new javax.swing.JTextField();
-        TypeLuggage = new javax.swing.JTextField();
         Weight = new javax.swing.JTextField();
         Colour = new javax.swing.JTextField();
         OtherThings = new javax.swing.JTextField();
@@ -68,6 +68,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        TypeLuggage = new javax.swing.JComboBox();
         panel12 = new java.awt.Panel();
         jButton60 = new javax.swing.JButton();
         jButton61 = new javax.swing.JButton();
@@ -211,16 +212,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
             }
         });
 
-        TypeLuggage.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        TypeLuggage.setForeground(new java.awt.Color(51, 51, 51));
-        TypeLuggage.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        TypeLuggage.setPreferredSize(new java.awt.Dimension(135, 20));
-        TypeLuggage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TypeLuggageActionPerformed(evt);
-            }
-        });
-
         Weight.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Weight.setForeground(new java.awt.Color(51, 51, 51));
         Weight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -299,6 +290,13 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel19.setText("Other thinks to declare:");
 
+        TypeLuggage.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bag", "Case", "Hand luggage", "Other" }));
+        TypeLuggage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TypeLuggageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -327,27 +325,25 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                     .addComponent(jLabel19))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(City, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(City, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                     .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ZipCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Country, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DepartedFrom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(OtherThings, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                            .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eMail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PhoneNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FlightNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Destination, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Colour, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TypeLuggage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(38, 38, 38))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(OtherThings, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                        .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eMail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PhoneNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FlightNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Destination, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Weight, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Colour, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TypeLuggage, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(32, 32, 32))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -409,11 +405,11 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TypeLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel5)
+                    .addComponent(TypeLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel19)
@@ -435,6 +431,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jButton60.setForeground(new java.awt.Color(255, 255, 255));
         jButton60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton60.setText("Add found luggage");
+        jButton60.setBorder(null);
         jButton60.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton60.setInheritsPopupMenu(true);
         jButton60.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -445,6 +442,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         });
 
         jButton61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        jButton61.setBorder(null);
         jButton61.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton61.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton61.setInheritsPopupMenu(true);
@@ -459,6 +457,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jButton62.setForeground(new java.awt.Color(255, 255, 255));
         jButton62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton62.setText("Add missing luggage");
+        jButton62.setBorder(null);
         jButton62.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton62.setInheritsPopupMenu(true);
         jButton62.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -473,6 +472,8 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jButton63.setForeground(new java.awt.Color(255, 255, 255));
         jButton63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton63.setText("Find costumer");
+        jButton63.setActionCommand("Find customer");
+        jButton63.setBorder(null);
         jButton63.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton63.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton63.setInheritsPopupMenu(true);
@@ -488,6 +489,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jButton64.setForeground(new java.awt.Color(255, 255, 255));
         jButton64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         jButton64.setText("Find luggage");
+        jButton64.setBorder(null);
         jButton64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton64.setInheritsPopupMenu(true);
         jButton64.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -503,6 +505,11 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jButton65.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton65.setInheritsPopupMenu(true);
         jButton65.setPreferredSize(new java.awt.Dimension(31, 31));
+        jButton65.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton65MouseClicked(evt);
+            }
+        });
         jButton65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton65ActionPerformed(evt);
@@ -512,9 +519,8 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Logged in as user");
+        jLabel18.setText(Main.getLoggedLabel());
         jLabel18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel18.setMaximumSize(null);
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
@@ -524,35 +530,32 @@ public class AddMissingLuggage extends javax.swing.JPanel {
                 .addGap(1, 1, 1)
                 .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(101, 101, 101)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 20, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel18)
                         .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton65, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton65, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -563,13 +566,13 @@ public class AddMissingLuggage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(307, 307, 307)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
@@ -580,9 +583,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_FirstNameActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        LuggageManager luggageManager = new LuggageManager();
-        CustomerManager customerManager = new CustomerManager();
-        
+
         try {
             HashMap<String, Object> customerValues = new HashMap<>();
             customerValues.put("FirstName", FirstName.getText());
@@ -597,24 +598,24 @@ public class AddMissingLuggage extends javax.swing.JPanel {
             customerValues.put("DepartedFrom", DepartedFrom.getText());
             customerValues.put("LostAt", "");
             customerValues.put("Destination", Destination.getText());
-            
+
             HashMap<String, Object> luggageValues = new HashMap<>();
             luggageValues.put("LabelNumber", LabelNumber.getText());
             luggageValues.put("FlightNumber", FlightNumber.getText());
             luggageValues.put("Weight", Weight.getText());
             luggageValues.put("Colour", Colour.getText());
-            luggageValues.put("Type", TypeLuggage.getText());
+            luggageValues.put("Type", luggageModel.typeToInt(TypeLuggage.getSelectedItem().toString()));
             luggageValues.put("Description", OtherThings.getText());
             luggageValues.put("Status", Main.LUGGAGE_MISSING);
-            
+
             luggageManager.addLuggage(luggageValues);
             customerManager.addCustomer(customerValues);
-            
+
             JOptionPane.showMessageDialog(null, "Customer with the associated luggage data has been added.");
         } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        
+
     }//GEN-LAST:event_submitActionPerformed
 
     private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
@@ -658,19 +659,19 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_PhoneNumberActionPerformed
 
     private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
-        Main.getInstance().showPanel(afl);
+        Main.getInstance().showPanel(new AddFoundLuggage());
     }//GEN-LAST:event_jButton60ActionPerformed
 
     private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
-        Main.getInstance().showPanel(um);
+        Main.getInstance().showPanel(new UserMenu());
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        Main.getInstance().showPanel(aml);
+        Main.getInstance().showPanel(new AddMissingLuggage());
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
-        Main.getInstance().showPanel(fc);
+        Main.getInstance().showPanel(new FindCustomer());
     }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
@@ -685,10 +686,6 @@ public class AddMissingLuggage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_LabelNumberActionPerformed
 
-    private void TypeLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeLuggageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TypeLuggageActionPerformed
-
     private void WeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WeightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_WeightActionPerformed
@@ -700,6 +697,14 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private void OtherThingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtherThingsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OtherThingsActionPerformed
+
+    private void TypeLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeLuggageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TypeLuggageActionPerformed
+
+    private void jButton65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton65MouseClicked
+        Main.showHelpMenu();
+    }//GEN-LAST:event_jButton65MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -715,7 +720,7 @@ public class AddMissingLuggage extends javax.swing.JPanel {
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField OtherThings;
     private javax.swing.JTextField PhoneNumber;
-    private javax.swing.JTextField TypeLuggage;
+    private javax.swing.JComboBox TypeLuggage;
     private javax.swing.JTextField Weight;
     private javax.swing.JTextField ZipCode;
     private javax.swing.JTextField eMail;

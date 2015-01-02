@@ -1,20 +1,21 @@
 package view.admin;
 
-import Main.Main;
+import Main.*;
 import connection.EmployeeManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JTable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Point;
 
 /**
  *
  * @author IS104_2
  */
 public class UserTable extends javax.swing.JPanel {
-    private static final AddUser adduser = new AddUser();
-    private static UserTable overview = new UserTable();
-    private static final AdminMenu adminMenu = new AdminMenu();
     /**
      * Creates new form overview
      */
@@ -61,7 +62,9 @@ public class UserTable extends javax.swing.JPanel {
                 
                 tableModel.addRow(
                         new Object[] {
-                            employees.getString("name"), 
+                            employees.getString("username"),
+                            employees.getString("name"),
+                            employees.getString("last_name"),
                             employees.getInt("employee_number"), 
                             employees.getString("location"), 
                             functionName
@@ -107,6 +110,7 @@ public class UserTable extends javax.swing.JPanel {
         overviewusers.setForeground(new java.awt.Color(255, 255, 255));
         overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
         overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         overviewusers.setInheritsPopupMenu(true);
         overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -117,6 +121,7 @@ public class UserTable extends javax.swing.JPanel {
         });
 
         logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
         logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         logocorendon.setInheritsPopupMenu(true);
@@ -131,6 +136,7 @@ public class UserTable extends javax.swing.JPanel {
         addusers.setForeground(new java.awt.Color(255, 255, 255));
         addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         addusers.setText("Add user");
+        addusers.setBorder(null);
         addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addusers.setInheritsPopupMenu(true);
         addusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -142,10 +148,10 @@ public class UserTable extends javax.swing.JPanel {
 
         help.setBackground(new java.awt.Color(187, 29, 20));
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
         help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         help.setInheritsPopupMenu(true);
-        help.setPreferredSize(new java.awt.Dimension(31, 31));
         help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpActionPerformed(evt);
@@ -155,7 +161,7 @@ public class UserTable extends javax.swing.JPanel {
         loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loggedinas.setForeground(new java.awt.Color(255, 255, 255));
         loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loggedinas.setText("Logged in as admin");
+        loggedinas.setText(Main.getLoggedLabel());
         loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout menuoverviewLayout = new javax.swing.GroupLayout(menuoverview);
@@ -172,8 +178,8 @@ public class UserTable extends javax.swing.JPanel {
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(help)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         menuoverviewLayout.setVerticalGroup(
             menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +190,7 @@ public class UserTable extends javax.swing.JPanel {
                         .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(loggedinas)
                         .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(help)
                     .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0))
         );
@@ -192,7 +198,7 @@ public class UserTable extends javax.swing.JPanel {
         add(menuoverview);
         menuoverview.setBounds(0, 0, 1044, 55);
 
-        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/view.png"))); // NOI18N
+        SearchButton.setText("Search");
         SearchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         SearchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -200,7 +206,7 @@ public class UserTable extends javax.swing.JPanel {
             }
         });
         add(SearchButton);
-        SearchButton.setBounds(930, 90, 50, 40);
+        SearchButton.setBounds(850, 80, 80, 30);
 
         SearchQuery.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         SearchQuery.addActionListener(new java.awt.event.ActionListener() {
@@ -209,18 +215,18 @@ public class UserTable extends javax.swing.JPanel {
             }
         });
         add(SearchQuery);
-        SearchQuery.setBounds(720, 90, 210, 40);
+        SearchQuery.setBounds(580, 80, 270, 30);
 
         UserOverviewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Name", "Employee Number", "Location", "Function"
+                "Username", "First Name", "Last Name", "Employee Number", "Location", "Function"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -233,6 +239,8 @@ public class UserTable extends javax.swing.JPanel {
             UserOverviewTable.getColumnModel().getColumn(1).setResizable(false);
             UserOverviewTable.getColumnModel().getColumn(2).setResizable(false);
             UserOverviewTable.getColumnModel().getColumn(3).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(4).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
         add(jScrollPane1);
@@ -290,8 +298,11 @@ public class UserTable extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "You may only edit one employee at the time.");
         } else {
             // We need to get the employee number of the selected row.
-            int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 1).toString());
-            System.out.println(employeeNumber);
+            int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 3).toString());
+            
+            // Store the value so we can retrieve it later when we are going to edit the employee.
+            Session.getInstance().setValue("EditEmployee", employeeNumber);
+            Main.getInstance().showPanel(new view.admin.EditUser());
         }
     }//GEN-LAST:event_EditButtonActionPerformed
 
@@ -300,6 +311,7 @@ public class UserTable extends javax.swing.JPanel {
         
         int selectedRows = UserOverviewTable.getSelectedRows().length;
         
+        // Prevent deleting multiple employees
         if (selectedRows == 0) {
             JOptionPane.showMessageDialog(this, "You didn't select an employee.");
         } else if(selectedRows > 1) {
@@ -307,6 +319,7 @@ public class UserTable extends javax.swing.JPanel {
         } else {
             int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this employee?\nThis action can not be reverted.");
             
+            // Make sure the administrator wants to delete the employee to avoid mistakes
             if (confirm == JOptionPane.YES_OPTION) {
                 int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 1).toString());
                 manager.deleteEmployee(employeeNumber);

@@ -98,16 +98,5 @@ public class LuggageManager extends QueryManager {
      * @param labelNumber
      * @param newStatus 
      */
-    public void setStatus(int labelNumber, int newStatus) {
-        String query = "UPDATE Luggage SET status = ? WHERE label_number = ?";
-        
-        try {
-            PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, newStatus);
-            statement.setInt(2, labelNumber);
-            statement.execute();
-        } catch (SQLException e) {
-            System.err.println(e);
-        }
-    }
+    
 }

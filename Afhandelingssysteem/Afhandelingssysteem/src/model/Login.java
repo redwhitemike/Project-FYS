@@ -1,5 +1,6 @@
 package model;
 
+import Main.Main;
 import connection.*;
 import java.sql.*;
 
@@ -25,6 +26,10 @@ public class Login {
         username = inputUser;
     }
     
+    public String getUsername() {
+        return username;
+    }
+    
     public void setPassword(String inputPass) {
         password = inputPass;
     }
@@ -35,7 +40,7 @@ public class Login {
     
     public boolean usernamePasswordMatch() {
         String query = "SELECT COUNT(*) as count FROM User WHERE username = ? AND password = ?";
-        ResultSet result = null;
+        ResultSet result;
         
         try {
             PreparedStatement statement = manager.Connection.prepareStatement(query);
@@ -49,7 +54,7 @@ public class Login {
             
             return result.getInt("count") > 0;
         } catch (SQLException e) {
-            System.err.println(e);
+            Main.exceptionPrint(e);
         }
         
         return false;
@@ -69,14 +74,14 @@ public class Login {
             
             return result.getInt("count") > 0;
         } catch (SQLException e) {
-            System.err.println(e);
+            Main.exceptionPrint(e);
         }
         
         return false;
     }
     
     public Employee getEmployee() {
-        String query = "SELECT userid FROM User WHERE username = ?";
+        String query = "SELECT employee_number FROM User WHERE username = ?";
         ResultSet result = null;
         
         try {
@@ -87,28 +92,12 @@ public class Login {
             result = statement.getResultSet();
             result.next();
             
-            return new Employee(result.getInt("userid"));
+            return new Employee(result.getInt("employee_number"));
         } catch (SQLException e) {
-            System.err.println(e);
+            Main.exceptionPrint(e);
         }     
         
         return null;
-    }
-    
-    public boolean doLogin() throws Exception {
-        if (!isEmpty()) {
-            if (isFound()) {
-                if (usernamePasswordMatch()) {
-                    return true;
-                } else {
-                   throw new Exception("Invalid password."); 
-                }
-            } else {
-                throw new Exception("The user is not found.");
-            }
-        } else {
-            throw new Exception("Username or password is missing.");
-        }
     }
     
 }
