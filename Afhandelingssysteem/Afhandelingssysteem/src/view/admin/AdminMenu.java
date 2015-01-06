@@ -204,7 +204,7 @@ public class AdminMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_overviewUsersActionPerformed
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new Handleiding.HelpAdmin());
     }//GEN-LAST:event_HelpActionPerformed
 
     private void addUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserMouseClicked
