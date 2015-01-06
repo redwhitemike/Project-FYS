@@ -40,7 +40,29 @@ public class HelpEmployee extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("User\n\n\nAdd Customer\nWhen the “Add Customer” button is clicked the interface will show text fields to enter customer information. It is required to enter all of the text fields. When this information is saved a screen with the customer information is displayed. \n\nAdd Luggage\nWhen the “Add Luggage” button is clicked the interface will show text fields to enter luggage information. It is not required to enter all of the text fields. Luggage number and the current location of the bag are the exception to this rule.\n\nFind Customer\nWhen the “Find Customer” button is clicked the interface will show a table with the most recently added customers. When a key word is entered the table will show all of the results containing this keyword. When the header of a column is clicked the table will be rearranged in alphabetical order. When a specific customer row is selected a new window will open containing the information of this customer.\n\nFind Luggage\nWhen the “Find Luggage” button is clicked the interface will show a table with the most recently added luggage. When a key word is entered the table will show all of the results containing this keyword. When the header of a column is clicked the table will be rearranged in alphabetical order. When a specific luggage row is selected a new window will open containing the information of this piece of luggage.\n\nCustomer Information\nIn this screen the customer information is displayed. There are also options to edit or delete the customer. There is an option to print a form to give to the customer with the information that was entered into the database as well as information to contact the airline. This form will serve as a confirmation of a missing luggage request.\n\nLuggage Information\nIn this screen the luggage information is displayed. There are also options to edit or delete the luggage.\n\n");
+        jTextArea1.setText("User\n\n\nAdd Customer\nWhen the “Add Missing Luggage” button is "
+                + "clicked the interface will show text fields to enter customer information as well as some luggae information."
+                + " When this information is "
+                + "saved the user can be found in the table on the find customer screen. \n\nAdd Found Luggage"
+                + "\nWhen the “Add Found Luggage” button is clicked the interface will show text fields"
+                + " to enter luggage information. It is not required to enter all of the text "
+                + "fields. Luggage number and the current location of the bag are the exception "
+                + "to this rule.\n\nFind Customer\nWhen the “Find Customer” button is clicked the "
+                + "interface will show a table with the most recently added customers. When a key "
+                + "word is entered the table will show all of the results containing this keyword."
+                + " When the header of a column is clicked the table will be rearranged in alphabetical "
+                + "order. When a specific customer row is selected a new window will open containing "
+                + "the information of this customer.\n\nFind Luggage\nWhen the “Find Luggage” button "
+                + "is clicked the interface will show a table with the most recently added luggage. "
+                + "When a key word is entered the table will show all of the results containing "
+                + "this keyword. When the header of a column is clicked the table will be rearranged"
+                + " in alphabetical order. When a specific luggage row is selected a new window will"
+                + " open containing the information of this piece of luggage.\n\nCustomer Information"
+                + "\nIn this screen the customer information is displayed. There are also options to "
+                + "edit or delete the customer. There is an option to print a form to give to the "
+                + "customer with the information a customer might need to contact their insurance if the luggage is not able to be found. "
+                + "\n\nLuggage Information\nIn this screen the luggage information is displayed. "
+                + "There are also options to edit or delete the luggage.\n\n");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

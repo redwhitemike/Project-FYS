@@ -36,7 +36,13 @@ public class HelpManager extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Manager\n\nLuggage Status\nWhen the “Luggage Status” button is selected a table will show of the information of luggage with the luggage number, the date that the report was entered and the date on which the luggage was handled and the status: found, missing or handled.\n\nGraphs\nWhen the “Graphs” button is selected a graph is shown with the number of missing, found and handled luggage. The time period can be manually changed by the manager. The graph will be printed by clicking the “Print” button.\n");
+        jTextArea1.setText("Manager\n\nLuggage Status\nWhen one of the “Luggage Status” buttons is "
+                + "selected a table will show of the information of luggage with the luggage "
+                + "number, the date that the report was entered and the date on which the "
+                + "luggage was handled -which can be left open- and the status: found, missing or handled."
+                + "\n\nGraphs\nWhen the “Graphs” button is selected a graph is shown "
+                + "with the number of missing, found and handled luggage. "
+                + "The time period can be manually changed by the manager.\n");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 

@@ -40,7 +40,24 @@ public class HelpGeneral extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("General Information\n\n\nGetting Started\nTo use the software you will need a username and a password to log in. To create an account you will have to go to an admin.\nWhen you are logged in you will see a menu, which is different for every account type. Depending on your account type you will see a set of options. Each option has a different function which is described by the option name.\n\n\nLogin\n\nEnter Username and Password\nThese fields are required. If the password is entered wrong for more than three times the account will be blocked and admin will be notified. When this happens the user will have to contact the admin.\n\nPassword Forgotten\nWhen the Password Forgotten option is clicked the admin will receive a notification to change the password. The admin will reset the password to a default after which the user has to immediately change the password by first entering this default password and then the new password twice. \n\nExit\nWhen the “Exit” button is pressed the application will be closed. \n\nLog Out\nThe “Log Out” button can be pressed in every screen in the application. A confirmation screen will show and when the user selects “Yes” the log out will be confirmed and the application will be closed.\n\n?\nThe “?” will show a new screen with information about the current page and its options. For further explanation or when an error occurs please go to the administrator for help.   \n");
+        jTextArea1.setText("General Information\n\n\nGetting Started\nTo use this"
+                + " application you will need a username and a password to log in."
+                + " To create an account you will have to contact an admin.\n"
+                + "When you are logged in you will see a menu, which is different"
+                + " for every account type. Depending on your account type you will"
+                + " see a set of options. Each option has a different function which"
+                + " is described by the option name.\n\n\nLogin\n\nEnter Username"
+                + " and Password\nThese fields are required. If the password"
+                + " is entered wrong you can change it by choosing Password Forgotten or contact an admin."
+                + "\n\nPassword Forgotten\nThe user can reset the password by entering an new password twice and then clicking confirm."
+                + "\n\nExit\n"
+                + "When the “Exit” button is pressed the application will be closed. "
+                + "\n\nLog Out\nThe “Log Out” button can be pressed in every screen in the "
+                + "application. A confirmation screen will show and when the user selects "
+                + "“Yes” the log out will be confirmed and the application will be closed."
+                + "\n\n?\nThe “?” will show a new screen with information about the current "
+                + "page and its options. For further explanation or when an error occurs"
+                + " please go to the administrator for help.   \n");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
