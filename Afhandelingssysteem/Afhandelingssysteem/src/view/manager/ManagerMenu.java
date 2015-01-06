@@ -1,5 +1,7 @@
 package view.manager;
 
+import Main.Main;
+
 /**
  *
  * @author IS104_2
@@ -254,7 +256,7 @@ public class ManagerMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_listFoundLuggageActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        // TODO add your handling code here:
+       Main.showHelpMenu(new Handleiding.HelpManager());
     }//GEN-LAST:event_helpActionPerformed
 
 

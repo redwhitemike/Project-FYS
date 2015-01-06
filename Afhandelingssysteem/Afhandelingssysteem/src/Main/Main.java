@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
         
 /**
  *
- * @author IS104_1
+ * @author IS104_2
  */
 
 
@@ -84,8 +84,14 @@ public class Main {
         return null;
     }
     
-    public static void showHelpMenu() {
-        
+    public static void showHelpMenu(JPanel panel) {
+       JFrame x = new JFrame();
+       x.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+       x.getContentPane().removeAll();
+       x.getContentPane().add(panel, BorderLayout.CENTER);
+       x.getContentPane().validate();
+       x.getContentPane().repaint();
+       x.setVisible(true);
     }
     
     public boolean onlyNumbers(String text) {

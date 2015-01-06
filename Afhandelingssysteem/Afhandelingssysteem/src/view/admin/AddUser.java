@@ -13,9 +13,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 public class AddUser extends javax.swing.JPanel {
 
-    private static final AddUser adduser = new AddUser();
-    private static final UserOverview overview = new UserOverview();
-    private static final AdminMenu adminMenu = new AdminMenu();
+    
 
     /**
      * Creates new form adduser
@@ -823,7 +821,7 @@ public class AddUser extends javax.swing.JPanel {
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        Main.getInstance().showPanel(new Handleiding.HelpAdmin());
+                Main.showHelpMenu(new Handleiding.HelpAdmin());
     }//GEN-LAST:event_helpActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed

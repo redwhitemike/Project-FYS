@@ -500,7 +500,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
     }//GEN-LAST:event_SearchActionPerformed
 
     private void jButton65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton65MouseClicked
-        Main.showHelpMenu();
+                        Main.showHelpMenu(new Handleiding.HelpEmployee());
     }//GEN-LAST:event_jButton65MouseClicked
 
 

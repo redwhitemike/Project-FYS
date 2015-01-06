@@ -80,7 +80,7 @@
                       <Component id="UpdateLuggageButton" min="-2" pref="74" max="-2" attributes="0"/>
                       <Component id="ColourField" alignment="0" max="32767" attributes="0"/>
                       <Component id="WeightField" alignment="0" max="32767" attributes="0"/>
-                      <Component id="LabelNumber" pref="226" max="32767" attributes="0"/>
+                      <Component id="LabelNumber" max="32767" attributes="0"/>
                       <Component id="LuggageType" alignment="0" max="32767" attributes="0"/>
                       <Component id="FlightNumber" alignment="0" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>

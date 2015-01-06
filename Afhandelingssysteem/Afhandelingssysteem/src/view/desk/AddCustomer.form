@@ -93,17 +93,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="Email" pref="226" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="PhoneNumber" max="32767" attributes="0"/>
-                          <Component id="Country" max="32767" attributes="0"/>
-                          <Component id="City" max="32767" attributes="0"/>
-                          <Component id="StayAddress" alignment="0" max="32767" attributes="0"/>
-                          <Component id="HomeAddress" alignment="0" max="32767" attributes="0"/>
-                          <Component id="FirstName" pref="226" max="32767" attributes="0"/>
-                          <Component id="LastName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Zipcode" max="32767" attributes="0"/>
-                          <Component id="UpdateLuggageButton" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="PhoneNumber" max="32767" attributes="0"/>
+                      <Component id="Country" max="32767" attributes="0"/>
+                      <Component id="City" max="32767" attributes="0"/>
+                      <Component id="StayAddress" alignment="0" max="32767" attributes="0"/>
+                      <Component id="HomeAddress" alignment="0" max="32767" attributes="0"/>
+                      <Component id="FirstName" pref="226" max="32767" attributes="0"/>
+                      <Component id="LastName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Zipcode" max="32767" attributes="0"/>
+                      <Component id="UpdateLuggageButton" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
