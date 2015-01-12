@@ -298,6 +298,7 @@ public class UserMenu extends javax.swing.JPanel {
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
         Main.showHelpMenu(new Handleiding.HelpEmployee());
+        Main.pressHelpKey(jButton65);
     }//GEN-LAST:event_jButton65ActionPerformed
 
     private void MissingLuggageBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MissingLuggageBlockMouseClicked

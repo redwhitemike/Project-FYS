@@ -5,11 +5,14 @@ import model.Employee;
 import java.util.HashMap;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
         
@@ -92,6 +95,29 @@ public class Main {
        x.getContentPane().validate();
        x.getContentPane().repaint();
        x.setVisible(true);
+    }
+    
+    public static void pressHelpKey(final JButton button){
+       
+        button.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_F1) {
+                    button.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        });
     }
     
     public boolean onlyNumbers(String text) {

@@ -308,6 +308,7 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         Main.showHelpMenu(new Handleiding.HelpGeneral());
+        Main.pressHelpKey(jButton7);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed

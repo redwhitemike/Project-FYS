@@ -1,6 +1,8 @@
 package view.admin;
 
 import Main.Main;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  *
@@ -205,6 +207,9 @@ public class AdminMenu extends javax.swing.JPanel {
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpAdmin());
+        
+        Main.pressHelpKey(Help);
+
     }//GEN-LAST:event_HelpActionPerformed
 
     private void addUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserMouseClicked
