@@ -47,7 +47,7 @@ public class EmployeeManager extends QueryManager {
      * @param values
      */
     public void editEmployee(int employeeNumber, HashMap<String, Object> values) {
-        String query = "UPDATE User SET username = ?, password = ?, name = ?, instertion = ?, last_name = ?, location = ?, function = ? WHERE employee_number = ?";
+        String query = "UPDATE User SET username = ?, password = ?, name = ?, insertion = ?, last_name = ?, location = ?, function = ? WHERE employee_number = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);

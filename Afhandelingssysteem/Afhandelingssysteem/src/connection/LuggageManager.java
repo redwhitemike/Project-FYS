@@ -43,6 +43,31 @@ public class LuggageManager extends QueryManager {
     }
     
     /**
+     * Updates the luggage
+     * @param label
+     * @param values
+     */
+    public void editLuggage(int label, HashMap<String, Object> values) {
+        String query = 
+                "UPDATE Luggage SET flight_number = ?, weight = ?, color = ?, type = ?, description = ?, status = ? "
+                + "WHERE label_number = ?";
+
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setString(1, values.get("FlightNumber").toString());
+            statement.setDouble(2, Double.parseDouble(values.get("Weight").toString()));
+            statement.setString(3, values.get("Colour").toString());
+            statement.setInt(4, Integer.parseInt(values.get("Type").toString()));
+            statement.setString(5, values.get("Description").toString());
+            statement.setInt(6, Integer.parseInt(values.get("Status").toString()));
+            statement.setInt(7, label);
+            statement.execute();
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+    }
+    
+    /**
      * Get luggage from the database.
      * @param labelNumber
      * @return 
@@ -74,8 +99,13 @@ public class LuggageManager extends QueryManager {
         return result;
     }
     
+    /**
+     * Get all the luggage, filtering by the label/flight number
+     * @param filter
+     * @return 
+     */
     public ResultSet getLuggages(String filter) {
-        String query = "SELECT * FROM Luggage WHERE label_number = ? OR flight_number = ? OR status = ?";
+        String query = "SELECT * FROM Luggage WHERE label_number = ? OR flight_number = ?";
         ResultSet result = null;
         
         try {
@@ -94,9 +124,18 @@ public class LuggageManager extends QueryManager {
     }
     
     /**
-     * Updates the status of the luggage.
+     * Deletes luggage from the database.
      * @param labelNumber
-     * @param newStatus 
      */
-    
+    public void deleteLuggage(int labelNumber) {
+        String query = "DELETE FROM Luggage WHERE label_number = ?";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, labelNumber);
+            statement.execute();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+    }
 }

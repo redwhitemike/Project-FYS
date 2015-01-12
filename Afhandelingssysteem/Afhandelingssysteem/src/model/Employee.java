@@ -42,7 +42,7 @@ public class Employee extends Main {
     }
     
     public String getInsertion() throws SQLException {
-        return data.getString("instertion");
+        return data.getString("insertion");
     }
     
     public String getLastName() throws SQLException {
@@ -63,6 +63,30 @@ public class Employee extends Main {
     
     public boolean usernameInUse(String username) {
         return manager.findUsername(username);
+    }
+    
+    public String getFunctionName(int functionId) {
+        String functionName = "";
+        
+        switch (functionId) {
+            case Main.FUNCTION_EMPLOYEE:
+                functionName = "Employee";
+                break;
+
+            case Main.FUNCTION_MANAGER:
+                functionName = "Manager";
+                break;
+
+            case Main.FUNCTION_APP_MANAGER:
+                functionName = "Administrator";
+                break;
+
+            default:
+                functionName = "Unknown";
+                break;
+        }
+        
+        return functionName;
     }
     
 }

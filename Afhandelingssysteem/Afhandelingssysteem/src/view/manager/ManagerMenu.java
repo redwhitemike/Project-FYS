@@ -1,5 +1,7 @@
 package view.manager;
 
+import Main.Main;
+
 /**
  *
  * @author IS104_2
@@ -24,14 +26,10 @@ public class ManagerMenu extends javax.swing.JPanel {
 
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         panel12 = new java.awt.Panel();
-        listMissingLuggage = new javax.swing.JButton();
+        List = new javax.swing.JButton();
         Home = new javax.swing.JButton();
         Graphs = new javax.swing.JButton();
-        listHandeldLuggage = new javax.swing.JButton();
-        listFoundLuggage = new javax.swing.JButton();
         help = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
@@ -44,43 +42,36 @@ public class ManagerMenu extends javax.swing.JPanel {
         jLabel8.setToolTipText("");
         jLabel8.setFocusable(false);
         jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel4.setText("List missing luggage");
+        jLabel4.setText("List luggage");
         jLabel4.setToolTipText("");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel7.setText("List found luggage");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/main_menu_button.PNG"))); // NOI18N
-        jLabel10.setText("List handled luggage");
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         panel12.setBackground(new java.awt.Color(187, 29, 20));
         panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panel12.setName(""); // NOI18N
         panel12.setPreferredSize(new java.awt.Dimension(1044, 55));
 
-        listMissingLuggage.setBackground(new java.awt.Color(157, 11, 15));
-        listMissingLuggage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        listMissingLuggage.setForeground(new java.awt.Color(255, 255, 255));
-        listMissingLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        listMissingLuggage.setText("List missing luggage");
-        listMissingLuggage.setBorder(null);
-        listMissingLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        listMissingLuggage.setInheritsPopupMenu(true);
-        listMissingLuggage.setPreferredSize(new java.awt.Dimension(145, 25));
-        listMissingLuggage.addActionListener(new java.awt.event.ActionListener() {
+        List.setBackground(new java.awt.Color(157, 11, 15));
+        List.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        List.setForeground(new java.awt.Color(255, 255, 255));
+        List.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        List.setText("List luggage");
+        List.setBorder(null);
+        List.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        List.setInheritsPopupMenu(true);
+        List.setPreferredSize(new java.awt.Dimension(145, 25));
+        List.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listMissingLuggageActionPerformed(evt);
+                ListActionPerformed(evt);
             }
         });
 
@@ -109,37 +100,6 @@ public class ManagerMenu extends javax.swing.JPanel {
             }
         });
 
-        listHandeldLuggage.setBackground(new java.awt.Color(157, 11, 15));
-        listHandeldLuggage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        listHandeldLuggage.setForeground(new java.awt.Color(255, 255, 255));
-        listHandeldLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        listHandeldLuggage.setText("List handeld luggage");
-        listHandeldLuggage.setBorder(null);
-        listHandeldLuggage.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        listHandeldLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        listHandeldLuggage.setInheritsPopupMenu(true);
-        listHandeldLuggage.setPreferredSize(new java.awt.Dimension(145, 25));
-        listHandeldLuggage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listHandeldLuggageActionPerformed(evt);
-            }
-        });
-
-        listFoundLuggage.setBackground(new java.awt.Color(157, 11, 15));
-        listFoundLuggage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        listFoundLuggage.setForeground(new java.awt.Color(255, 255, 255));
-        listFoundLuggage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        listFoundLuggage.setText("List found luggage");
-        listFoundLuggage.setBorder(null);
-        listFoundLuggage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        listFoundLuggage.setInheritsPopupMenu(true);
-        listFoundLuggage.setPreferredSize(new java.awt.Dimension(145, 25));
-        listFoundLuggage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listFoundLuggageActionPerformed(evt);
-            }
-        });
-
         help.setBackground(new java.awt.Color(187, 29, 20));
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
         help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -155,9 +115,8 @@ public class ManagerMenu extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Logged in as user");
+        jLabel11.setText(Main.getLoggedLabel());
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel11.setMaximumSize(null);
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
@@ -167,18 +126,14 @@ public class ManagerMenu extends javax.swing.JPanel {
                 .addGap(3, 3, 3)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listMissingLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listFoundLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listHandeldLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(340, 340, 340)
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +144,8 @@ public class ManagerMenu extends javax.swing.JPanel {
                     .addGroup(panel12Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(listMissingLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(listFoundLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(listHandeldLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
                             .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panel12Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -205,15 +158,9 @@ public class ManagerMenu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(254, 254, 254)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel10)))
+                .addComponent(jLabel8)
+                .addGap(85, 85, 85)
+                .addComponent(jLabel4)
                 .addContainerGap(255, Short.MAX_VALUE))
             .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -221,55 +168,43 @@ public class ManagerMenu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121)
+                .addGap(112, 112, 112)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void listMissingLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listMissingLuggageActionPerformed
+    private void ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListActionPerformed
         
-    }//GEN-LAST:event_listMissingLuggageActionPerformed
+    }//GEN-LAST:event_ListActionPerformed
 
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
         
     }//GEN-LAST:event_HomeActionPerformed
 
     private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
-        
+        Main.getInstance().showPanel(new view.manager.Graph());
     }//GEN-LAST:event_GraphsActionPerformed
-
-    private void listHandeldLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listHandeldLuggageActionPerformed
-        
-    }//GEN-LAST:event_listHandeldLuggageActionPerformed
-
-    private void listFoundLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listFoundLuggageActionPerformed
-
-    }//GEN-LAST:event_listFoundLuggageActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_helpActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        Main.getInstance().showPanel(new view.manager.Graph());
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Graphs;
     private javax.swing.JButton Home;
+    private javax.swing.JButton List;
     private javax.swing.JButton help;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JButton listFoundLuggage;
-    private javax.swing.JButton listHandeldLuggage;
-    private javax.swing.JButton listMissingLuggage;
     private java.awt.Panel panel12;
     // End of variables declaration//GEN-END:variables
 }

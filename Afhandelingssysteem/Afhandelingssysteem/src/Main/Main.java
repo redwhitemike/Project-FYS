@@ -29,7 +29,7 @@ public class Main {
     public static final String NAME = "Corendon - Luggage System";
     
     private static final Main instance = new Main();
-    private JFrame mainWindow;
+    public JFrame mainWindow;
    
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;

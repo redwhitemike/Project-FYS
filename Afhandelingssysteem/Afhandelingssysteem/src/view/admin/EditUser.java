@@ -1,6 +1,6 @@
 package view.admin;
 
-import Main.Main;
+import Main.*;
 import Main.Session;
 import model.Employee;
 import connection.*;
@@ -15,19 +15,19 @@ import org.apache.commons.codec.digest.DigestUtils;
  * @author IS104_2
  */
 public class EditUser extends javax.swing.JPanel {
-
-    private static final AddUser adduser = new AddUser();
-    private static final UserOverview overview = new UserOverview();
-    private static final AdminMenu adminMenu = new AdminMenu();
     
-    Employee employee = new Employee(Integer.parseInt(Session.getInstance().getValue("EditEmployee")));
+    Employee employee;
     EmployeeManager manager = new EmployeeManager();
 
+    private boolean passwordWarning = false;
+    
     /**
      * Creates new form adduser
      */
-    public EditUser() {
+    public EditUser(int employeeId) {
         initComponents();
+        employee = new Employee(employeeId);
+        
         setDefaultValues();
     }
     
@@ -67,6 +67,7 @@ public class EditUser extends javax.swing.JPanel {
     private String getPassword() {
         try {
             if (!Password.getText().isEmpty() && !Repeatpassword.getText().isEmpty()) {
+                this.passwordWarning = true;
                 return DigestUtils.sha512Hex(Password.getText());
             }
 
@@ -81,7 +82,7 @@ public class EditUser extends javax.swing.JPanel {
      * Validates the fields based on the table column settings.
      */
     private void fieldsValidator()  {
-        if (Username.getText().length() < 3 || Username.getText().length() > 45) {
+        if (!Validator.betweenLength(Username, 3, 45)) {
             throw new NumberFormatException("Username must be between 3 and 45 characters.");
         }
         
@@ -91,15 +92,15 @@ public class EditUser extends javax.swing.JPanel {
             }
         }
         
-        if (Name.getText().isEmpty() || Name.getText().length() > 45) {
+        if (Validator.isEmpty(Name) || !Validator.betweenLength(Name, 0, 45)) {
             throw new NumberFormatException("First name can not be empty, and may not contain more than 45 characters.");
         }
         
-        if (Lastname.getText().isEmpty() || Lastname.getText().length() > 45) {
+        if (Validator.isEmpty(Lastname) || !Validator.betweenLength(Lastname, 0, 45)) {
             throw new NumberFormatException("Last name can not be empty, and may not contain more than 45 characters.");
         }
         
-        if (Location.getText().isEmpty() || Location.getText().length() > 45) {
+        if (Validator.isEmpty(Location) || !Validator.betweenLength(Location, 0, 45)) {
             throw new NumberFormatException("Location can not be empty, and may not contain more than 45 characters.");
         }
     }
@@ -148,12 +149,6 @@ public class EditUser extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        menuoverview = new java.awt.Panel();
-        overviewusers = new javax.swing.JButton();
-        logocorendon = new javax.swing.JButton();
-        addusers = new javax.swing.JButton();
-        help = new javax.swing.JButton();
-        loggedinas = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         submit1 = new javax.swing.JButton();
         Username = new javax.swing.JTextField();
@@ -177,6 +172,13 @@ public class EditUser extends javax.swing.JPanel {
         Manager = new javax.swing.JRadioButton();
         Balie = new javax.swing.JRadioButton();
         jLabel29 = new javax.swing.JLabel();
+        MenuOverview = new java.awt.Panel();
+        overviewusers = new javax.swing.JButton();
+        logocorendon = new javax.swing.JButton();
+        addusers = new javax.swing.JButton();
+        help = new javax.swing.JButton();
+        loggedinas = new javax.swing.JLabel();
+        LogoutButton = new javax.swing.JButton();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -526,101 +528,6 @@ public class EditUser extends javax.swing.JPanel {
                         .addContainerGap(86, Short.MAX_VALUE))))
         );
 
-        menuoverview.setBackground(new java.awt.Color(187, 29, 20));
-        menuoverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        menuoverview.setName(""); // NOI18N
-        menuoverview.setPreferredSize(new java.awt.Dimension(1044, 55));
-
-        overviewusers.setBackground(new java.awt.Color(157, 11, 15));
-        overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        overviewusers.setForeground(new java.awt.Color(255, 255, 255));
-        overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        overviewusers.setText("Overview users");
-        overviewusers.setBorder(null);
-        overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        overviewusers.setInheritsPopupMenu(true);
-        overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
-        overviewusers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                overviewusersActionPerformed(evt);
-            }
-        });
-
-        logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        logocorendon.setBorder(null);
-        logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        logocorendon.setInheritsPopupMenu(true);
-        logocorendon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logocorendonActionPerformed(evt);
-            }
-        });
-
-        addusers.setBackground(new java.awt.Color(157, 11, 15));
-        addusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        addusers.setForeground(new java.awt.Color(255, 255, 255));
-        addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        addusers.setText("Add user");
-        addusers.setBorder(null);
-        addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        addusers.setInheritsPopupMenu(true);
-        addusers.setPreferredSize(new java.awt.Dimension(145, 25));
-        addusers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addusersActionPerformed(evt);
-            }
-        });
-
-        help.setBackground(new java.awt.Color(187, 29, 20));
-        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
-        help.setBorder(null);
-        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        help.setInheritsPopupMenu(true);
-        help.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpActionPerformed(evt);
-            }
-        });
-
-        loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        loggedinas.setForeground(new java.awt.Color(255, 255, 255));
-        loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loggedinas.setText(Main.getLoggedLabel());
-        loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout menuoverviewLayout = new javax.swing.GroupLayout(menuoverview);
-        menuoverview.setLayout(menuoverviewLayout);
-        menuoverviewLayout.setHorizontalGroup(
-            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuoverviewLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(422, 422, 422)
-                .addComponent(loggedinas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(help)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        menuoverviewLayout.setVerticalGroup(
-            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(loggedinas)
-                        .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(help)
-                    .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
         submit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add_button.png"))); // NOI18N
@@ -833,6 +740,108 @@ public class EditUser extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview.setName(""); // NOI18N
+        MenuOverview.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        overviewusers.setBackground(new java.awt.Color(157, 11, 15));
+        overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        overviewusers.setForeground(new java.awt.Color(255, 255, 255));
+        overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
+        overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        overviewusers.setInheritsPopupMenu(true);
+        overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
+        overviewusers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overviewusersActionPerformed(evt);
+            }
+        });
+
+        logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
+        logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon.setInheritsPopupMenu(true);
+        logocorendon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendonActionPerformed(evt);
+            }
+        });
+
+        addusers.setBackground(new java.awt.Color(157, 11, 15));
+        addusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        addusers.setForeground(new java.awt.Color(255, 255, 255));
+        addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        addusers.setText("Add user");
+        addusers.setBorder(null);
+        addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addusers.setInheritsPopupMenu(true);
+        addusers.setPreferredSize(new java.awt.Dimension(145, 25));
+        addusers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addusersActionPerformed(evt);
+            }
+        });
+
+        help.setBackground(new java.awt.Color(187, 29, 20));
+        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
+        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help.setInheritsPopupMenu(true);
+        help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpActionPerformed(evt);
+            }
+        });
+
+        loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas.setText(Main.getLoggedLabel());
+        loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout MenuOverviewLayout = new javax.swing.GroupLayout(MenuOverview);
+        MenuOverview.setLayout(MenuOverviewLayout);
+        MenuOverviewLayout.setHorizontalGroup(
+            MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuOverviewLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas)
+                .addGap(18, 18, 18)
+                .addComponent(help)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        MenuOverviewLayout.setVerticalGroup(
+            MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOverviewLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas)
+                        .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help)
+                    .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        LogoutButton.setText("Log out");
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -842,34 +851,24 @@ public class EditUser extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(menuoverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogoutButton)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(menuoverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogoutButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 345, Short.MAX_VALUE))
+                .addGap(0, 339, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(new view.admin.UserTable());
-    }//GEN-LAST:event_overviewusersActionPerformed
-
-    private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(new view.admin.AdminMenu());
-    }//GEN-LAST:event_logocorendonActionPerformed
-
-    private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(new view.admin.AddUser());
-    }//GEN-LAST:event_addusersActionPerformed
-
-    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_helpActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
 
@@ -965,9 +964,17 @@ public class EditUser extends javax.swing.JPanel {
             values.put("LastName", Lastname.getText());
             values.put("Location", Location.getText());
             values.put("Function", function);
+            
+            // Apply changes to the employee
             manager.editEmployee(employee.getId(), values);
            
-            JOptionPane.showMessageDialog(this, "This employee has been updated.");
+            if (this.passwordWarning) {
+                JOptionPane.showMessageDialog(this, "This employee has been updated.\nWarning: The password has been changed.");
+            } else {
+                JOptionPane.showMessageDialog(this, "This employee has been updated.");
+            }
+            
+            this.passwordWarning = false;
             
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -1028,6 +1035,26 @@ public class EditUser extends javax.swing.JPanel {
         Manager.setSelected(false);
     }//GEN-LAST:event_BalieMouseClicked
 
+    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.UserOverview());
+    }//GEN-LAST:event_overviewusersActionPerformed
+
+    private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
+    }//GEN-LAST:event_logocorendonActionPerformed
+
+    private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.AddUser());
+    }//GEN-LAST:event_addusersActionPerformed
+
+    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_helpActionPerformed
+
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
@@ -1046,7 +1073,9 @@ public class EditUser extends javax.swing.JPanel {
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField Lastname;
     private javax.swing.JTextField Location;
+    private javax.swing.JButton LogoutButton;
     private javax.swing.JRadioButton Manager;
+    private java.awt.Panel MenuOverview;
     private javax.swing.JTextField Name;
     private javax.swing.JTextField OtherThings;
     private javax.swing.JPasswordField Password;
@@ -1090,7 +1119,6 @@ public class EditUser extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel loggedinas;
     private javax.swing.JButton logocorendon;
-    private java.awt.Panel menuoverview;
     private javax.swing.JButton overviewusers;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
