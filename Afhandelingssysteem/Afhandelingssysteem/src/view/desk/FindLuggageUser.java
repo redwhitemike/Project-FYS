@@ -538,6 +538,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
 
         int selectedRows = LuggageTable.getSelectedRows().length;
 
+<<<<<<< HEAD
         // Prevent deleting multiple employees
         if (selectedRows == 0) {
             JOptionPane.showMessageDialog(this, "You must select luggage first.");
@@ -545,6 +546,12 @@ public class FindLuggageUser extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "You may only delete one luggage at a time.");
         } else {
             int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this luggage?\nThis action can not be reverted.");
+=======
+    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
+       Main.showHelpMenu(new Handleiding.HelpEmployee());
+       Main.pressHelpKey(jButton65);
+    }//GEN-LAST:event_jButton65ActionPerformed
+>>>>>>> 102ed56eb0276697d2e82a69ab3fdffb70dc7fa3
 
             // Make sure the employee wants to delete the luggage to avoid mistakes.
             if (confirm == JOptionPane.YES_OPTION) {
