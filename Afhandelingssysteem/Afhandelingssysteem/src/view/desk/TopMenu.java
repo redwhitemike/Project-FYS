@@ -83,6 +83,7 @@ public class TopMenu extends javax.swing.JPanel {
 
         jButton65.setBackground(new java.awt.Color(187, 29, 20));
         jButton65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        jButton65.setBorder(null);
         jButton65.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton65.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton65.setInheritsPopupMenu(true);

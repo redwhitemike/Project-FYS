@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class Luggage extends Main {
 
     private ResultSet data;
+    private FlightManager flightManager = new FlightManager();
     private LuggageManager manager = new LuggageManager();
     
     public Luggage() {
@@ -21,6 +22,10 @@ public class Luggage extends Main {
     
     public Luggage(int labelNumber) {
         data = manager.getLuggage(labelNumber);
+    }
+    
+    public int getOwner() throws SQLException {
+        return flightManager.getOwnerByLabel(this.getLabelNumber());
     }
     
     public int getLabelNumber() throws SQLException {

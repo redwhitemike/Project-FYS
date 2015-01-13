@@ -75,14 +75,15 @@ public class LuggageOverview extends javax.swing.JPanel {
         LuggageOverviewTable = new javax.swing.JTable();
         LogoutButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        TopBar = new java.awt.Panel();
-        jButton61 = new javax.swing.JButton();
-        jButton62 = new javax.swing.JButton();
-        jButton64 = new javax.swing.JButton();
-        jButton65 = new javax.swing.JButton();
+        TopBar1 = new java.awt.Panel();
+        jButton67 = new javax.swing.JButton();
+        jButton68 = new javax.swing.JButton();
+        jButton69 = new javax.swing.JButton();
+        jButton70 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
-        jButton66 = new javax.swing.JButton();
-        jButton63 = new javax.swing.JButton();
+        jButton71 = new javax.swing.JButton();
+        jButton72 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(null);
 
@@ -111,7 +112,7 @@ public class LuggageOverview extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(20, 110, 1060, 440);
+        jScrollPane1.setBounds(20, 140, 1010, 410);
 
         LogoutButton1.setText("Log out");
         LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,67 +121,67 @@ public class LuggageOverview extends javax.swing.JPanel {
             }
         });
         add(LogoutButton1);
-        LogoutButton1.setBounds(990, 70, 69, 23);
+        LogoutButton1.setBounds(960, 100, 69, 23);
 
         jLabel1.setText("If the table does not show data, the customer has no current luggage data.");
         add(jLabel1);
         jLabel1.setBounds(20, 80, 960, 14);
 
-        TopBar.setBackground(new java.awt.Color(187, 29, 20));
-        TopBar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TopBar.setName(""); // NOI18N
-        TopBar.setPreferredSize(new java.awt.Dimension(1044, 55));
+        TopBar1.setBackground(new java.awt.Color(187, 29, 20));
+        TopBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TopBar1.setName(""); // NOI18N
+        TopBar1.setPreferredSize(new java.awt.Dimension(1044, 55));
 
-        jButton61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        jButton61.setBorder(null);
-        jButton61.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton61.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton61.setInheritsPopupMenu(true);
-        jButton61.addActionListener(new java.awt.event.ActionListener() {
+        jButton67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        jButton67.setBorder(null);
+        jButton67.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton67.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton67.setInheritsPopupMenu(true);
+        jButton67.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton61ActionPerformed(evt);
+                jButton67ActionPerformed(evt);
             }
         });
 
-        jButton62.setBackground(new java.awt.Color(157, 11, 15));
-        jButton62.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton62.setForeground(new java.awt.Color(255, 255, 255));
-        jButton62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton62.setText("Add luggage");
-        jButton62.setBorder(null);
-        jButton62.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton62.setInheritsPopupMenu(true);
-        jButton62.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton62.addActionListener(new java.awt.event.ActionListener() {
+        jButton68.setBackground(new java.awt.Color(157, 11, 15));
+        jButton68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton68.setForeground(new java.awt.Color(255, 255, 255));
+        jButton68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton68.setText("Add luggage");
+        jButton68.setBorder(null);
+        jButton68.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton68.setInheritsPopupMenu(true);
+        jButton68.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton68.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton62ActionPerformed(evt);
+                jButton68ActionPerformed(evt);
             }
         });
 
-        jButton64.setBackground(new java.awt.Color(157, 11, 15));
-        jButton64.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton64.setForeground(new java.awt.Color(255, 255, 255));
-        jButton64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton64.setText("Find luggage");
-        jButton64.setBorder(null);
-        jButton64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton64.setInheritsPopupMenu(true);
-        jButton64.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton64.addActionListener(new java.awt.event.ActionListener() {
+        jButton69.setBackground(new java.awt.Color(157, 11, 15));
+        jButton69.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton69.setForeground(new java.awt.Color(255, 255, 255));
+        jButton69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton69.setText("Find luggage");
+        jButton69.setBorder(null);
+        jButton69.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton69.setInheritsPopupMenu(true);
+        jButton69.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton69.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton64ActionPerformed(evt);
+                jButton69ActionPerformed(evt);
             }
         });
 
-        jButton65.setBackground(new java.awt.Color(187, 29, 20));
-        jButton65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
-        jButton65.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton65.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton65.setInheritsPopupMenu(true);
-        jButton65.setPreferredSize(new java.awt.Dimension(31, 31));
-        jButton65.addActionListener(new java.awt.event.ActionListener() {
+        jButton70.setBackground(new java.awt.Color(187, 29, 20));
+        jButton70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        jButton70.setBorder(null);
+        jButton70.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton70.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton70.setInheritsPopupMenu(true);
+        jButton70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton65ActionPerformed(evt);
+                jButton70ActionPerformed(evt);
             }
         });
 
@@ -190,117 +191,131 @@ public class LuggageOverview extends javax.swing.JPanel {
         jLabel26.setText(Main.getLoggedLabel());
         jLabel26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jButton66.setBackground(new java.awt.Color(157, 11, 15));
-        jButton66.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton66.setForeground(new java.awt.Color(255, 255, 255));
-        jButton66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton66.setText("Add customer");
-        jButton66.setBorder(null);
-        jButton66.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton66.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton66.setInheritsPopupMenu(true);
-        jButton66.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton66.addActionListener(new java.awt.event.ActionListener() {
+        jButton71.setBackground(new java.awt.Color(157, 11, 15));
+        jButton71.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton71.setForeground(new java.awt.Color(255, 255, 255));
+        jButton71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton71.setText("Add customer");
+        jButton71.setBorder(null);
+        jButton71.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton71.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton71.setInheritsPopupMenu(true);
+        jButton71.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton66ActionPerformed(evt);
+                jButton71ActionPerformed(evt);
             }
         });
 
-        jButton63.setBackground(new java.awt.Color(157, 11, 15));
-        jButton63.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton63.setForeground(new java.awt.Color(255, 255, 255));
-        jButton63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton63.setText("Find customer");
-        jButton63.setBorder(null);
-        jButton63.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton63.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton63.setInheritsPopupMenu(true);
-        jButton63.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton63.addActionListener(new java.awt.event.ActionListener() {
+        jButton72.setBackground(new java.awt.Color(157, 11, 15));
+        jButton72.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton72.setForeground(new java.awt.Color(255, 255, 255));
+        jButton72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton72.setText("Find customer");
+        jButton72.setBorder(null);
+        jButton72.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton72.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton72.setInheritsPopupMenu(true);
+        jButton72.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton72.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton63ActionPerformed(evt);
+                jButton72ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout TopBarLayout = new javax.swing.GroupLayout(TopBar);
-        TopBar.setLayout(TopBarLayout);
-        TopBarLayout.setHorizontalGroup(
-            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopBarLayout.createSequentialGroup()
+        javax.swing.GroupLayout TopBar1Layout = new javax.swing.GroupLayout(TopBar1);
+        TopBar1.setLayout(TopBar1Layout);
+        TopBar1Layout.setHorizontalGroup(
+            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopBar1Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
-                .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton66, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(jLabel26)
                 .addGap(54, 54, 54)
-                .addComponent(jButton65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton70)
                 .addContainerGap())
         );
-        TopBarLayout.setVerticalGroup(
-            TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopBarLayout.createSequentialGroup()
+        TopBar1Layout.setVerticalGroup(
+            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopBar1Layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel26))
-                    .addComponent(jButton65, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton70, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        add(TopBar);
-        TopBar.setBounds(0, 0, 1044, 55);
+        add(TopBar1);
+        TopBar1.setBounds(0, 0, 1044, 55);
+
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(910, 70, 119, 23);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButton1ActionPerformed
 
-    private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
+    private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
         Main.getInstance().showPanel(new UserMenu());
-    }//GEN-LAST:event_jButton61ActionPerformed
+    }//GEN-LAST:event_jButton67ActionPerformed
 
-    private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        Main.getInstance().showPanel(new view.desk.AddLuggage());
-    }//GEN-LAST:event_jButton62ActionPerformed
+    private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
 
-    private void jButton64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton64ActionPerformed
+    }//GEN-LAST:event_jButton68ActionPerformed
+
+    private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
         Main.getInstance().showPanel(new FindLuggageUser());
-    }//GEN-LAST:event_jButton64ActionPerformed
+    }//GEN-LAST:event_jButton69ActionPerformed
 
-    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
+    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton65ActionPerformed
+    }//GEN-LAST:event_jButton70ActionPerformed
 
-    private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
-        Main.getInstance().showPanel(new view.desk.AddCustomer());
-    }//GEN-LAST:event_jButton66ActionPerformed
+    private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton71ActionPerformed
 
-    private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
-        Main.getInstance().showPanel(new view.desk.FindCustomer());
-    }//GEN-LAST:event_jButton63ActionPerformed
+    private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
+        Main.getInstance().showPanel(new FindCustomer());
+    }//GEN-LAST:event_jButton72ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogoutButton1;
     private javax.swing.JTable LuggageOverviewTable;
-    private java.awt.Panel TopBar;
-    private javax.swing.JButton jButton61;
-    private javax.swing.JButton jButton62;
-    private javax.swing.JButton jButton63;
-    private javax.swing.JButton jButton64;
-    private javax.swing.JButton jButton65;
-    private javax.swing.JButton jButton66;
+    private java.awt.Panel TopBar1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton67;
+    private javax.swing.JButton jButton68;
+    private javax.swing.JButton jButton69;
+    private javax.swing.JButton jButton70;
+    private javax.swing.JButton jButton71;
+    private javax.swing.JButton jButton72;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JScrollPane jScrollPane1;

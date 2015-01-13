@@ -55,7 +55,7 @@ public class Customer {
     }
     
     public String getPhone() throws SQLException {
-        return data.getString("phone");
+        return data.getString("phone_number");
     }
 
     public String getEmail() throws SQLException {

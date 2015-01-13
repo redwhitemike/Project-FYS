@@ -4,7 +4,6 @@ import Main.Main;
 import connection.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JPanel;
 
 /**
  *
@@ -25,22 +24,54 @@ public class Employee extends Main {
         id = employeeNumber;
     }
     
+    /**
+     * Get the employee number
+     * @return 
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Get the user id
+     * @return 
+     */
+    public int getUserId() throws SQLException {
+        return data.getInt("userid");
+    }
+    
+    /**
+     * Get the password of the employee (Database version)
+     * @return
+     * @throws SQLException 
+     */
     public String getPassword() throws SQLException {
         return data.getString("password");
     }
     
+    /**
+     * Get the username of the employee
+     * @return
+     * @throws SQLException 
+     */
     public String getUsername() throws SQLException {
         return data.getString("username");
     }
     
+    /**
+     * Get the first name of the employee
+     * @return
+     * @throws SQLException 
+     */
     public String getName() throws SQLException {
         return data.getString("name");
     }
     
+    /**
+     * Get the insertion of the employee
+     * @return
+     * @throws SQLException 
+     */
     public String getInsertion() throws SQLException {
         return data.getString("insertion");
     }
