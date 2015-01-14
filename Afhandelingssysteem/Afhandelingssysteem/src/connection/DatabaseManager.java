@@ -2,6 +2,7 @@ package connection;
 
 import Main.*;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +25,11 @@ public class DatabaseManager {
 
             Connection = DriverManager.getConnection(link, user, pass);
         } catch (SQLException | ClassNotFoundException e) {
+            if (e.getClass().getName().equals("com.mysql.jdbc.exceptions.jdbc4.CommunicationsException")) {
+                JOptionPane.showMessageDialog(null, "No database connection.");
+                System.exit(0);
+            }
+            
             Main.exceptionPrint(e);
         }
         

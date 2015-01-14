@@ -32,11 +32,8 @@ public class Main {
     public static final String NAME = "Corendon - Luggage System";
     
     private static final Main instance = new Main();
-<<<<<<< HEAD
-    public JFrame mainWindow;
-=======
+
     public static JFrame mainWindow;
->>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
    
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
