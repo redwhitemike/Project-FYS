@@ -1,22 +1,71 @@
 package view.admin;
 
-import Main.Main;
+import Main.*;
+import connection.EmployeeManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JTable;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Point;
+import model.Employee;
 
 /**
  *
  * @author IS104_2
  */
 public class UserOverview extends javax.swing.JPanel {
-    private static final AddUser adduser = new AddUser();
-    private static final UserOverview overview = new UserOverview();
-    private static final AdminMenu adminMenu = new AdminMenu();
     /**
      * Creates new form overview
      */
     public UserOverview() {
         initComponents();
+        fillTable(null);
     }
 
+    private void fillTable(String filter) {
+        DefaultTableModel tableModel = (DefaultTableModel) UserOverviewTable.getModel();
+        
+        EmployeeManager manager = new EmployeeManager();
+        Employee employee = new Employee();
+        
+        ResultSet employees;
+        
+        // Do we want to filter the results?
+        if (filter == null || filter.isEmpty()) {
+            employees = manager.getEmployees();
+        } else {
+            employees = manager.getEmployees(filter);
+        }
+        
+        try {
+            tableModel.setRowCount(0);
+            
+            while (employees.next()) {
+                String functionName;
+                
+                // Get the function name from the function ID
+                functionName = employee.getFunctionName(employees.getInt("function"));
+                
+                // Fill the table with information
+                tableModel.addRow(
+                        new Object[] {
+                            employees.getString("username"),
+                            employees.getString("name"),
+                            employees.getString("last_name"),
+                            employees.getInt("employee_number"), 
+                            employees.getString("location"), 
+                            functionName
+                    }
+                );
+            }
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,34 +75,95 @@ public class UserOverview extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuoverview = new java.awt.Panel();
+        SearchButton = new javax.swing.JButton();
+        SearchQuery = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        UserOverviewTable = new javax.swing.JTable();
+        EditButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
+        LogoutButton = new javax.swing.JButton();
+        MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
-        Functiondummytext = new javax.swing.JLabel();
-        locationdummytext = new javax.swing.JLabel();
-        employeenamedummytext = new javax.swing.JLabel();
-        namedummytext = new javax.swing.JLabel();
-        deletebutton = new javax.swing.JButton();
-        editbutton = new javax.swing.JButton();
-        overviewbackground = new javax.swing.JLabel();
-        searchbutton = new javax.swing.JButton();
-        search = new javax.swing.JTextField();
 
-        setLayout(null);
+        setPreferredSize(new java.awt.Dimension(1044, 600));
 
-        menuoverview.setBackground(new java.awt.Color(187, 29, 20));
-        menuoverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        menuoverview.setName(""); // NOI18N
-        menuoverview.setPreferredSize(new java.awt.Dimension(1044, 55));
+        SearchButton.setText("Search");
+        SearchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SearchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchButtonMouseClicked(evt);
+            }
+        });
+
+        SearchQuery.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        SearchQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchQueryActionPerformed(evt);
+            }
+        });
+
+        UserOverviewTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Username", "First Name", "Last Name", "Employee Number", "Location", "Function"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(UserOverviewTable);
+        if (UserOverviewTable.getColumnModel().getColumnCount() > 0) {
+            UserOverviewTable.getColumnModel().getColumn(0).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(1).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(2).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(3).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(4).setResizable(false);
+            UserOverviewTable.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        EditButton.setText("Edit employee");
+        EditButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditButtonActionPerformed(evt);
+            }
+        });
+
+        DeleteButton.setText("Delete employee");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
+
+        LogoutButton.setText("Log out");
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButtonActionPerformed(evt);
+            }
+        });
+
+        MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview.setName(""); // NOI18N
+        MenuOverview.setPreferredSize(new java.awt.Dimension(1044, 55));
 
         overviewusers.setBackground(new java.awt.Color(157, 11, 15));
         overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         overviewusers.setForeground(new java.awt.Color(255, 255, 255));
         overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
         overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         overviewusers.setInheritsPopupMenu(true);
         overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -64,6 +174,7 @@ public class UserOverview extends javax.swing.JPanel {
         });
 
         logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
         logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         logocorendon.setInheritsPopupMenu(true);
@@ -78,6 +189,7 @@ public class UserOverview extends javax.swing.JPanel {
         addusers.setForeground(new java.awt.Color(255, 255, 255));
         addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         addusers.setText("Add user");
+        addusers.setBorder(null);
         addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addusers.setInheritsPopupMenu(true);
         addusers.setPreferredSize(new java.awt.Dimension(145, 25));
@@ -89,10 +201,10 @@ public class UserOverview extends javax.swing.JPanel {
 
         help.setBackground(new java.awt.Color(187, 29, 20));
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
         help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         help.setInheritsPopupMenu(true);
-        help.setPreferredSize(new java.awt.Dimension(31, 31));
         help.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpActionPerformed(evt);
@@ -102,14 +214,14 @@ public class UserOverview extends javax.swing.JPanel {
         loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loggedinas.setForeground(new java.awt.Color(255, 255, 255));
         loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loggedinas.setText("Logged in as admin");
+        loggedinas.setText(Main.getLoggedLabel());
         loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout menuoverviewLayout = new javax.swing.GroupLayout(menuoverview);
-        menuoverview.setLayout(menuoverviewLayout);
-        menuoverviewLayout.setHorizontalGroup(
-            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuoverviewLayout.createSequentialGroup()
+        javax.swing.GroupLayout MenuOverviewLayout = new javax.swing.GroupLayout(MenuOverview);
+        MenuOverview.setLayout(MenuOverviewLayout);
+        MenuOverviewLayout.setHorizontalGroup(
+            MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuOverviewLayout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -118,114 +230,153 @@ public class UserOverview extends javax.swing.JPanel {
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(help)
+                .addContainerGap())
         );
-        menuoverviewLayout.setVerticalGroup(
-            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createSequentialGroup()
+        MenuOverviewLayout.setVerticalGroup(
+            MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOverviewLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(loggedinas)
                         .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(help)
                     .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
 
-        add(menuoverview);
-        menuoverview.setBounds(0, 0, 1044, 55);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(580, 580, 580)
+                        .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(EditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LogoutButton)
+                .addContainerGap())
+            .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogoutButton)
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SearchQuery))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EditButton)
+                    .addComponent(DeleteButton))
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
 
-        Functiondummytext.setText("Function");
-        Functiondummytext.setToolTipText("");
-        add(Functiondummytext);
-        Functiondummytext.setBounds(190, 220, 110, 16);
-
-        locationdummytext.setText("Location");
-        locationdummytext.setToolTipText("");
-        add(locationdummytext);
-        locationdummytext.setBounds(190, 200, 110, 16);
-
-        employeenamedummytext.setText("Employee number");
-        employeenamedummytext.setToolTipText("");
-        add(employeenamedummytext);
-        employeenamedummytext.setBounds(190, 180, 120, 16);
-
-        namedummytext.setText("Name");
-        add(namedummytext);
-        namedummytext.setBounds(190, 160, 80, 16);
-
-        deletebutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
-        deletebutton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        deletebutton.setPreferredSize(new java.awt.Dimension(30, 25));
-        add(deletebutton);
-        deletebutton.setBounds(340, 200, 30, 25);
-
-        editbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/edit.png"))); // NOI18N
-        editbutton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        editbutton.setPreferredSize(new java.awt.Dimension(30, 25));
-        add(editbutton);
-        editbutton.setBounds(340, 160, 30, 25);
-
-        overviewbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/overviewbackground.png"))); // NOI18N
-        add(overviewbackground);
-        overviewbackground.setBounds(170, 150, 200, 95);
-
-        searchbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/view.png"))); // NOI18N
-        searchbutton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(searchbutton);
-        searchbutton.setBounds(890, 100, 30, 25);
-
-        search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        search.setText("Search");
-        search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
-            }
-        });
-        add(search);
-        search.setBounds(720, 90, 210, 40);
+        getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SearchQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQueryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchQueryActionPerformed
+
+    private void SearchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchButtonMouseClicked
+        this.fillTable(SearchQuery.getText());
+    }//GEN-LAST:event_SearchButtonMouseClicked
+
+    private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
+        int selectedRows = UserOverviewTable.getSelectedRows().length;
+        
+        if (selectedRows == 0) {
+            JOptionPane.showMessageDialog(this, "You didn't select an employee.");
+        } else if(selectedRows > 1) {
+            JOptionPane.showMessageDialog(this, "You may only edit one employee at the time.");
+        } else {
+            // We need to get the employee number of the selected row.
+            int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 3).toString());
+            
+            Main.getInstance().showPanel(new view.admin.EditUser(employeeNumber));
+        }
+    }//GEN-LAST:event_EditButtonActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        EmployeeManager manager = new EmployeeManager();
+        
+        int selectedRows = UserOverviewTable.getSelectedRows().length;
+        
+        // Prevent deleting multiple employees
+        if (selectedRows == 0) {
+            JOptionPane.showMessageDialog(this, "You didn't select an employee.");
+        } else if(selectedRows > 1) {
+            JOptionPane.showMessageDialog(this, "You may only delete one employee at the time.");
+        } else {
+            int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this employee?\nThis action can not be reverted.");
+            
+            // Make sure the administrator wants to delete the employee to avoid mistakes
+            if (confirm == JOptionPane.YES_OPTION) {
+                int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 3).toString());
+                manager.deleteEmployee(employeeNumber);
+                
+                JOptionPane.showMessageDialog(this, "Employee " + employeeNumber + " has been deleted.\nRefreshing table.");
+                this.fillTable(SearchQuery.getText());
+            }
+        }
+    }//GEN-LAST:event_DeleteButtonActionPerformed
+
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButtonActionPerformed
+
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(overview);
+        Main.getInstance().showPanel(new view.admin.UserOverview());
     }//GEN-LAST:event_overviewusersActionPerformed
 
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(adminMenu);
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
     }//GEN-LAST:event_logocorendonActionPerformed
 
     private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(adduser);
+        Main.getInstance().showPanel(new view.admin.AddUser());
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        // TODO add your handling code here:
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
     }//GEN-LAST:event_helpActionPerformed
-
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Functiondummytext;
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JButton EditButton;
+    private javax.swing.JButton LogoutButton;
+    private java.awt.Panel MenuOverview;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchQuery;
+    private javax.swing.JTable UserOverviewTable;
     private javax.swing.JButton addusers;
-    private javax.swing.JButton deletebutton;
-    private javax.swing.JButton editbutton;
-    private javax.swing.JLabel employeenamedummytext;
     private javax.swing.JButton help;
-    private javax.swing.JLabel locationdummytext;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel loggedinas;
     private javax.swing.JButton logocorendon;
-    private java.awt.Panel menuoverview;
-    private javax.swing.JLabel namedummytext;
-    private javax.swing.JLabel overviewbackground;
     private javax.swing.JButton overviewusers;
-    private javax.swing.JTextField search;
-    private javax.swing.JButton searchbutton;
     // End of variables declaration//GEN-END:variables
 }

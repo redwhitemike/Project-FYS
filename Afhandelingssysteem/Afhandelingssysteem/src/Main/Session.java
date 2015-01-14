@@ -44,4 +44,12 @@ public class Session {
     public void removeKey(String key) {
         values.remove(key);
     }
+    
+    /**
+     * Logs the user out, removing the session values and showing the login screen.
+     */
+    public void logoutUser() {
+        values.clear();
+        Main.getInstance().showPanel(new view.desk.LoginPanel());
+    }
 }
