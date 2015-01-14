@@ -822,6 +822,7 @@ public class AddUser extends javax.swing.JPanel {
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
                 Main.showHelpMenu(new Handleiding.HelpAdmin());
+                Main.pressHelpKey(help);
     }//GEN-LAST:event_helpActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
