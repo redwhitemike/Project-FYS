@@ -122,25 +122,8 @@ public class Main {
     
     public static void pressHelpKey(final JButton button){
        
-        button.addKeyListener(new KeyListener() {
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent ke) {
-                int key = ke.getKeyCode();
-                if (key == KeyEvent.VK_F1) {
-                    button.doClick(0);
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent ke) {
-            }
-
-        });
+       
+        button.setMnemonic(KeyEvent.VK_F1);
     }
     
     public boolean onlyNumbers(String text) {
