@@ -300,9 +300,7 @@ public class UserTable extends javax.swing.JPanel {
             // We need to get the employee number of the selected row.
             int employeeNumber = Integer.parseInt(UserOverviewTable.getValueAt(UserOverviewTable.getSelectedRow(), 3).toString());
             
-            // Store the value so we can retrieve it later when we are going to edit the employee.
-            Session.getInstance().setValue("EditEmployee", employeeNumber);
-            Main.getInstance().showPanel(new view.admin.EditUser());
+            Main.getInstance().showPanel(new view.admin.EditUser(employeeNumber));
         }
     }//GEN-LAST:event_EditButtonActionPerformed
 

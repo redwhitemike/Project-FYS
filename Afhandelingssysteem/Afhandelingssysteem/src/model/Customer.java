@@ -14,6 +14,10 @@ public class Customer {
     CustomerManager manager = new CustomerManager();
     ResultSet data;
     
+    public Customer() {
+        
+    }
+    
     public Customer(int customerId) {
         data = manager.getCustomer(customerId);
     }
@@ -39,7 +43,7 @@ public class Customer {
     }
     
     public String getZipcode() throws SQLException {
-        return data.getString("zipcode");
+        return data.getString("postcode");
     }
     
     public String getCountry() throws SQLException {
@@ -72,6 +76,10 @@ public class Customer {
     
     public String getDestination() throws SQLException {
         return data.getString("destination");
+    }
+    
+    public boolean isFound(int id) {
+        return manager.findId(id);
     }
     
 }

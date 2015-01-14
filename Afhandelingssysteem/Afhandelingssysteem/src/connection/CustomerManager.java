@@ -30,8 +30,8 @@ public class CustomerManager extends QueryManager {
 
         try {
             String query = 
-                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, zipcode, city, country, phone_number, `e-mail`) "
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, postcode, city, country, phone_number, `e-mail`) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());
             statement.setString(2, values.get("LastName").toString());
@@ -48,23 +48,26 @@ public class CustomerManager extends QueryManager {
         }
     }
     
-    public void editCustomer(int customerId, String firstName, String lastName, String address, String zipcode, String city, 
-                            String country, String phone, String email) {
+    public void editCustomer(int customerId, HashMap<String, Object> values) {
         try {
-            String query = "";
+            String query = 
+                    "UPDATE Customer SET first_name = ?, last_name = ?, home_address = ?, stay_address = ?, postcode = ?, city = ?, country = ?, phone_number = ?, `e-mail` = ? "
+                    + "WHERE customer_id = ?";
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setString(1, firstName);
-            statement.setString(2, lastName);
-            statement.setString(3, address);
-            statement.setString(4, zipcode);
-            statement.setString(5, city);
-            statement.setString(6, country);
-            statement.setString(7, phone);
-            statement.setString(8, email);
+            statement.setString(1, values.get("FirstName").toString());
+            statement.setString(2, values.get("LastName").toString());
+            statement.setString(3, values.get("HomeAddress").toString());
+            statement.setString(4, values.get("StayAddress").toString());
+            statement.setString(5, values.get("Zipcode").toString());
+            statement.setString(6, values.get("City").toString());
+            statement.setString(7, values.get("Country").toString());
+            statement.setString(8, values.get("Phone").toString());
+            statement.setString(9, values.get("Email").toString());
+            statement.setInt(10, customerId);
             statement.execute();
         } catch (SQLException e) {
-            System.err.println(e);
-        }        
+            Main.exceptionPrint(e);
+        }       
     }
     
     /**
@@ -74,7 +77,7 @@ public class CustomerManager extends QueryManager {
      */
     public ResultSet getCustomer(int customerid) {
         ResultSet result = null;
-        String query = "SELECT * FROM Customer WHERE customerid = ?";
+        String query = "SELECT * FROM Customer WHERE customer_id = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
@@ -129,15 +132,39 @@ public class CustomerManager extends QueryManager {
      * @param customerid 
      */
     public void deleteCustomer(int customerid) {
-        String query = "DELETE FROM Customer WHERE customerid = ?";
+        String query = "DELETE FROM Customer WHERE customer_id = ?";
+        String queryFlight = "DELETE FROM Flight WHERE customer_id = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setInt(1, customerid);
             statement.execute();
+            
+            statement = Connection.prepareStatement(queryFlight);
+            statement.setInt(1, customerid);
+            statement.execute();
         } catch (SQLException e) {
             System.err.println(e);
         }
+    }
+    
+    public boolean findId(int id) {
+         String query = "SELECT COUNT(*) as count FROM Customer WHERE customer_id = ?";
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, id);
+            statement.execute();
+            
+            ResultSet result = statement.getResultSet();
+            result.next();
+            
+            return result.getInt("count") > 0;
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }       
+        
+        return false;
     }
     
 }

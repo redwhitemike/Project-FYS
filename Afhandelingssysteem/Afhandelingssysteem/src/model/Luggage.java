@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class Luggage extends Main {
 
     private ResultSet data;
+    private FlightManager flightManager = new FlightManager();
     private LuggageManager manager = new LuggageManager();
     
     public Luggage() {
@@ -23,12 +24,16 @@ public class Luggage extends Main {
         data = manager.getLuggage(labelNumber);
     }
     
+    public int getOwner() throws SQLException {
+        return flightManager.getOwnerByLabel(this.getLabelNumber());
+    }
+    
     public int getLabelNumber() throws SQLException {
         return data.getInt("label_number");
     }
     
-    public int getFlightNumber() throws SQLException {
-        return data.getInt("flight_number");
+    public String getFlightNumber() throws SQLException {
+        return data.getString("flight_number");
     }
     
     public double getWeight() throws SQLException {
@@ -87,5 +92,45 @@ public class Luggage extends Main {
             default:
                 return "Other";
         }
+    }
+    
+    public String getStatusText(int status) {
+        String statusText;
+                
+        switch (status) {
+            case Main.LUGGAGE_MISSING:
+                statusText = "Missing";
+                break;
+
+            case Main.LUGGAGE_FOUND:
+                statusText = "Found";
+                break;
+
+            default:
+                statusText = "Unknown status";
+                break;
+        }
+        
+        return statusText;
+    }
+    
+    public int getStatusInteger(String status) {
+        int statusValue = -1;
+                
+        switch (status) {
+            case "Missing":
+                statusValue = Main.LUGGAGE_MISSING;
+                break;
+
+            case "Found":
+                statusValue = Main.LUGGAGE_FOUND;
+                break;
+
+            default:
+                statusValue = -1;
+                break;
+        }
+        
+        return statusValue;
     }
 }
