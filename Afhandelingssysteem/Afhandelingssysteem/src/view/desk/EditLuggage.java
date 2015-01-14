@@ -37,7 +37,7 @@ public class EditLuggage extends javax.swing.JPanel {
         luggage = new Luggage(labelNumber);
  
         try {
-            flight = new Flight(luggage.getLabelNumber(), luggage.getFlightNumber());
+            flight = new Flight(luggage.getLabelNumber());
         } catch (SQLException e) {
             Main.exceptionPrint(e);
         }
@@ -742,6 +742,12 @@ public class EditLuggage extends javax.swing.JPanel {
         jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel37.setText("Customer ID:");
 
+        CustomerID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerIDActionPerformed(evt);
+            }
+        });
+
         jLabel38.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel38.setText("Departed from:");
 
@@ -1009,23 +1015,28 @@ public class EditLuggage extends javax.swing.JPanel {
             // Validate the fields
             fieldsValidator();
 
-
+            if (!CustomerID.getText().isEmpty()) {
+                checkCustomerExistance(Integer.parseInt(CustomerID.getText()));
+                
+                isCustomerEmpty = false;
+            }
+            
             FlightManager flightManager = new FlightManager();
             LuggageManager luggageManager = new LuggageManager();
             Luggage luggageModel = new Luggage();
 
             HashMap<String, Object> values = new HashMap<>();
             values.put("LabelNumber", LabelNumber.getText());
-            values.put("FlightNumber", FlightNumber.getText());
+            values.put("FlightNumber", FlightNumberField.getText());
             values.put("Weight", WeightField.getText());
             values.put("Colour", ColourField.getText());
             values.put("Type", luggageModel.typeToInt(LuggageType.getSelectedItem().toString()));
             values.put("Description", Description.getText());
             values.put("Status", luggageModel.getStatusInteger(Status.getSelectedItem().toString()));
-            values.put("DepartedFrom", DepartedFrom.getText());
+            values.put("DepartedFrom", DepartedFromField.getText());
             values.put("LostAt", LostAt.getText());
-            values.put("Destination", Destination.getText());
-
+            values.put("Destination", DestinationField.getText());
+            
             // Update the luggage
             luggageManager.editLuggage(luggage.getLabelNumber(), values);
             
@@ -1033,7 +1044,8 @@ public class EditLuggage extends javax.swing.JPanel {
             flightManager.editFlightData(luggage.getLabelNumber(), luggage.getFlightNumber(), values);
             
             if (!isCustomerEmpty) {
-                //flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
+                System.out.println("Update the owner");
+                flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
             }
 
             JOptionPane.showMessageDialog(null, "Luggage has been updated");
@@ -1050,6 +1062,10 @@ public class EditLuggage extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Main.getInstance().showPanel(new view.desk.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CustomerIDActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

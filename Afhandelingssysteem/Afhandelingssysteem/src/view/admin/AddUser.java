@@ -127,13 +127,14 @@ public class AddUser extends javax.swing.JPanel {
         Manager = new javax.swing.JRadioButton();
         Balie = new javax.swing.JRadioButton();
         jLabel29 = new javax.swing.JLabel();
-        LogoutButton = new javax.swing.JButton();
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -694,13 +695,6 @@ public class AddUser extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        LogoutButton.setText("Log out");
-        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutButtonActionPerformed(evt);
-            }
-        });
-
         MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
         MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuOverview.setName(""); // NOI18N
@@ -778,7 +772,7 @@ public class AddUser extends javax.swing.JPanel {
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(help)
                 .addContainerGap())
         );
@@ -796,6 +790,20 @@ public class AddUser extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -803,10 +811,12 @@ public class AddUser extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(296, 296, 296)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(262, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LogoutButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(LogoutButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
             .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -814,10 +824,15 @@ public class AddUser extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LogoutButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton1)))
                 .addGap(0, 222, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -1010,9 +1025,13 @@ public class AddUser extends javax.swing.JPanel {
         Manager.setSelected(false);
     }//GEN-LAST:event_BalieMouseClicked
 
-    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
         Session.getInstance().logoutUser();
-    }//GEN-LAST:event_LogoutButtonActionPerformed
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
 
 
 
@@ -1033,7 +1052,7 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField Lastname;
     private javax.swing.JTextField Location;
-    private javax.swing.JButton LogoutButton;
+    private javax.swing.JButton LogoutButton1;
     private javax.swing.JRadioButton Manager;
     private java.awt.Panel MenuOverview;
     private javax.swing.JTextField Name;
@@ -1048,6 +1067,7 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JButton addusers;
     private javax.swing.JTextField eMail;
     private javax.swing.JButton help;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
