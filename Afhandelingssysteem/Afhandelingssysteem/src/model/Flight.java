@@ -19,8 +19,8 @@ public class Flight extends Main {
     
     FlightManager manager = new FlightManager();
     
-    public Flight(int luggageID, String flightNumber) {
-        data = manager.getFlightData(luggageID, flightNumber);
+    public Flight(int luggageID) {
+        data = manager.getFlightData(luggageID);
     }
     
     public String getDepartedFrom() throws SQLException {

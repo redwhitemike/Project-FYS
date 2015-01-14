@@ -479,9 +479,9 @@ public class FindLuggageUser extends javax.swing.JPanel {
                     .addComponent(EditLuggage)
                     .addComponent(DeleteLuggage)
                     .addComponent(LogoutButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -547,7 +547,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
             int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this luggage?\nThis action can not be reverted.");
             // Make sure the employee wants to delete the luggage to avoid mistakes.
             if (confirm == JOptionPane.YES_OPTION) {
-                int labelNumber = Integer.parseInt(LuggageTable.getValueAt(LuggageTable.getSelectedRow(), 1).toString());
+                int labelNumber = Integer.parseInt(LuggageTable.getValueAt(LuggageTable.getSelectedRow(), 0).toString());
                 manager.deleteLuggage(labelNumber);
 
                 JOptionPane.showMessageDialog(this, "Luggage with label number " + labelNumber + " has been deleted.\nRefreshing table.");

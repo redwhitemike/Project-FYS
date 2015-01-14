@@ -131,11 +131,11 @@ public class LuggageManager extends QueryManager {
         String queryFlight = "DELETE FROM Flight WHERE luggage_id = ?";
         
         try {
-            PreparedStatement statement = Connection.prepareStatement(query);
+            PreparedStatement statement = Connection.prepareStatement(queryFlight);
             statement.setInt(1, labelNumber);
             statement.execute();
             
-            statement = Connection.prepareStatement(queryFlight);
+            statement = Connection.prepareStatement(query);
             statement.setInt(1, labelNumber);
             statement.execute();
         } catch (SQLException e) {

@@ -39,7 +39,7 @@ public class FlightManager extends QueryManager {
     
     public void editFlightData(int label, String flight, HashMap<String, Object> values) {
         String query = "UPDATE Flight SET flight_number = ?, departed_from = ?, lost_at = ?, destination = ? "
-                + "WHERE label_number = ? AND flight_number = ?";
+                + "WHERE luggage_id = ? AND flight_number = ?";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
@@ -127,14 +127,18 @@ public class FlightManager extends QueryManager {
         }
     }
     
-    public ResultSet getFlightData(int labelNumber, String flightNumber) {
-        String query = "SELECT * FROM Flight WHERE luggage_id = ? AND flight_number = ?";
+    /**
+     * Returns flight data based on label number
+     * @param labelNumber
+     * @return 
+     */
+    public ResultSet getFlightData(int labelNumber) {
+        String query = "SELECT * FROM Flight WHERE luggage_id = ?";
         ResultSet result;
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setInt(1, labelNumber);
-            statement.setString(2, flightNumber);
             statement.execute();
             
             result = statement.getResultSet();
