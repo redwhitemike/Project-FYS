@@ -122,6 +122,38 @@ public class LuggageManager extends QueryManager {
         return result;
     }
     
+    public ResultSet getLuggagesManager(String query) {
+        ResultSet result = null;
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
+    public ResultSet getLuggagesManager(String query, String filter) {
+        ResultSet result = null;
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, Integer.parseInt(filter));
+            statement.setString(2, filter);
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
     /**
      * Deletes luggage from the database.
      * @param labelNumber

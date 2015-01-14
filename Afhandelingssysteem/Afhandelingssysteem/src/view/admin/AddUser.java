@@ -1026,7 +1026,7 @@ public class AddUser extends javax.swing.JPanel {
     }//GEN-LAST:event_BalieMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.admin.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed

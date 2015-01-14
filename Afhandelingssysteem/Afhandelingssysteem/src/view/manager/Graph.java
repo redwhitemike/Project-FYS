@@ -49,14 +49,14 @@ public class Graph extends javax.swing.JPanel {
         YearComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         ChartPanel = new javax.swing.JPanel();
-        panel12 = new java.awt.Panel();
-        List = new javax.swing.JButton();
-        Home = new javax.swing.JButton();
-        Graphs = new javax.swing.JButton();
-        help = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         LogoutButton1 = new javax.swing.JButton();
+        MenuOverview2 = new java.awt.Panel();
+        List2 = new javax.swing.JButton();
+        logocorendon2 = new javax.swing.JButton();
+        Graphs = new javax.swing.JButton();
+        help2 = new javax.swing.JButton();
+        loggedinas2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -72,103 +72,6 @@ public class Graph extends javax.swing.JPanel {
 
         ChartPanel.setLayout(new java.awt.BorderLayout());
 
-        panel12.setBackground(new java.awt.Color(187, 29, 20));
-        panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panel12.setName(""); // NOI18N
-        panel12.setPreferredSize(new java.awt.Dimension(1044, 55));
-
-        List.setBackground(new java.awt.Color(157, 11, 15));
-        List.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        List.setForeground(new java.awt.Color(255, 255, 255));
-        List.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        List.setText("List luggage");
-        List.setBorder(null);
-        List.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        List.setInheritsPopupMenu(true);
-        List.setPreferredSize(new java.awt.Dimension(145, 25));
-        List.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ListActionPerformed(evt);
-            }
-        });
-
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        Home.setBorder(null);
-        Home.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Home.setInheritsPopupMenu(true);
-        Home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeActionPerformed(evt);
-            }
-        });
-
-        Graphs.setBackground(new java.awt.Color(157, 11, 15));
-        Graphs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Graphs.setForeground(new java.awt.Color(255, 255, 255));
-        Graphs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        Graphs.setText("Graphs");
-        Graphs.setBorder(null);
-        Graphs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Graphs.setInheritsPopupMenu(true);
-        Graphs.setPreferredSize(new java.awt.Dimension(145, 25));
-        Graphs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GraphsActionPerformed(evt);
-            }
-        });
-
-        help.setBackground(new java.awt.Color(187, 29, 20));
-        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
-        help.setBorder(null);
-        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        help.setInheritsPopupMenu(true);
-        help.setPreferredSize(new java.awt.Dimension(31, 31));
-        help.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText(Main.getLoggedLabel());
-        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
-        panel12.setLayout(panel12Layout);
-        panel12Layout.setHorizontalGroup(
-            panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(340, 340, 340)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        panel12Layout.setVerticalGroup(
-            panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(List, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11)
-                        .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(help, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
         jButton1.setText("Change password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,10 +86,107 @@ public class Graph extends javax.swing.JPanel {
             }
         });
 
+        MenuOverview2.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview2.setName(""); // NOI18N
+        MenuOverview2.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        List2.setBackground(new java.awt.Color(157, 11, 15));
+        List2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        List2.setForeground(new java.awt.Color(255, 255, 255));
+        List2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        List2.setText("List luggage");
+        List2.setBorder(null);
+        List2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        List2.setInheritsPopupMenu(true);
+        List2.setPreferredSize(new java.awt.Dimension(145, 25));
+        List2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                List2ActionPerformed(evt);
+            }
+        });
+
+        logocorendon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon2.setBorder(null);
+        logocorendon2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon2.setInheritsPopupMenu(true);
+        logocorendon2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendon2ActionPerformed(evt);
+            }
+        });
+
+        Graphs.setBackground(new java.awt.Color(157, 11, 15));
+        Graphs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Graphs.setForeground(new java.awt.Color(255, 255, 255));
+        Graphs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        Graphs.setText("Graphs");
+        Graphs.setToolTipText("");
+        Graphs.setBorder(null);
+        Graphs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Graphs.setInheritsPopupMenu(true);
+        Graphs.setPreferredSize(new java.awt.Dimension(145, 25));
+        Graphs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GraphsActionPerformed(evt);
+            }
+        });
+
+        help2.setBackground(new java.awt.Color(187, 29, 20));
+        help2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help2.setBorder(null);
+        help2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help2.setInheritsPopupMenu(true);
+        help2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                help2ActionPerformed(evt);
+            }
+        });
+
+        loggedinas2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas2.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setText(Main.getLoggedLabel());
+        loggedinas2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout MenuOverview2Layout = new javax.swing.GroupLayout(MenuOverview2);
+        MenuOverview2.setLayout(MenuOverview2Layout);
+        MenuOverview2Layout.setHorizontalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuOverview2Layout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(help2)
+                .addContainerGap())
+        );
+        MenuOverview2Layout.setVerticalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOverview2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas2)
+                        .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help2)
+                    .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MenuOverview2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,31 +195,29 @@ public class Graph extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(YearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(LogoutButton1))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(ChartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(LogoutButton1))
+                    .addComponent(ChartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1044, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
-            .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MenuOverview2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(YearComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton1)))
-                .addGap(32, 32, 32)
+                .addGap(18, 156, Short.MAX_VALUE)
                 .addComponent(ChartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -229,44 +227,55 @@ public class Graph extends javax.swing.JPanel {
         
     }//GEN-LAST:event_YearComboBoxActionPerformed
 
-    private void ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListActionPerformed
-
-    }//GEN-LAST:event_ListActionPerformed
-
-    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-        Main.getInstance().showPanel(new view.manager.ManagerMenu());
-    }//GEN-LAST:event_HomeActionPerformed
-
-    private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
-        Main.getInstance().showPanel(new view.manager.Graph());
-    }//GEN-LAST:event_GraphsActionPerformed
-
-    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        Main.showHelpMenu(new Handleiding.HelpManager());
-        Main.pressHelpKey(help);
-    }//GEN-LAST:event_helpActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.manager.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButton1ActionPerformed
 
+    private void List2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_List2ActionPerformed
+        Main.getInstance().showPanel(new view.manager.Lists());
+    }//GEN-LAST:event_List2ActionPerformed
+
+    private void logocorendon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendon2ActionPerformed
+
+    }//GEN-LAST:event_logocorendon2ActionPerformed
+
+    private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
+        Main.getInstance().showPanel(new view.manager.Graph());
+    }//GEN-LAST:event_GraphsActionPerformed
+
+    private void help2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help2ActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+    }//GEN-LAST:event_help2ActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ChartPanel;
     private javax.swing.JButton Graphs;
-    private javax.swing.JButton Home;
     private javax.swing.JButton List;
+    private javax.swing.JButton List1;
+    private javax.swing.JButton List2;
     private javax.swing.JButton LogoutButton1;
+    private java.awt.Panel MenuOverview;
+    private java.awt.Panel MenuOverview1;
+    private java.awt.Panel MenuOverview2;
     private javax.swing.JComboBox YearComboBox;
+    private javax.swing.JButton addusers;
+    private javax.swing.JButton addusers1;
     private javax.swing.JButton help;
+    private javax.swing.JButton help1;
+    private javax.swing.JButton help2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private java.awt.Panel panel12;
+    private javax.swing.JLabel loggedinas;
+    private javax.swing.JLabel loggedinas1;
+    private javax.swing.JLabel loggedinas2;
+    private javax.swing.JButton logocorendon;
+    private javax.swing.JButton logocorendon1;
+    private javax.swing.JButton logocorendon2;
     // End of variables declaration//GEN-END:variables
 }
