@@ -6,6 +6,8 @@ import connection.PasswordManager;
 import model.Login;
 import javax.swing.JOptionPane;
 import java.awt.Cursor;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  *
@@ -19,7 +21,23 @@ public class ForgotPassword extends javax.swing.JPanel {
      */
     public ForgotPassword() {
         initComponents();
+        EmailField.addKeyListener(new KeyListener(){
+             @Override
+            public void keyTyped(KeyEvent ke) {
+            }
 
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    SubmitButton.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+            });
     }
 
     private void fieldsValidator() {

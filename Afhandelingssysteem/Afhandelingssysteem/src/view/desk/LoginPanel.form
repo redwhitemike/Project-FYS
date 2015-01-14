@@ -200,11 +200,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jButton3" min="-2" pref="185" max="-2" attributes="0"/>
-
                   <EmptySpace min="-2" pref="797" max="-2" attributes="0"/>
                   <Component id="help" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="31" max="32767" attributes="0"/>
-
               </Group>
           </Group>
         </DimensionLayout>
@@ -214,12 +212,10 @@
                   <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButton3" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
-
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Component id="help" min="-2" max="-2" attributes="0"/>
                       </Group>
-
                   </Group>
               </Group>
           </Group>
@@ -260,9 +256,6 @@
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="inheritsPopupMenu" type="boolean" value="true"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[31, 31]"/>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="helpActionPerformed"/>
