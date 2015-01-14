@@ -319,14 +319,13 @@ public class UserMenu extends javax.swing.JPanel {
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
 
-<<<<<<< HEAD
     }//GEN-LAST:event_jButton68ActionPerformed
-=======
+
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
         Main.showHelpMenu(new Handleiding.HelpEmployee());
-        Main.pressHelpKey(jButton65);
+        Main.pressHelpKey(jButton70);
     }//GEN-LAST:event_jButton65ActionPerformed
->>>>>>> 102ed56eb0276697d2e82a69ab3fdffb70dc7fa3
+
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
         Main.getInstance().showPanel(new FindLuggageUser());

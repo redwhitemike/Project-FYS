@@ -1,12 +1,11 @@
 package view.admin;
 
 import Main.Main;
-<<<<<<< HEAD
 import Main.Session;
-=======
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
->>>>>>> 102ed56eb0276697d2e82a69ab3fdffb70dc7fa3
+
 
 /**
  *
@@ -213,7 +212,7 @@ public class AdminMenu extends javax.swing.JPanel {
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpAdmin());
-        Main.pressHelpKey(Help);
+        Main.pressHelpKey(help);
     }//GEN-LAST:event_HelpActionPerformed
 
 

@@ -453,18 +453,17 @@ public class AddCustomer extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstNameActionPerformed
 
-<<<<<<< HEAD
+
     private void LastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LastNameActionPerformed
-=======
+
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
         Main.showHelpMenu(new Handleiding.HelpEmployee());
-        Main.pressHelpKey(jButton65);
+        Main.pressHelpKey(jButton70);
     }//GEN-LAST:event_jButton65ActionPerformed
->>>>>>> 102ed56eb0276697d2e82a69ab3fdffb70dc7fa3
 
-    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {
         Main.showHelpMenu(new Handleiding.HelpEmployee());
     }
 
@@ -487,10 +486,6 @@ public class AddCustomer extends javax.swing.JPanel {
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
         Main.getInstance().showPanel(new FindLuggageUser());
     }//GEN-LAST:event_jButton69ActionPerformed
-
-    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
         // TODO add your handling code here:

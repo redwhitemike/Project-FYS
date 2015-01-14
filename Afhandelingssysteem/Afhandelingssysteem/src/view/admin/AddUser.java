@@ -822,10 +822,8 @@ public class AddUser extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(new view.admin.UserTable());
+        Main.getInstance().showPanel(new view.admin.UserOverview());
     }//GEN-LAST:event_overviewusersActionPerformed
 
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
@@ -841,7 +839,6 @@ public class AddUser extends javax.swing.JPanel {
                 Main.pressHelpKey(help);
     }//GEN-LAST:event_helpActionPerformed
 
->>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
 
     }//GEN-LAST:event_submitActionPerformed
@@ -1017,21 +1014,6 @@ public class AddUser extends javax.swing.JPanel {
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
 
-    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
-        Main.getInstance().showPanel(new view.admin.UserOverview());
-    }//GEN-LAST:event_overviewusersActionPerformed
-
-    private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
-        Main.getInstance().showPanel(new view.admin.AdminMenu());
-    }//GEN-LAST:event_logocorendonActionPerformed
-
-    private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
-        Main.getInstance().showPanel(new view.admin.AddUser());
-    }//GEN-LAST:event_addusersActionPerformed
-
-    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
-        Main.showHelpMenu(new Handleiding.HelpAdmin());
-    }//GEN-LAST:event_helpActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
