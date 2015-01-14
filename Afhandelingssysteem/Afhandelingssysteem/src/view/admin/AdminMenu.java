@@ -213,9 +213,7 @@ public class AdminMenu extends javax.swing.JPanel {
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpAdmin());
-        
         Main.pressHelpKey(Help);
-
     }//GEN-LAST:event_HelpActionPerformed
 
 

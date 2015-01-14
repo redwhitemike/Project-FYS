@@ -190,6 +190,7 @@ public class ManagerMenu extends javax.swing.JPanel {
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
        Main.showHelpMenu(new Handleiding.HelpManager());
+       Main.pressHelpKey(help);
     }//GEN-LAST:event_helpActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked

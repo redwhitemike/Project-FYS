@@ -32,7 +32,11 @@ public class Main {
     public static final String NAME = "Corendon - Luggage System";
     
     private static final Main instance = new Main();
+<<<<<<< HEAD
     public JFrame mainWindow;
+=======
+    public static JFrame mainWindow;
+>>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
    
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
@@ -95,6 +99,29 @@ public class Main {
        x.getContentPane().validate();
        x.getContentPane().repaint();
        x.setVisible(true);
+    }
+    
+    public static void pressEnter(final JButton button){
+        button.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    button.requestFocus();
+                    button.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        });
     }
     
     public static void pressHelpKey(final JButton button){

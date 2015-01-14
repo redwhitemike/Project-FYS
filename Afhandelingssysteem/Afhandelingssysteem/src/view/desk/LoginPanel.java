@@ -21,7 +21,6 @@ public class LoginPanel extends javax.swing.JPanel {
         initComponents();
         ForgotPasswordLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
-        
     }
 
     /**
@@ -43,7 +42,7 @@ public class LoginPanel extends javax.swing.JPanel {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         panel3 = new java.awt.Panel();
         jButton3 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        help = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         PasswordField = new javax.swing.JPasswordField();
         UsernameField = new javax.swing.JTextField();
@@ -155,6 +154,7 @@ public class LoginPanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         jButton7.setBackground(new java.awt.Color(187, 29, 20));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
         jButton7.setBorder(null);
@@ -163,8 +163,17 @@ public class LoginPanel extends javax.swing.JPanel {
         jButton7.setInheritsPopupMenu(true);
         jButton7.setPreferredSize(new java.awt.Dimension(31, 31));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
+=======
+        help.setBackground(new java.awt.Color(187, 29, 20));
+        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help.setInheritsPopupMenu(true);
+        help.setPreferredSize(new java.awt.Dimension(31, 31));
+        help.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                helpActionPerformed(evt);
             }
         });
 
@@ -174,9 +183,15 @@ public class LoginPanel extends javax.swing.JPanel {
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 818, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+=======
+                .addGap(797, 797, 797)
+                .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+>>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +199,13 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+=======
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+>>>>>>> 7f3ae350d14bb8d0ba3e3154e00c4809f88cd6dd
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
@@ -305,10 +326,10 @@ public class LoginPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpGeneral());
-        Main.pressHelpKey(jButton7);
-    }//GEN-LAST:event_jButton7ActionPerformed
+        
+    }//GEN-LAST:event_helpActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
@@ -323,7 +344,7 @@ public class LoginPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        // TODO add your handling code here:
+        Main.pressEnter(jButton2);
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
@@ -389,9 +410,9 @@ public class LoginPanel extends javax.swing.JPanel {
     private javax.swing.JButton LoginButton;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JTextField UsernameField;
+    private javax.swing.JButton help;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
