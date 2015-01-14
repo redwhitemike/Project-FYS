@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
         
 /**
@@ -98,8 +100,8 @@ public class Main {
        x.setVisible(true);
     }
     
-    public static void pressEnter(final JButton button){
-        button.addKeyListener(new KeyListener() {
+    public static void pressEnterPassword(JPasswordField textfield,final JButton button){
+        textfield.addKeyListener(new KeyListener() {
 
             @Override
             public void keyTyped(KeyEvent ke) {
@@ -122,9 +124,26 @@ public class Main {
     }
     
     public static void pressHelpKey(final JButton button){
-       
-       
-        button.setMnemonic(KeyEvent.VK_F1);
+       button.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    button.doClick(5);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        });
+
     }
     
     public boolean onlyNumbers(String text) {

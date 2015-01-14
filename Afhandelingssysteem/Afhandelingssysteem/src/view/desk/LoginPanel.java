@@ -5,6 +5,8 @@ import model.Login;
 import javax.swing.JOptionPane;
 import java.awt.Cursor;
 import java.awt.HeadlessException;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.SQLException;
 
 /**
@@ -20,6 +22,25 @@ public class LoginPanel extends javax.swing.JPanel {
     public LoginPanel() {
         initComponents();
         ForgotPasswordLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        PasswordField.addKeyListener(new KeyListener(){
+             @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    LoginButton.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+            });
+        
+        
         
     }
 
@@ -330,7 +351,7 @@ public class LoginPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        Main.pressEnter(jButton2);
+        Main.pressEnterPassword(PasswordField,jButton2);
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
