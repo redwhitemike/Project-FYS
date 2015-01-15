@@ -164,7 +164,7 @@ public class AddLuggage extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel12.setText("Flight Number:");
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found", "Handled", "Insuranced" }));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Status:");

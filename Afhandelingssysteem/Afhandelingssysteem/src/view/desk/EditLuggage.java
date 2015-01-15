@@ -734,7 +734,7 @@ public class EditLuggage extends javax.swing.JPanel {
         jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel35.setText("Flight Number:");
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found", "Handled", "Insuranced" }));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel36.setText("Status:");
