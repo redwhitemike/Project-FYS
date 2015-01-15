@@ -734,7 +734,7 @@ public class EditLuggage extends javax.swing.JPanel {
         jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel35.setText("Flight Number:");
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found", "Handled", "Insuranced" }));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel36.setText("Status:");
@@ -985,7 +985,7 @@ public class EditLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -997,7 +997,7 @@ public class EditLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
@@ -1044,8 +1044,9 @@ public class EditLuggage extends javax.swing.JPanel {
             flightManager.editFlightData(luggage.getLabelNumber(), luggage.getFlightNumber(), values);
             
             if (!isCustomerEmpty) {
-                System.out.println("Update the owner");
-                flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
+                flightManager.giveOwner(CustomerID.getText(), luggage.getLabelNumber());
+            } else {
+                flightManager.giveOwner(null, luggage.getLabelNumber());
             }
 
             JOptionPane.showMessageDialog(null, "Luggage has been updated");

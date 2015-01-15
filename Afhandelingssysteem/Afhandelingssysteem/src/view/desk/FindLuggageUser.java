@@ -114,7 +114,6 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         LuggageTable = new javax.swing.JTable();
         Search = new javax.swing.JButton();
-        LogoutButton1 = new javax.swing.JButton();
         EditLuggage = new javax.swing.JButton();
         DeleteLuggage = new javax.swing.JButton();
         TopBar1 = new java.awt.Panel();
@@ -126,6 +125,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jButton71 = new javax.swing.JButton();
         jButton72 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        LogoutButton = new javax.swing.JButton();
 
         panel4.setBackground(new java.awt.Color(187, 29, 20));
         panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -301,13 +301,6 @@ public class FindLuggageUser extends javax.swing.JPanel {
             }
         });
 
-        LogoutButton1.setText("Log out");
-        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutButton1ActionPerformed(evt);
-            }
-        });
-
         EditLuggage.setText("Edit luggage");
         EditLuggage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -461,6 +454,13 @@ public class FindLuggageUser extends javax.swing.JPanel {
             }
         });
 
+        LogoutButton.setText("Log out");
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -480,7 +480,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(Search)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(LogoutButton1))
+                                .addComponent(LogoutButton))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -494,12 +494,13 @@ public class FindLuggageUser extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Search)
-                    .addComponent(EditLuggage)
-                    .addComponent(DeleteLuggage)
-                    .addComponent(LogoutButton1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Search)
+                        .addComponent(EditLuggage)
+                        .addComponent(DeleteLuggage))
+                    .addComponent(LogoutButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(166, 166, 166))
@@ -537,10 +538,6 @@ public class FindLuggageUser extends javax.swing.JPanel {
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         this.fillTable(SearchQuery.getText());
     }//GEN-LAST:event_SearchActionPerformed
-
-    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
-        Session.getInstance().logoutUser();
-    }//GEN-LAST:event_LogoutButton1ActionPerformed
 
     private void EditLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditLuggageActionPerformed
         int selectedRows = LuggageTable.getSelectedRows().length;
@@ -592,7 +589,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -604,7 +601,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
@@ -615,11 +612,15 @@ public class FindLuggageUser extends javax.swing.JPanel {
         Main.getInstance().showPanel(new view.desk.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteLuggage;
     private javax.swing.JButton EditLuggage;
-    private javax.swing.JButton LogoutButton1;
+    private javax.swing.JButton LogoutButton;
     private javax.swing.JTable LuggageTable;
     private javax.swing.JButton Search;
     private javax.swing.JTextField SearchQuery;

@@ -96,13 +96,20 @@ public class FlightManager extends QueryManager {
      * @param customer
      * @param label 
      */
-    public void giveOwner(int customer, int label) {
+    public void giveOwner(String customer, int label) {
         String query = "UPDATE Flight SET customer_id = ? WHERE luggage_id = ?";
         ResultSet flightData = null;
         
         try {
+            
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, customer);
+            
+            if (customer == null) {
+                statement.setString(1, null);
+            } else {
+                statement.setInt(1, Integer.parseInt(customer));
+            }
+            
             statement.setInt(2, label);
             statement.execute();
         } catch (SQLException e) {
