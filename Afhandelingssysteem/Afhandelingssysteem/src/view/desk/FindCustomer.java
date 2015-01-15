@@ -61,6 +61,10 @@ public class FindCustomer extends javax.swing.JPanel {
         });
     }
 
+    /**
+     * Fills the table with customer data
+     * @param filter 
+     */
     private void fillTable(String filter) {
         DefaultTableModel tableModel = (DefaultTableModel) FindCustomerTable.getModel();
         
@@ -76,12 +80,21 @@ public class FindCustomer extends javax.swing.JPanel {
             tableModel.setRowCount(0);
             
             while (customers.next()) {
+                String email;
+                
+                if (customers.getString("e-mail") == null || customers.getString("e-mail").equals("")) {
+                    email = "No e-mail";
+                } else {
+                    email = customers.getString("e-mail");
+                }
+                
                 tableModel.addRow(
                         new Object[] {
                             customers.getInt("customer_id"),
                             customers.getString("first_name"), 
                             customers.getString("last_name"), 
-                            customers.getString("home_address")
+                            customers.getString("phone_number"),
+                            email
                     }
                 );
             }
@@ -140,11 +153,11 @@ public class FindCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "First Name", "Last Name"
+                "ID", "First Name", "Last Name", "Phone", "E-mail"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -156,6 +169,8 @@ public class FindCustomer extends javax.swing.JPanel {
             FindCustomerTable.getColumnModel().getColumn(0).setResizable(false);
             FindCustomerTable.getColumnModel().getColumn(1).setResizable(false);
             FindCustomerTable.getColumnModel().getColumn(2).setResizable(false);
+            FindCustomerTable.getColumnModel().getColumn(3).setResizable(false);
+            FindCustomerTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
         GetLuggage.setText("Luggage overview");
@@ -368,7 +383,7 @@ public class FindCustomer extends javax.swing.JPanel {
                         .addComponent(LogoutButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SearchButton))

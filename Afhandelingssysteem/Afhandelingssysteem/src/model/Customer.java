@@ -72,7 +72,7 @@ public class Customer {
  * @throws SQLException 
  */    
     public String getZipcode() throws SQLException {
-        return data.getString("postcode");
+        return data.getString("zipcode");
     }
     
 /**

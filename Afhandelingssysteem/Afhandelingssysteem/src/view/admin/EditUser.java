@@ -31,6 +31,9 @@ public class EditUser extends javax.swing.JPanel {
         setDefaultValues();
     }
     
+    /**
+     * Sets the values of the text fields, so the administrator can edit them
+     */
     private void setDefaultValues() {
         try {
             Username.setText(employee.getUsername());
@@ -79,7 +82,7 @@ public class EditUser extends javax.swing.JPanel {
     }
     
     /**
-     * Validates the fields based on the table column settings.
+     * Validates the fields.
      */
     private void fieldsValidator()  {
         if (!Validator.betweenLength(Username, 3, 45)) {
@@ -978,7 +981,7 @@ public class EditUser extends javax.swing.JPanel {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton1)))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1093,8 +1096,6 @@ public class EditUser extends javax.swing.JPanel {
             values.put("LastName", Lastname.getText());
             values.put("Location", Location.getText());
             values.put("Function", function);
-            
-            System.out.println(getPassword());
             
             // Apply changes to the employee
             manager.editEmployee(employee.getUserId(), values);

@@ -30,7 +30,7 @@ public class CustomerManager extends QueryManager {
 
         try {
             String query = 
-                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, postcode, city, country, phone_number, `e-mail`) "
+                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, zipcode, city, country, phone_number, `e-mail`) "
                     + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());
@@ -56,7 +56,7 @@ public class CustomerManager extends QueryManager {
     public void editCustomer(int customerId, HashMap<String, Object> values) {
         try {
             String query = 
-                    "UPDATE Customer SET first_name = ?, last_name = ?, home_address = ?, stay_address = ?, postcode = ?, city = ?, country = ?, phone_number = ?, `e-mail` = ? "
+                    "UPDATE Customer SET first_name = ?, last_name = ?, home_address = ?, stay_address = ?, zipcode = ?, city = ?, country = ?, phone_number = ?, `e-mail` = ? "
                     + "WHERE customer_id = ?";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());

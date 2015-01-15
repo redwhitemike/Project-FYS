@@ -45,6 +45,10 @@ public class UserOverview extends javax.swing.JPanel {
             });
     }
 
+    /**
+     * Fills the table with user data, based on filter
+     * @param filter 
+     */
     private void fillTable(String filter) {
         DefaultTableModel tableModel = (DefaultTableModel) UserOverviewTable.getModel();
         
@@ -65,16 +69,25 @@ public class UserOverview extends javax.swing.JPanel {
             
             while (employees.next()) {
                 String functionName;
+                String lastName;
                 
                 // Get the function name from the function ID
                 functionName = employee.getFunctionName(employees.getInt("function"));
+                
+                String insertion = employees.getString("insertion");
+                
+                if (insertion == null || insertion.equals("")) {
+                    lastName = employees.getString("last_name");
+                } else {
+                    lastName = employees.getString("last_name") + ", " + employees.getString("insertion");
+                }
                 
                 // Fill the table with information
                 tableModel.addRow(
                         new Object[] {
                             employees.getString("username"),
                             employees.getString("name"),
-                            employees.getString("last_name"),
+                            lastName,
                             employees.getInt("employee_number"), 
                             employees.getString("location"), 
                             functionName
@@ -321,7 +334,7 @@ public class UserOverview extends javax.swing.JPanel {
                         .addComponent(SearchButton)))
                 .addGap(7, 7, 7)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("");

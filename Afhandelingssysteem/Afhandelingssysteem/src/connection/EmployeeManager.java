@@ -23,18 +23,19 @@ public class EmployeeManager extends QueryManager {
      * @param values
      */
     public void addEmployee(HashMap<String, Object> values) {
-        String query = "INSERT INTO User VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO User VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("Username").toString());
             statement.setString(2, values.get("Password").toString());
-            statement.setString(3, values.get("FirstName").toString());
-            statement.setString(4, values.get("Insertion").toString());
-            statement.setString(5, values.get("LastName").toString());
-            statement.setString(6, values.get("Location").toString());
-            statement.setInt(7, Integer.parseInt(values.get("EmployeeNumber").toString()));
-            statement.setInt(8, Integer.parseInt(values.get("Function").toString()));
+            statement.setString(3, values.get("Email").toString());
+            statement.setString(4, values.get("FirstName").toString());
+            statement.setString(5, values.get("Insertion").toString());
+            statement.setString(6, values.get("LastName").toString());
+            statement.setString(7, values.get("Location").toString());
+            statement.setInt(8, Integer.parseInt(values.get("EmployeeNumber").toString()));
+            statement.setInt(9, Integer.parseInt(values.get("Function").toString()));
             statement.execute();
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -43,13 +44,15 @@ public class EmployeeManager extends QueryManager {
     
     /**
      * Edits an existing employee based on employee number.
-     * @param employeeNumber
+     * @param userid
      * @param values
      */
-    public void editEmployee(int employeeNumber, HashMap<String, Object> values) {
-        String query = "UPDATE User SET username = ?, password = ?, name = ?, insertion = ?, last_name = ?, location = ?, function = ? WHERE employee_number = ?";
+    public void editEmployee(int userid, HashMap<String, Object> values) {
+        String query = "UPDATE User SET username = ?, password = ?, name = ?, insertion = ?, last_name = ?, location = ?, function = ? WHERE userid = ?";
         
         try {
+            System.out.println(values.get("Insertion").toString());
+            
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("Username").toString());
             statement.setString(2, values.get("Password").toString());
@@ -58,7 +61,7 @@ public class EmployeeManager extends QueryManager {
             statement.setString(5, values.get("LastName").toString());
             statement.setString(6, values.get("Location").toString());
             statement.setInt(7, Integer.parseInt(values.get("Function").toString()));
-            statement.setInt(8, employeeNumber);
+            statement.setInt(8, userid);
             statement.execute();
         } catch (SQLException e) {
             Main.exceptionPrint(e);

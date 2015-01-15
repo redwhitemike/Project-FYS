@@ -832,7 +832,7 @@ public class EditCustomer extends javax.swing.JPanel {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton)))
-                .addGap(0, 206, Short.MAX_VALUE))
+                .addGap(0, 336, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
