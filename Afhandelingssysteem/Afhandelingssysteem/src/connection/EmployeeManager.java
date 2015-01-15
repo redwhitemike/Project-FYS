@@ -17,7 +17,7 @@ public class EmployeeManager extends QueryManager {
     public EmployeeManager() {
         
     }
-    
+
     /**
      * Adds a new employee to the database.
      * @param values

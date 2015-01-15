@@ -157,6 +157,10 @@ public class EditCustomer extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jButton71 = new javax.swing.JButton();
         jButton72 = new javax.swing.JButton();
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -773,7 +777,11 @@ public class EditCustomer extends javax.swing.JPanel {
                 .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
                 .addComponent(jLabel26)
                 .addGap(54, 54, 54)
                 .addComponent(jButton70)
@@ -794,10 +802,21 @@ public class EditCustomer extends javax.swing.JPanel {
                     .addComponent(jButton67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
@@ -807,15 +826,41 @@ public class EditCustomer extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(352, Short.MAX_VALUE))
             .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(347, 347, 347)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogoutButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton)
                 .addGap(9, 9, 9)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton)))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
                 .addGap(0, 206, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -939,7 +984,11 @@ public class EditCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton69ActionPerformed
 
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
         Main.showHelpMenu(new Handleiding.employee());
+=======
+        // TODO add your handling code here:
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
@@ -950,6 +999,13 @@ public class EditCustomer extends javax.swing.JPanel {
         Main.getInstance().showPanel(new FindCustomer());
     }//GEN-LAST:event_jButton72ActionPerformed
 
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
@@ -980,6 +1036,10 @@ public class EditCustomer extends javax.swing.JPanel {
     private javax.swing.JTextField ZipCode;
     private javax.swing.JTextField Zipcode;
     private javax.swing.JTextField eMail;
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
     private javax.swing.JButton jButton67;
     private javax.swing.JButton jButton68;
     private javax.swing.JButton jButton69;
@@ -1018,4 +1078,8 @@ public class EditCustomer extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
 }
+=======
+}
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java

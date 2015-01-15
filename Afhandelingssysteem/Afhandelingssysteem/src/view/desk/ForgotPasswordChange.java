@@ -13,15 +13,24 @@ import java.awt.event.KeyListener;
  *
  * @author IS104_2
  */
-public class ForgotPassword extends javax.swing.JPanel {
-    private PasswordManager passwordManager = new PasswordManager();
+public class ForgotPasswordChange extends javax.swing.JPanel {
+    PasswordManager passwordManager = new PasswordManager();
+    
+    private String username;
+    private String email;
 
     /**
      * Creates new form login
+     * @param username
+     * @param email
      */
-    public ForgotPassword() {
+    public ForgotPasswordChange(String username, String email) {
         initComponents();
-        EmailField.addKeyListener(new KeyListener(){
+        
+        this.username = username;
+        this.email = email;
+        
+        RepeatField.addKeyListener(new KeyListener(){
              @Override
             public void keyTyped(KeyEvent ke) {
             }
@@ -41,12 +50,16 @@ public class ForgotPassword extends javax.swing.JPanel {
     }
 
     private void fieldsValidator() {
-        if (Validator.isEmpty(UsernameField)) {
-            throw new NumberFormatException("Username is required");
+        if (Validator.isEmpty(PasswordField)) {
+            throw new NumberFormatException("New password is required");
         }
         
-        if (Validator.isEmpty(EmailField)) {
-            throw new NumberFormatException("E-mail is required");
+        if (Validator.isEmpty(RepeatField)) {
+            throw new NumberFormatException("Please repeat your password");
+        }
+        
+        if (!PasswordField.getText().equals(RepeatField.getText())) {
+            throw new NumberFormatException("Passwords do not match");
         }
     }
     
@@ -71,13 +84,13 @@ public class ForgotPassword extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        UsernameField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         SubmitButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        EmailField = new javax.swing.JTextField();
         CancelButton = new javax.swing.JButton();
+        RepeatField = new javax.swing.JPasswordField();
+        PasswordField = new javax.swing.JPasswordField();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -195,11 +208,7 @@ public class ForgotPassword extends javax.swing.JPanel {
             .addGroup(panel3Layout.createSequentialGroup()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 818, Short.MAX_VALUE)
-<<<<<<< HEAD
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                 .addComponent(jButton7)
->>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addContainerGap())
         );
         panel3Layout.setVerticalGroup(
@@ -208,24 +217,11 @@ public class ForgotPassword extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-=======
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)))
->>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
         jPanel2.setPreferredSize(new java.awt.Dimension(301, 180));
-
-        UsernameField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        UsernameField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        UsernameField.setPreferredSize(new java.awt.Dimension(135, 20));
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameFieldActionPerformed(evt);
-            }
-        });
 
         SubmitButton.setText("Submit");
         SubmitButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -236,10 +232,10 @@ public class ForgotPassword extends javax.swing.JPanel {
         });
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel6.setText("Username");
+        jLabel6.setText("New password:");
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel7.setText("Email");
+        jLabel7.setText("Repeat password:");
 
         CancelButton.setText("Cancel");
         CancelButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -257,17 +253,20 @@ public class ForgotPassword extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(UsernameField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EmailField)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 1, Short.MAX_VALUE)
+                                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(RepeatField)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 24, Short.MAX_VALUE)
                         .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -277,15 +276,15 @@ public class ForgotPassword extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(RepeatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -321,12 +320,7 @@ public class ForgotPassword extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-<<<<<<< HEAD
-        Main.showHelpMenu(new Handleiding.general());
-=======
-        Main.showHelpMenu(new Handleiding.HelpGeneral());
-        Main.pressHelpKey(jButton7);
->>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -341,20 +335,19 @@ public class ForgotPassword extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameFieldActionPerformed
-
     @SuppressWarnings("deprecation")
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         try {
             fieldsValidator();
             
-            if (passwordManager.findUserEmailCombination(UsernameField.getText(), EmailField.getText())) {
-                Main.getInstance().showPanel(new ForgotPasswordChange(UsernameField.getText(), EmailField.getText()));
-            } else {
-                JOptionPane.showMessageDialog(null, "Could not find an user with this username and e-mail. Please try again.");
-            }
+            // Get the ID because its safer to edit it from there
+            int employeeId = passwordManager.getIdFromUserEmail(this.username, this.email);
+            
+            // Update the password with the new one
+            passwordManager.updatePassword(employeeId, PasswordField.getText());
+            JOptionPane.showMessageDialog(null, "The password of " + this.username + " has been changed.");
+            
+            Main.getInstance().showPanel(new LoginPanel());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -367,9 +360,9 @@ public class ForgotPassword extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelButton;
-    private javax.swing.JTextField EmailField;
+    private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JPasswordField RepeatField;
     private javax.swing.JButton SubmitButton;
-    private javax.swing.JTextField UsernameField;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton7;

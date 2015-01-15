@@ -37,7 +37,11 @@ public class EditLuggage extends javax.swing.JPanel {
         luggage = new Luggage(labelNumber);
  
         try {
+<<<<<<< HEAD
             flight = new Flight(luggage.getLabelNumber(), luggage.getFlightNumber());
+=======
+            flight = new Flight(luggage.getLabelNumber());
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         } catch (SQLException e) {
             Main.exceptionPrint(e);
         }
@@ -193,6 +197,10 @@ public class EditLuggage extends javax.swing.JPanel {
         DepartedFromField = new javax.swing.JTextField();
         DestinationField = new javax.swing.JTextField();
         LostAt = new javax.swing.JTextField();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -741,6 +749,15 @@ public class EditLuggage extends javax.swing.JPanel {
         jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel37.setText("Customer ID:");
 
+<<<<<<< HEAD
+=======
+        CustomerID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerIDActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         jLabel38.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel38.setText("Departed from:");
 
@@ -798,12 +815,19 @@ public class EditLuggage extends javax.swing.JPanel {
                                     .addComponent(DestinationField, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
+<<<<<<< HEAD
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+=======
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -867,10 +891,21 @@ public class EditLuggage extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(296, 965, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
@@ -881,12 +916,25 @@ public class EditLuggage extends javax.swing.JPanel {
                     .addGap(341, 341, 341)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(352, Short.MAX_VALUE)))
+=======
+            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(270, 270, 270)
+                        .addComponent(LogoutButton)))
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addComponent(LogoutButton)
                 .addGap(0, 512, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -894,6 +942,14 @@ public class EditLuggage extends javax.swing.JPanel {
                     .addGap(61, 61, 61)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(62, Short.MAX_VALUE)))
+=======
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LogoutButton)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 29, Short.MAX_VALUE))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -982,7 +1038,11 @@ public class EditLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton69ActionPerformed
 
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
+<<<<<<< HEAD
         Main.showHelpMenu(new Handleiding.employee());
+=======
+        // TODO add your handling code here:
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
@@ -1004,23 +1064,43 @@ public class EditLuggage extends javax.swing.JPanel {
             // Validate the fields
             fieldsValidator();
 
+<<<<<<< HEAD
 
+=======
+            if (!CustomerID.getText().isEmpty()) {
+                checkCustomerExistance(Integer.parseInt(CustomerID.getText()));
+                
+                isCustomerEmpty = false;
+            }
+            
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             FlightManager flightManager = new FlightManager();
             LuggageManager luggageManager = new LuggageManager();
             Luggage luggageModel = new Luggage();
 
             HashMap<String, Object> values = new HashMap<>();
             values.put("LabelNumber", LabelNumber.getText());
+<<<<<<< HEAD
             values.put("FlightNumber", FlightNumber.getText());
+=======
+            values.put("FlightNumber", FlightNumberField.getText());
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             values.put("Weight", WeightField.getText());
             values.put("Colour", ColourField.getText());
             values.put("Type", luggageModel.typeToInt(LuggageType.getSelectedItem().toString()));
             values.put("Description", Description.getText());
             values.put("Status", luggageModel.getStatusInteger(Status.getSelectedItem().toString()));
+<<<<<<< HEAD
             values.put("DepartedFrom", DepartedFrom.getText());
             values.put("LostAt", LostAt.getText());
             values.put("Destination", Destination.getText());
 
+=======
+            values.put("DepartedFrom", DepartedFromField.getText());
+            values.put("LostAt", LostAt.getText());
+            values.put("Destination", DestinationField.getText());
+            
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             // Update the luggage
             luggageManager.editLuggage(luggage.getLabelNumber(), values);
             
@@ -1028,7 +1108,12 @@ public class EditLuggage extends javax.swing.JPanel {
             flightManager.editFlightData(luggage.getLabelNumber(), luggage.getFlightNumber(), values);
             
             if (!isCustomerEmpty) {
+<<<<<<< HEAD
                 //flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
+=======
+                System.out.println("Update the owner");
+                flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             }
 
             JOptionPane.showMessageDialog(null, "Luggage has been updated");
@@ -1042,6 +1127,17 @@ public class EditLuggage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_LuggageTypeActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CustomerIDActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
@@ -1074,6 +1170,10 @@ public class EditLuggage extends javax.swing.JPanel {
     private javax.swing.JTextField WeightField;
     private javax.swing.JTextField ZipCode;
     private javax.swing.JTextField eMail;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JButton jButton67;
     private javax.swing.JButton jButton68;
     private javax.swing.JButton jButton69;

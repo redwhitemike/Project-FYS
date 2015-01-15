@@ -2,6 +2,13 @@ package view.admin;
 
 import Main.Main;
 import Main.Session;
+<<<<<<< HEAD
+=======
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 /**
  *
@@ -27,13 +34,21 @@ public class AdminMenu extends javax.swing.JPanel {
 
         AddUserBlock = new javax.swing.JLabel();
         OverviewUsersBlock = new javax.swing.JLabel();
+<<<<<<< HEAD
         LogoutButton = new javax.swing.JButton();
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -62,6 +77,7 @@ public class AdminMenu extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         LogoutButton.setText("Log out");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +116,39 @@ public class AdminMenu extends javax.swing.JPanel {
             }
         });
 
+=======
+        MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview.setName(""); // NOI18N
+        MenuOverview.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        overviewusers.setBackground(new java.awt.Color(157, 11, 15));
+        overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        overviewusers.setForeground(new java.awt.Color(255, 255, 255));
+        overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
+        overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        overviewusers.setInheritsPopupMenu(true);
+        overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
+        overviewusers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overviewusersActionPerformed(evt);
+            }
+        });
+
+        logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
+        logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon.setInheritsPopupMenu(true);
+        logocorendon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendonActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         addusers.setBackground(new java.awt.Color(157, 11, 15));
         addusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         addusers.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,9 +195,15 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(help)
                 .addGap(33, 33, 33))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(help)
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         MenuOverviewLayout.setVerticalGroup(
             MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,6 +219,20 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -175,24 +244,47 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addComponent(OverviewUsersBlock)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
                 .addGap(35, 35, 35))
+=======
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MenuOverview, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(LogoutButton1))
+                        .addGap(19, 19, 19)))
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addComponent(LogoutButton)
                 .addGap(233, 233, 233)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OverviewUsersBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddUserBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(248, Short.MAX_VALUE))
+=======
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogoutButton1)
+                .addGap(204, 204, 204)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(OverviewUsersBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddUserBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(250, Short.MAX_VALUE))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -207,9 +299,11 @@ public class AdminMenu extends javax.swing.JPanel {
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpAdmin());
+        Main.pressHelpKey(help);
     }//GEN-LAST:event_HelpActionPerformed
 
 
+<<<<<<< HEAD
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
@@ -218,6 +312,12 @@ public class AdminMenu extends javax.swing.JPanel {
         Main.getInstance().showPanel(new view.admin.UserOverview());
     }//GEN-LAST:event_overviewusersActionPerformed
 
+=======
+    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.UserOverview());
+    }//GEN-LAST:event_overviewusersActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
         Main.getInstance().showPanel(new view.admin.AdminMenu());
     }//GEN-LAST:event_logocorendonActionPerformed
@@ -227,17 +327,38 @@ public class AdminMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
+<<<<<<< HEAD
         Main.showHelpMenu(new Handleiding.admin());
     }//GEN-LAST:event_helpActionPerformed
+=======
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+    }//GEN-LAST:event_helpActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddUserBlock;
+<<<<<<< HEAD
     private javax.swing.JButton LogoutButton;
+=======
+    private javax.swing.JButton LogoutButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private java.awt.Panel MenuOverview;
     private javax.swing.JLabel OverviewUsersBlock;
     private javax.swing.JButton addusers;
     private javax.swing.JButton help;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JLabel loggedinas;
     private javax.swing.JButton logocorendon;
     private javax.swing.JButton overviewusers;

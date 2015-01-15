@@ -131,15 +131,91 @@ public class LuggageManager extends QueryManager {
         String queryFlight = "DELETE FROM Flight WHERE luggage_id = ?";
         
         try {
+<<<<<<< HEAD
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setInt(1, labelNumber);
             statement.execute();
             
             statement = Connection.prepareStatement(queryFlight);
+=======
+            PreparedStatement statement = Connection.prepareStatement(queryFlight);
+            statement.setInt(1, labelNumber);
+            statement.execute();
+            
+            statement = Connection.prepareStatement(query);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             statement.setInt(1, labelNumber);
             statement.execute();
         } catch (SQLException e) {
             System.err.println(e);
         }
     }
+<<<<<<< HEAD
+=======
+    
+    /**
+     * Get the chart data based on year and status
+     * @param year
+     * @return 
+     */
+    public HashMap<Integer, ResultSet> getChartData(int year, int status) {
+        ResultSet result = null;
+        HashMap<Integer, ResultSet> chartData = new HashMap<>();
+        
+        for (int month = 1; month <= 12; month++) {
+            String query = "SELECT COUNT(*) as count, MONTH(added_at) as month FROM Luggage WHERE YEAR(added_at) = ? AND MONTH(added_at) = ? AND status = " + status;
+
+            try {
+                PreparedStatement statement = Connection.prepareStatement(query);
+                statement.setInt(1, year);
+                statement.setInt(2, month);
+                statement.execute();
+
+                result = statement.getResultSet();
+                result.next();
+                chartData.put(month - 1, result);
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+        
+        return chartData;
+    }
+    
+    /**
+     * Get the missing luggage data based on year
+     * @param year
+     * @return 
+     */
+    public HashMap<Integer, ResultSet> getMissingLuggageData(int year) {
+        return this.getChartData(year, Main.LUGGAGE_MISSING);
+    }
+    
+    /**
+     * Get the found luggage data based on year
+     * @param year
+     * @return 
+     */
+    public HashMap<Integer, ResultSet> getFoundLuggageData(int year) {
+        return this.getChartData(year, Main.LUGGAGE_FOUND);
+    }
+    
+    /**
+     * Get the handled luggage data based on year
+     * @param year
+     * @return 
+     */
+    public HashMap<Integer, ResultSet> getHandledLuggageData(int year) {
+        return this.getChartData(year, Main.LUGGAGE_HANDLED);
+    }
+    
+    /**
+     * Get the insuranced luggage data based on year
+     * @param year
+     * @return 
+     */
+    public HashMap<Integer, ResultSet> getInsurancedLuggageData(int year) {
+        return this.getChartData(year, Main.LUGGAGE_INSURANCE);
+    }
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 }

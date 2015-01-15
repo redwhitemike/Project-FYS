@@ -127,13 +127,21 @@ public class AddUser extends javax.swing.JPanel {
         Manager = new javax.swing.JRadioButton();
         Balie = new javax.swing.JRadioButton();
         jLabel29 = new javax.swing.JLabel();
+<<<<<<< HEAD
         LogoutButton = new javax.swing.JButton();
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -694,6 +702,7 @@ public class AddUser extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+<<<<<<< HEAD
         LogoutButton.setText("Log out");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -701,6 +710,8 @@ public class AddUser extends javax.swing.JPanel {
             }
         });
 
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
         MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuOverview.setName(""); // NOI18N
@@ -710,7 +721,11 @@ public class AddUser extends javax.swing.JPanel {
         overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         overviewusers.setForeground(new java.awt.Color(255, 255, 255));
         overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+<<<<<<< HEAD
         overviewusers.setText("User Overview");
+=======
+        overviewusers.setText("Overview users");
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         overviewusers.setBorder(null);
         overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         overviewusers.setInheritsPopupMenu(true);
@@ -778,7 +793,11 @@ public class AddUser extends javax.swing.JPanel {
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addComponent(help)
                 .addContainerGap())
         );
@@ -796,6 +815,23 @@ public class AddUser extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -803,10 +839,19 @@ public class AddUser extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(296, 296, 296)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(262, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(LogoutButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addContainerGap())
             .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -814,14 +859,46 @@ public class AddUser extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton1)))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addGap(0, 222, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
+=======
+    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.UserOverview());
+    }//GEN-LAST:event_overviewusersActionPerformed
+
+    private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
+    }//GEN-LAST:event_logocorendonActionPerformed
+
+    private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.AddUser());
+    }//GEN-LAST:event_addusersActionPerformed
+
+    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
+                Main.showHelpMenu(new Handleiding.HelpAdmin());
+                Main.pressHelpKey(help);
+    }//GEN-LAST:event_helpActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
 
     }//GEN-LAST:event_submitActionPerformed
@@ -993,6 +1070,7 @@ public class AddUser extends javax.swing.JPanel {
         Manager.setSelected(false);
     }//GEN-LAST:event_BalieMouseClicked
 
+<<<<<<< HEAD
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
@@ -1012,6 +1090,16 @@ public class AddUser extends javax.swing.JPanel {
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         Main.showHelpMenu(new Handleiding.admin());
     }//GEN-LAST:event_helpActionPerformed
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1031,7 +1119,11 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField Lastname;
     private javax.swing.JTextField Location;
+<<<<<<< HEAD
     private javax.swing.JButton LogoutButton;
+=======
+    private javax.swing.JButton LogoutButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JRadioButton Manager;
     private java.awt.Panel MenuOverview;
     private javax.swing.JTextField Name;
@@ -1046,6 +1138,7 @@ public class AddUser extends javax.swing.JPanel {
     private javax.swing.JButton addusers;
     private javax.swing.JTextField eMail;
     private javax.swing.JButton help;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -83,6 +83,10 @@ public class LuggageOverview extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jButton71 = new javax.swing.JButton();
         jButton72 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         setLayout(null);
 
@@ -111,7 +115,11 @@ public class LuggageOverview extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
+<<<<<<< HEAD
         jScrollPane1.setBounds(20, 110, 1010, 440);
+=======
+        jScrollPane1.setBounds(20, 140, 1010, 410);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         LogoutButton1.setText("Log out");
         LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +128,11 @@ public class LuggageOverview extends javax.swing.JPanel {
             }
         });
         add(LogoutButton1);
+<<<<<<< HEAD
         LogoutButton1.setBounds(960, 70, 69, 23);
+=======
+        LogoutButton1.setBounds(960, 100, 69, 23);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         jLabel1.setText("If the table does not show data, the customer has no current luggage data.");
         add(jLabel1);
@@ -260,6 +272,18 @@ public class LuggageOverview extends javax.swing.JPanel {
 
         add(TopBar1);
         TopBar1.setBounds(0, 0, 1044, 55);
+<<<<<<< HEAD
+=======
+
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(910, 70, 119, 23);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
@@ -279,7 +303,11 @@ public class LuggageOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton69ActionPerformed
 
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
+<<<<<<< HEAD
         Main.showHelpMenu(new Handleiding.employee());
+=======
+        // TODO add your handling code here:
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
@@ -290,11 +318,22 @@ public class LuggageOverview extends javax.swing.JPanel {
         Main.getInstance().showPanel(new FindCustomer());
     }//GEN-LAST:event_jButton72ActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogoutButton1;
     private javax.swing.JTable LuggageOverviewTable;
     private java.awt.Panel TopBar1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JButton jButton67;
     private javax.swing.JButton jButton68;
     private javax.swing.JButton jButton69;

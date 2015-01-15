@@ -5,12 +5,17 @@ import model.Employee;
 import java.util.HashMap;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.SwingUtilities;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
         
 /**
@@ -29,7 +34,12 @@ public class Main {
     public static final String NAME = "Corendon - Luggage System";
     
     private static final Main instance = new Main();
+<<<<<<< HEAD
     public JFrame mainWindow;
+=======
+
+    public static JFrame mainWindow;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
    
     // Function Constants
     public static final int FUNCTION_CUSTOMER = 0;
@@ -92,6 +102,52 @@ public class Main {
        x.getContentPane().validate();
        x.getContentPane().repaint();
        x.setVisible(true);
+    }
+    
+    public static void pressEnterPassword(JPasswordField textfield,final JButton button){
+        textfield.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    button.requestFocus();
+                    button.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        });
+    }
+    
+    public static void pressHelpKey(final JButton button){
+       button.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    button.doClick(5);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+
+        });
+
     }
     
     public boolean onlyNumbers(String text) {

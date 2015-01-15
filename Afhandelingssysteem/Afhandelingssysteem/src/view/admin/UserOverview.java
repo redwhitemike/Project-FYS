@@ -10,6 +10,11 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
+<<<<<<< HEAD
+=======
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 import model.Employee;
 
 /**
@@ -23,6 +28,27 @@ public class UserOverview extends javax.swing.JPanel {
     public UserOverview() {
         initComponents();
         fillTable(null);
+<<<<<<< HEAD
+=======
+        
+        SearchQuery.addKeyListener(new KeyListener(){
+             @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    SearchButton.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+            });
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }
 
     private void fillTable(String filter) {
@@ -81,13 +107,21 @@ public class UserOverview extends javax.swing.JPanel {
         UserOverviewTable = new javax.swing.JTable();
         EditButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
+<<<<<<< HEAD
         LogoutButton = new javax.swing.JButton();
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         setPreferredSize(new java.awt.Dimension(1044, 600));
 
@@ -146,6 +180,7 @@ public class UserOverview extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         LogoutButton.setText("Log out");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +188,8 @@ public class UserOverview extends javax.swing.JPanel {
             }
         });
 
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
         MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuOverview.setName(""); // NOI18N
@@ -230,7 +267,11 @@ public class UserOverview extends javax.swing.JPanel {
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(422, 422, 422)
                 .addComponent(loggedinas)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addComponent(help)
                 .addContainerGap())
         );
@@ -248,6 +289,23 @@ public class UserOverview extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+<<<<<<< HEAD
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -255,6 +313,7 @@ public class UserOverview extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(580, 580, 580)
                         .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -271,12 +330,32 @@ public class UserOverview extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
+=======
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(LogoutButton1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(EditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addContainerGap())
             .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton)
@@ -288,6 +367,23 @@ public class UserOverview extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EditButton)
                     .addComponent(DeleteButton))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton1)))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EditButton)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(DeleteButton)
+                        .addComponent(SearchQuery)
+                        .addComponent(SearchButton)))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addGap(7, 7, 7)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -343,10 +439,13 @@ public class UserOverview extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
+<<<<<<< HEAD
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
 
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
         Main.getInstance().showPanel(new view.admin.UserOverview());
     }//GEN-LAST:event_overviewusersActionPerformed
@@ -360,20 +459,42 @@ public class UserOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_addusersActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
+<<<<<<< HEAD
         Main.showHelpMenu(new Handleiding.admin());
     }//GEN-LAST:event_helpActionPerformed
 
+=======
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+    }//GEN-LAST:event_helpActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton EditButton;
+<<<<<<< HEAD
     private javax.swing.JButton LogoutButton;
+=======
+    private javax.swing.JButton LogoutButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private java.awt.Panel MenuOverview;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchQuery;
     private javax.swing.JTable UserOverviewTable;
     private javax.swing.JButton addusers;
     private javax.swing.JButton help;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel loggedinas;
     private javax.swing.JButton logocorendon;

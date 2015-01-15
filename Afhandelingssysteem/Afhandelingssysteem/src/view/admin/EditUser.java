@@ -70,7 +70,7 @@ public class EditUser extends javax.swing.JPanel {
                 this.passwordWarning = true;
                 return DigestUtils.sha512Hex(Password.getText());
             }
-
+            
             return employee.getPassword();
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -172,6 +172,7 @@ public class EditUser extends javax.swing.JPanel {
         Manager = new javax.swing.JRadioButton();
         Balie = new javax.swing.JRadioButton();
         jLabel29 = new javax.swing.JLabel();
+<<<<<<< HEAD
         LogoutButton = new javax.swing.JButton();
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
@@ -179,6 +180,16 @@ public class EditUser extends javax.swing.JPanel {
         addusers = new javax.swing.JButton();
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
+=======
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
+        MenuOverview = new java.awt.Panel();
+        overviewusers2 = new javax.swing.JButton();
+        logocorendon2 = new javax.swing.JButton();
+        addusers2 = new javax.swing.JButton();
+        help2 = new javax.swing.JButton();
+        loggedinas2 = new javax.swing.JLabel();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -528,6 +539,104 @@ public class EditUser extends javax.swing.JPanel {
                         .addContainerGap(86, Short.MAX_VALUE))))
         );
 
+<<<<<<< HEAD
+=======
+        menuoverview.setBackground(new java.awt.Color(187, 29, 20));
+        menuoverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuoverview.setName(""); // NOI18N
+        menuoverview.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        overviewusers.setBackground(new java.awt.Color(157, 11, 15));
+        overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        overviewusers.setForeground(new java.awt.Color(255, 255, 255));
+        overviewusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        overviewusers.setText("Overview users");
+        overviewusers.setBorder(null);
+        overviewusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        overviewusers.setInheritsPopupMenu(true);
+        overviewusers.setPreferredSize(new java.awt.Dimension(145, 25));
+        overviewusers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overviewusersActionPerformed(evt);
+            }
+        });
+
+        logocorendon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon.setBorder(null);
+        logocorendon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon.setInheritsPopupMenu(true);
+        logocorendon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendonActionPerformed(evt);
+            }
+        });
+
+        addusers.setBackground(new java.awt.Color(157, 11, 15));
+        addusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        addusers.setForeground(new java.awt.Color(255, 255, 255));
+        addusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        addusers.setText("Add user");
+        addusers.setBorder(null);
+        addusers.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addusers.setInheritsPopupMenu(true);
+        addusers.setPreferredSize(new java.awt.Dimension(145, 25));
+        addusers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addusersActionPerformed(evt);
+            }
+        });
+
+        help.setBackground(new java.awt.Color(187, 29, 20));
+        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
+        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help.setInheritsPopupMenu(true);
+        help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpActionPerformed(evt);
+            }
+        });
+
+        loggedinas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas.setText(Main.getLoggedLabel());
+        loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout menuoverviewLayout = new javax.swing.GroupLayout(menuoverview);
+        menuoverview.setLayout(menuoverviewLayout);
+        menuoverviewLayout.setHorizontalGroup(
+            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuoverviewLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(help)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menuoverviewLayout.setVerticalGroup(
+            menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuoverviewLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(menuoverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas)
+                        .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help)
+                    .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
         submit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/add_button.png"))); // NOI18N
@@ -740,10 +849,24 @@ public class EditUser extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+<<<<<<< HEAD
         LogoutButton.setText("Log out");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutButtonActionPerformed(evt);
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             }
         });
 
@@ -752,6 +875,7 @@ public class EditUser extends javax.swing.JPanel {
         MenuOverview.setName(""); // NOI18N
         MenuOverview.setPreferredSize(new java.awt.Dimension(1044, 55));
 
+<<<<<<< HEAD
         overviewusers.setBackground(new java.awt.Color(157, 11, 15));
         overviewusers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         overviewusers.setForeground(new java.awt.Color(255, 255, 255));
@@ -810,6 +934,66 @@ public class EditUser extends javax.swing.JPanel {
         loggedinas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loggedinas.setText(Main.getLoggedLabel());
         loggedinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+=======
+        overviewusers2.setBackground(new java.awt.Color(157, 11, 15));
+        overviewusers2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        overviewusers2.setForeground(new java.awt.Color(255, 255, 255));
+        overviewusers2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        overviewusers2.setText("Overview users");
+        overviewusers2.setBorder(null);
+        overviewusers2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        overviewusers2.setInheritsPopupMenu(true);
+        overviewusers2.setPreferredSize(new java.awt.Dimension(145, 25));
+        overviewusers2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overviewusers2ActionPerformed(evt);
+            }
+        });
+
+        logocorendon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon2.setBorder(null);
+        logocorendon2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon2.setInheritsPopupMenu(true);
+        logocorendon2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendon2ActionPerformed(evt);
+            }
+        });
+
+        addusers2.setBackground(new java.awt.Color(157, 11, 15));
+        addusers2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        addusers2.setForeground(new java.awt.Color(255, 255, 255));
+        addusers2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        addusers2.setText("Add user");
+        addusers2.setBorder(null);
+        addusers2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addusers2.setInheritsPopupMenu(true);
+        addusers2.setPreferredSize(new java.awt.Dimension(145, 25));
+        addusers2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addusers2ActionPerformed(evt);
+            }
+        });
+
+        help2.setBackground(new java.awt.Color(187, 29, 20));
+        help2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help2.setBorder(null);
+        help2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help2.setInheritsPopupMenu(true);
+        help2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                help2ActionPerformed(evt);
+            }
+        });
+
+        loggedinas2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas2.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setText(Main.getLoggedLabel());
+        loggedinas2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         javax.swing.GroupLayout MenuOverviewLayout = new javax.swing.GroupLayout(MenuOverview);
         MenuOverview.setLayout(MenuOverviewLayout);
@@ -817,6 +1001,7 @@ public class EditUser extends javax.swing.JPanel {
             MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuOverviewLayout.createSequentialGroup()
                 .addGap(1, 1, 1)
+<<<<<<< HEAD
                 .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -826,6 +1011,17 @@ public class EditUser extends javax.swing.JPanel {
                 .addComponent(loggedinas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(help)
+=======
+                .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addusers2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(overviewusers2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(help2)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addContainerGap())
         );
         MenuOverviewLayout.setVerticalGroup(
@@ -834,11 +1030,19 @@ public class EditUser extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(MenuOverviewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
                         .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(loggedinas)
                         .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(help)
                     .addComponent(logocorendon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+=======
+                        .addComponent(overviewusers2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas2)
+                        .addComponent(addusers2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help2)
+                    .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addContainerGap())
         );
 
@@ -846,20 +1050,30 @@ public class EditUser extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(296, 296, 296)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(262, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
                 .addContainerGap())
             .addComponent(MenuOverview, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addComponent(LogoutButton1))
+                .addContainerGap())
+            .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -868,6 +1082,38 @@ public class EditUser extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton1)))
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.UserOverview());
+    }//GEN-LAST:event_overviewusersActionPerformed
+
+    private void logocorendonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendonActionPerformed
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
+    }//GEN-LAST:event_logocorendonActionPerformed
+
+    private void addusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusersActionPerformed
+        Main.getInstance().showPanel(new view.admin.AddUser());
+    }//GEN-LAST:event_addusersActionPerformed
+
+    private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+        Main.pressHelpKey(help);
+    }//GEN-LAST:event_helpActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
 
     }//GEN-LAST:event_submitActionPerformed
@@ -963,8 +1209,15 @@ public class EditUser extends javax.swing.JPanel {
             values.put("Location", Location.getText());
             values.put("Function", function);
             
+<<<<<<< HEAD
             // Apply changes to the employee
             manager.editEmployee(employee.getId(), values);
+=======
+            System.out.println(getPassword());
+            
+            // Apply changes to the employee
+            manager.editEmployee(employee.getUserId(), values);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
            
             if (this.passwordWarning) {
                 JOptionPane.showMessageDialog(this, "This employee has been updated.\nWarning: The password has been changed.");
@@ -976,7 +1229,7 @@ public class EditUser extends javax.swing.JPanel {
             
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        } catch (HeadlessException e) {
+        } catch (HeadlessException | SQLException e) {
             
         }
 
@@ -1033,6 +1286,7 @@ public class EditUser extends javax.swing.JPanel {
         Manager.setSelected(false);
     }//GEN-LAST:event_BalieMouseClicked
 
+<<<<<<< HEAD
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
@@ -1052,6 +1306,33 @@ public class EditUser extends javax.swing.JPanel {
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         Main.showHelpMenu(new Handleiding.admin());
     }//GEN-LAST:event_helpActionPerformed
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
+
+    private void overviewusers2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusers2ActionPerformed
+        Main.getInstance().showPanel(new view.admin.UserOverview());
+    }//GEN-LAST:event_overviewusers2ActionPerformed
+
+    private void logocorendon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendon2ActionPerformed
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
+    }//GEN-LAST:event_logocorendon2ActionPerformed
+
+    private void addusers2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addusers2ActionPerformed
+        Main.getInstance().showPanel(new view.admin.AddUser());
+    }//GEN-LAST:event_addusers2ActionPerformed
+
+    private void help2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help2ActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+        Main.pressHelpKey(help);
+    }//GEN-LAST:event_help2ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1071,7 +1352,11 @@ public class EditUser extends javax.swing.JPanel {
     private javax.swing.JTextField LastName;
     private javax.swing.JTextField Lastname;
     private javax.swing.JTextField Location;
+<<<<<<< HEAD
     private javax.swing.JButton LogoutButton;
+=======
+    private javax.swing.JButton LogoutButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JRadioButton Manager;
     private java.awt.Panel MenuOverview;
     private javax.swing.JTextField Name;
@@ -1084,8 +1369,11 @@ public class EditUser extends javax.swing.JPanel {
     private javax.swing.JTextField Weight;
     private javax.swing.JTextField ZipCode;
     private javax.swing.JButton addusers;
+    private javax.swing.JButton addusers2;
     private javax.swing.JTextField eMail;
     private javax.swing.JButton help;
+    private javax.swing.JButton help2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1116,8 +1404,15 @@ public class EditUser extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel loggedinas;
+    private javax.swing.JLabel loggedinas2;
     private javax.swing.JButton logocorendon;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton logocorendon2;
+    private java.awt.Panel menuoverview;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JButton overviewusers;
+    private javax.swing.JButton overviewusers2;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
     // End of variables declaration//GEN-END:variables

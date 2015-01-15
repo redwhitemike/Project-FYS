@@ -33,6 +33,17 @@ public class Employee extends Main {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the user id
+     * @return 
+     */
+    public int getUserId() throws SQLException {
+        return data.getInt("userid");
+    }
+    
+    /**
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
      * Get the password of the employee (Database version)
      * @return
      * @throws SQLException 

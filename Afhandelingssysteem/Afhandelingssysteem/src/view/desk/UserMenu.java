@@ -47,6 +47,10 @@ public class UserMenu extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jButton71 = new javax.swing.JButton();
         jButton72 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -212,6 +216,7 @@ public class UserMenu extends javax.swing.JPanel {
             .addGroup(TopBar1Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,6 +226,17 @@ public class UserMenu extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addComponent(jLabel26)
                 .addGap(54, 54, 54)
                 .addComponent(jButton70)
@@ -241,6 +257,13 @@ public class UserMenu extends javax.swing.JPanel {
                     .addComponent(jButton67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -257,19 +280,36 @@ public class UserMenu extends javax.swing.JPanel {
                         .addGap(85, 85, 85)
                         .addComponent(FindCustomerBlock)))
                 .addContainerGap(277, Short.MAX_VALUE))
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(965, Short.MAX_VALUE)
                 .addComponent(LogoutButton)
                 .addContainerGap())
             .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addComponent(LogoutButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogoutButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LuggageFindBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddLuggageBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -288,6 +328,7 @@ public class UserMenu extends javax.swing.JPanel {
     private void LuggageFindBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LuggageFindBlockMouseClicked
         Main.getInstance().showPanel(new view.desk.FindLuggageUser());
     }//GEN-LAST:event_LuggageFindBlockMouseClicked
+<<<<<<< HEAD
 
     private void AddCustomerBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddCustomerBlockMouseClicked
         Main.getInstance().showPanel(new view.desk.AddCustomer());
@@ -324,6 +365,54 @@ public class UserMenu extends javax.swing.JPanel {
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
         Main.getInstance().showPanel(new FindCustomer());
     }//GEN-LAST:event_jButton72ActionPerformed
+=======
+
+    private void AddCustomerBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddCustomerBlockMouseClicked
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
+    }//GEN-LAST:event_AddCustomerBlockMouseClicked
+
+    private void FindCustomerBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FindCustomerBlockMouseClicked
+        Main.getInstance().showPanel(new view.desk.FindCustomer());
+    }//GEN-LAST:event_FindCustomerBlockMouseClicked
+
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButtonActionPerformed
+
+    private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
+        Main.getInstance().showPanel(new UserMenu());
+    }//GEN-LAST:event_jButton67ActionPerformed
+
+    private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
+
+    }//GEN-LAST:event_jButton68ActionPerformed
+
+    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpEmployee());
+        Main.pressHelpKey(jButton70);
+    }//GEN-LAST:event_jButton65ActionPerformed
+
+
+    private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
+        Main.getInstance().showPanel(new FindLuggageUser());
+    }//GEN-LAST:event_jButton69ActionPerformed
+
+    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton70ActionPerformed
+
+    private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton71ActionPerformed
+
+    private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
+        Main.getInstance().showPanel(new FindCustomer());
+    }//GEN-LAST:event_jButton72ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -333,6 +422,10 @@ public class UserMenu extends javax.swing.JPanel {
     private javax.swing.JButton LogoutButton;
     private javax.swing.JLabel LuggageFindBlock;
     private java.awt.Panel TopBar1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JButton jButton67;
     private javax.swing.JButton jButton68;
     private javax.swing.JButton jButton69;

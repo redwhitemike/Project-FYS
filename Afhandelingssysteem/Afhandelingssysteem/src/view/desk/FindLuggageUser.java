@@ -7,6 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 import connection.*;
+<<<<<<< HEAD
+=======
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 import javax.swing.JOptionPane;
 import model.Luggage;
 
@@ -25,6 +30,25 @@ public class FindLuggageUser extends javax.swing.JPanel {
     public FindLuggageUser() {
         initComponents();
         fillTable(null);
+        
+        SearchQuery.addKeyListener(new KeyListener(){
+             @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int key = ke.getKeyCode();
+                if (key == KeyEvent.VK_ENTER) {
+                    Search.doClick(0);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+            }
+            });
+        
     }
 
     private void fillTable(String filter) {
@@ -104,6 +128,10 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jLabel26 = new javax.swing.JLabel();
         jButton71 = new javax.swing.JButton();
         jButton72 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         panel4.setBackground(new java.awt.Color(187, 29, 20));
         panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -258,6 +286,8 @@ public class FindLuggageUser extends javax.swing.JPanel {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+<<<<<<< HEAD
+=======
             }
         });
         jScrollPane1.setViewportView(LuggageTable);
@@ -272,6 +302,26 @@ public class FindLuggageUser extends javax.swing.JPanel {
             LuggageTable.getColumnModel().getColumn(6).setPreferredWidth(150);
         }
 
+        Search.setText("Search");
+        Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchActionPerformed(evt);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+            }
+        });
+        jScrollPane1.setViewportView(LuggageTable);
+        if (LuggageTable.getColumnModel().getColumnCount() > 0) {
+            LuggageTable.getColumnModel().getColumn(0).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(1).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(2).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(3).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(4).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(5).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(6).setResizable(false);
+            LuggageTable.getColumnModel().getColumn(6).setPreferredWidth(150);
+        }
+
+<<<<<<< HEAD
         Search.setText("Search");
         Search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -358,6 +408,87 @@ public class FindLuggageUser extends javax.swing.JPanel {
             }
         });
 
+=======
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
+        EditLuggage.setText("Edit luggage");
+        EditLuggage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditLuggageActionPerformed(evt);
+            }
+        });
+
+        DeleteLuggage.setText("Delete luggage");
+        DeleteLuggage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteLuggageActionPerformed(evt);
+            }
+        });
+
+        TopBar1.setBackground(new java.awt.Color(187, 29, 20));
+        TopBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TopBar1.setName(""); // NOI18N
+        TopBar1.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        jButton67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        jButton67.setBorder(null);
+        jButton67.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton67.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton67.setInheritsPopupMenu(true);
+        jButton67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton67ActionPerformed(evt);
+            }
+        });
+
+        jButton68.setBackground(new java.awt.Color(157, 11, 15));
+        jButton68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton68.setForeground(new java.awt.Color(255, 255, 255));
+        jButton68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton68.setText("Add luggage");
+        jButton68.setBorder(null);
+        jButton68.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton68.setInheritsPopupMenu(true);
+        jButton68.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton68ActionPerformed(evt);
+            }
+        });
+
+        jButton69.setBackground(new java.awt.Color(157, 11, 15));
+        jButton69.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton69.setForeground(new java.awt.Color(255, 255, 255));
+        jButton69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        jButton69.setText("Find luggage");
+        jButton69.setBorder(null);
+        jButton69.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton69.setInheritsPopupMenu(true);
+        jButton69.setPreferredSize(new java.awt.Dimension(145, 25));
+        jButton69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton69ActionPerformed(evt);
+            }
+        });
+
+        jButton70.setBackground(new java.awt.Color(187, 29, 20));
+        jButton70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        jButton70.setBorder(null);
+        jButton70.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton70.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton70.setInheritsPopupMenu(true);
+        jButton70.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton70ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -391,8 +522,56 @@ public class FindLuggageUser extends javax.swing.JPanel {
         jButton72.setInheritsPopupMenu(true);
         jButton72.setPreferredSize(new java.awt.Dimension(145, 25));
         jButton72.addActionListener(new java.awt.event.ActionListener() {
+<<<<<<< HEAD
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton72ActionPerformed(evt);
+=======
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton72ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TopBar1Layout = new javax.swing.GroupLayout(TopBar1);
+        TopBar1.setLayout(TopBar1Layout);
+        TopBar1Layout.setHorizontalGroup(
+            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopBar1Layout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(jButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addComponent(jLabel26)
+                .addGap(54, 54, 54)
+                .addComponent(jButton70)
+                .addContainerGap())
+        );
+        TopBar1Layout.setVerticalGroup(
+            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TopBar1Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel26))
+                    .addComponent(jButton70, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             }
         });
 
@@ -436,6 +615,7 @@ public class FindLuggageUser extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -454,22 +634,57 @@ public class FindLuggageUser extends javax.swing.JPanel {
                 .addComponent(LogoutButton1)
                 .addContainerGap())
             .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(EditLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DeleteLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Search)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LogoutButton1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                 .addComponent(LogoutButton1)
+=======
+                .addComponent(jButton1)
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Search)
                     .addComponent(EditLuggage)
+<<<<<<< HEAD
                     .addComponent(DeleteLuggage))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(182, 182, 182))
+=======
+                    .addComponent(DeleteLuggage)
+                    .addComponent(LogoutButton1))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -522,7 +737,11 @@ public class FindLuggageUser extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_EditLuggageActionPerformed
 
+<<<<<<< HEAD
     private void DeleteLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteLuggageActionPerformed
+=======
+    private void DeleteLuggageActionPerformed(java.awt.event.ActionEvent evt) {                                              
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         int selectedRows = LuggageTable.getSelectedRows().length;
 
@@ -533,20 +752,39 @@ public class FindLuggageUser extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "You may only delete one luggage at a time.");
         } else {
             int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this luggage?\nThis action can not be reverted.");
+<<<<<<< HEAD
 
             // Make sure the employee wants to delete the luggage to avoid mistakes.
             if (confirm == JOptionPane.YES_OPTION) {
                 int labelNumber = Integer.parseInt(LuggageTable.getValueAt(LuggageTable.getSelectedRow(), 1).toString());
+=======
+            // Make sure the employee wants to delete the luggage to avoid mistakes.
+            if (confirm == JOptionPane.YES_OPTION) {
+                int labelNumber = Integer.parseInt(LuggageTable.getValueAt(LuggageTable.getSelectedRow(), 0).toString());
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 manager.deleteLuggage(labelNumber);
 
                 JOptionPane.showMessageDialog(this, "Luggage with label number " + labelNumber + " has been deleted.\nRefreshing table.");
                 this.fillTable(SearchQuery.getText());
             }
         }
+<<<<<<< HEAD
     }//GEN-LAST:event_DeleteLuggageActionPerformed
 
     private void jButton65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton65MouseClicked
         Main.showHelpMenu(new Handleiding.employee());
+=======
+    }              
+    
+    private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
+       Main.showHelpMenu(new Handleiding.HelpEmployee());
+       Main.pressHelpKey(jButton70);
+    }//GEN-LAST:event_jButton65ActionPerformed
+                                           
+
+    private void jButton65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton65MouseClicked
+        Main.showHelpMenu(new Handleiding.HelpEmployee());
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }//GEN-LAST:event_jButton65MouseClicked
 
     private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
@@ -573,6 +811,13 @@ public class FindLuggageUser extends javax.swing.JPanel {
         Main.getInstance().showPanel(new FindCustomer());
     }//GEN-LAST:event_jButton72ActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.desk.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteLuggage;
@@ -582,6 +827,10 @@ public class FindLuggageUser extends javax.swing.JPanel {
     private javax.swing.JButton Search;
     private javax.swing.JTextField SearchQuery;
     private java.awt.Panel TopBar1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton jButton1;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;

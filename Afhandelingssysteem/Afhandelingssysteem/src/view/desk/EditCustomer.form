@@ -602,6 +602,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
@@ -613,16 +614,49 @@
               <EmptySpace pref="352" max="32767" attributes="0"/>
           </Group>
           <Component id="TopBar1" alignment="0" max="32767" attributes="0"/>
+=======
+          <Component id="TopBar1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="347" max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="TopBar1" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
               <EmptySpace max="-2" attributes="0"/>
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
               <EmptySpace min="0" pref="206" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -799,6 +833,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateLuggageButtonActionPerformed"/>
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel28">
@@ -842,6 +877,51 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameFieldActionPerformed"/>
           </Events>
         </Component>
+=======
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel28">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="First name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="HomeAddress">
+        </Component>
+        <Component class="javax.swing.JTextField" name="StayAddress">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel30">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Home address:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel31">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Stay address:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel32">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Last name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="LastNameField">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameFieldActionPerformed"/>
+          </Events>
+        </Component>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
         <Component class="javax.swing.JTextField" name="Zipcode">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel33">
@@ -916,6 +996,7 @@
                   <Component id="jButton67" min="-2" pref="185" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton68" min="-2" pref="159" max="-2" attributes="0"/>
+<<<<<<< HEAD:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton69" min="-2" pref="117" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -923,6 +1004,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton72" min="-2" pref="124" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton69" min="-2" pref="117" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton71" min="-2" pref="124" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton72" min="-2" pref="124" max="-2" attributes="0"/>
+                  <EmptySpace pref="141" max="32767" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.form
                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="jButton70" min="-2" max="-2" attributes="0"/>
@@ -1124,5 +1214,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Change password"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

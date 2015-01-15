@@ -29,6 +29,7 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="MenuOverview" min="-2" max="-2" attributes="0"/>
           </Group>
@@ -36,6 +37,20 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+=======
+              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="MenuOverview" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LogoutButton1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,8 +59,15 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="MenuOverview" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
+=======
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="LogoutButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="OverviewUsersBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
                   <Component id="AddUserBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
@@ -95,6 +117,7 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OverviewUsersBlockMouseClicked"/>
       </Events>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JButton" name="LogoutButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log out"/>
@@ -103,6 +126,8 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutButtonActionPerformed"/>
       </Events>
     </Component>
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     <Container class="java.awt.Panel" name="MenuOverview">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -123,6 +148,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Component id="logocorendon" min="-2" pref="185" max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="addusers" min="-2" pref="96" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -132,6 +158,17 @@
                   <EmptySpace pref="35" max="32767" attributes="0"/>
                   <Component id="help" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+=======
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="addusers" min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="overviewusers" min="-2" pref="131" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="422" max="-2" attributes="0"/>
+                  <Component id="loggedinas" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                  <Component id="help" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
               </Group>
           </Group>
         </DimensionLayout>
@@ -168,7 +205,11 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/view/menu_button.png"/>
             </Property>
+<<<<<<< HEAD
             <Property name="text" type="java.lang.String" value="User Overview"/>
+=======
+            <Property name="text" type="java.lang.String" value="Overview users"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -266,5 +307,21 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Change password"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="LogoutButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Log out"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutButton1ActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

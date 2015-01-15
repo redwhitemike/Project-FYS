@@ -1,9 +1,21 @@
 
 package graph;
 
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GradientPaint;
+=======
+import Main.Main;
+import connection.LuggageManager;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GradientPaint;
+import javax.swing.JPanel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -24,6 +36,7 @@ import org.jfree.ui.RefineryUtilities;
  */
 public class ManagerGraph extends ApplicationFrame {
 
+<<<<<<< HEAD
     /**
      * Creates a new demo instance.
      *
@@ -32,12 +45,31 @@ public class ManagerGraph extends ApplicationFrame {
     public ManagerGraph(String title) {
 
         super(title);
+=======
+    private static int chartYear;
+    
+    /**
+     * Creates a new demo instance.
+     *
+     */
+    public ManagerGraph(JPanel panel, int year) {
+
+        super("Luggage Data");
+        
+        chartYear = year;
+        
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         CategoryDataset dataset = createDataset();
         JFreeChart chart = createChart(dataset);
         ChartPanel chartPanel = new ChartPanel(chart, false);
         chartPanel.setPreferredSize(new Dimension(800, 600));
         setContentPane(chartPanel);
+<<<<<<< HEAD
 
+=======
+        panel.add(chartPanel);
+        panel.validate();
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }
 
     /**
@@ -47,6 +79,7 @@ public class ManagerGraph extends ApplicationFrame {
      */
     private static CategoryDataset createDataset() {
         
+<<<<<<< HEAD
         // row keys...
         String series1 = "Handled";
         String series2 = "Found";
@@ -66,6 +99,290 @@ public class ManagerGraph extends ApplicationFrame {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         dataset.addValue(1.0, series1, category1);
+=======
+        LuggageManager luggageManager = new LuggageManager();
+        
+        // row keys...
+        String missingLuggage = "Missing";
+        String foundLuggage = "Found";
+        String handledLuggage = "Handled";
+        String insurancedLuggage = "Insuranced";
+        
+        
+        // column keys...
+        String monthJanuary = "Jan";
+        String monthFebruary = "Feb";
+        String monthMarch = "Mar";
+        String monthApril = "Apr";
+        String monthMay = "May";
+        String monthJune = "Jun";
+        String monthJuly = "Jul";
+        String monthAugust = "Aug";
+        String monthSeptember = "Sep";
+        String monthOctober = "Oct";
+        String monthNovember = "Nov";
+        String monthDecember = "Dec";
+
+        // create the dataset...
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        HashMap<Integer, ResultSet> chartData;
+        
+        chartData = luggageManager.getMissingLuggageData(chartYear);
+        
+        try {
+            // Loop over the result set so we can get the count from them
+            for (Integer key : chartData.keySet()) {
+                // Retrieve the count from the result
+                int count = chartData.get(key).getInt("count");
+                
+                // Show the corresponding count based on month
+                switch (key) {
+                    case 0:
+                        dataset.addValue(count, missingLuggage, monthJanuary);
+                        break;
+                        
+                    case 1:
+                        dataset.addValue(count, missingLuggage, monthFebruary);
+                        break;
+                        
+                    case 2:
+                        dataset.addValue(count, missingLuggage, monthMarch);
+                        break;
+                        
+                    case 3:
+                        dataset.addValue(count, missingLuggage, monthApril);
+                        break;
+                            
+                    case 4:
+                        dataset.addValue(count, missingLuggage, monthMay);
+                        break;
+                                
+                    case 5:
+                        dataset.addValue(count, missingLuggage, monthJune);
+                        break;
+                                    
+                    case 6:
+                        dataset.addValue(count, missingLuggage, monthJuly);
+                        break;
+                        
+                    case 7:
+                        dataset.addValue(count, missingLuggage, monthAugust);
+                        break;
+                        
+                    case 8:
+                        dataset.addValue(count, missingLuggage, monthSeptember);
+                        break;
+                    
+                    case 9:
+                        dataset.addValue(count, missingLuggage, monthOctober);
+                        break;
+                        
+                    case 10:
+                        dataset.addValue(count, missingLuggage, monthNovember);
+                        break;
+                        
+                    case 11:
+                        dataset.addValue(count, missingLuggage, monthDecember);
+                        break;
+                }
+            }
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+        
+        chartData = luggageManager.getFoundLuggageData(chartYear);
+        
+        try {
+            // Loop over the result set so we can get the count from them
+            for (Integer key : chartData.keySet()) {
+                // Retrieve the count from the result
+                int count = chartData.get(key).getInt("count");
+                
+                // Show the corresponding count based on month
+                switch (key) {
+                    case 0:
+                        dataset.addValue(count, foundLuggage, monthJanuary);
+                        break;
+                        
+                    case 1:
+                        dataset.addValue(count, foundLuggage, monthFebruary);
+                        break;
+                        
+                    case 2:
+                        dataset.addValue(count, foundLuggage, monthMarch);
+                        break;
+                        
+                    case 3:
+                        dataset.addValue(count, foundLuggage, monthApril);
+                        break;
+                            
+                    case 4:
+                        dataset.addValue(count, foundLuggage, monthMay);
+                        break;
+                                
+                    case 5:
+                        dataset.addValue(count, foundLuggage, monthJune);
+                        break;
+                                    
+                    case 6:
+                        dataset.addValue(count, foundLuggage, monthJuly);
+                        break;
+                        
+                    case 7:
+                        dataset.addValue(count, foundLuggage, monthAugust);
+                        break;
+                        
+                    case 8:
+                        dataset.addValue(count, foundLuggage, monthSeptember);
+                        break;
+                    
+                    case 9:
+                        dataset.addValue(count, foundLuggage, monthOctober);
+                        break;
+                        
+                    case 10:
+                        dataset.addValue(count, foundLuggage, monthNovember);
+                        break;
+                        
+                    case 11:
+                        dataset.addValue(count, foundLuggage, monthDecember);
+                        break;
+                }
+            }
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+        
+        chartData = luggageManager.getHandledLuggageData(chartYear);
+        
+        try {
+            // Loop over the result set so we can get the count from them
+            for (Integer key : chartData.keySet()) {
+                // Retrieve the count from the result
+                int count = chartData.get(key).getInt("count");
+                
+                // Show the corresponding count based on month
+                switch (key) {
+                    case 0:
+                        dataset.addValue(count, handledLuggage, monthJanuary);
+                        break;
+                        
+                    case 1:
+                        dataset.addValue(count, handledLuggage, monthFebruary);
+                        break;
+                        
+                    case 2:
+                        dataset.addValue(count, handledLuggage, monthMarch);
+                        break;
+                        
+                    case 3:
+                        dataset.addValue(count, handledLuggage, monthApril);
+                        break;
+                            
+                    case 4:
+                        dataset.addValue(count, handledLuggage, monthMay);
+                        break;
+                                
+                    case 5:
+                        dataset.addValue(count, handledLuggage, monthJune);
+                        break;
+                                    
+                    case 6:
+                        dataset.addValue(count, handledLuggage, monthJuly);
+                        break;
+                        
+                    case 7:
+                        dataset.addValue(count, handledLuggage, monthAugust);
+                        break;
+                        
+                    case 8:
+                        dataset.addValue(count, handledLuggage, monthSeptember);
+                        break;
+                    
+                    case 9:
+                        dataset.addValue(count, handledLuggage, monthOctober);
+                        break;
+                        
+                    case 10:
+                        dataset.addValue(count, handledLuggage, monthNovember);
+                        break;
+                        
+                    case 11:
+                        dataset.addValue(count, handledLuggage, monthDecember);
+                        break;
+                }
+            }
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+        
+        chartData = luggageManager.getInsurancedLuggageData(chartYear);
+        
+        try {
+            // Loop over the result set so we can get the count from them
+            for (Integer key : chartData.keySet()) {
+                // Retrieve the count from the result
+                int count = chartData.get(key).getInt("count");
+                
+                // Show the corresponding count based on month
+                switch (key) {
+                    case 0:
+                        dataset.addValue(count, insurancedLuggage, monthJanuary);
+                        break;
+                        
+                    case 1:
+                        dataset.addValue(count, insurancedLuggage, monthFebruary);
+                        break;
+                        
+                    case 2:
+                        dataset.addValue(count, insurancedLuggage, monthMarch);
+                        break;
+                        
+                    case 3:
+                        dataset.addValue(count, insurancedLuggage, monthApril);
+                        break;
+                            
+                    case 4:
+                        dataset.addValue(count, insurancedLuggage, monthMay);
+                        break;
+                                
+                    case 5:
+                        dataset.addValue(count, insurancedLuggage, monthJune);
+                        break;
+                                    
+                    case 6:
+                        dataset.addValue(count, insurancedLuggage, monthJuly);
+                        break;
+                        
+                    case 7:
+                        dataset.addValue(count, insurancedLuggage, monthAugust);
+                        break;
+                        
+                    case 8:
+                        dataset.addValue(count, insurancedLuggage, monthSeptember);
+                        break;
+                    
+                    case 9:
+                        dataset.addValue(count, insurancedLuggage, monthOctober);
+                        break;
+                        
+                    case 10:
+                        dataset.addValue(count, insurancedLuggage, monthNovember);
+                        break;
+                        
+                    case 11:
+                        dataset.addValue(count, insurancedLuggage, monthDecember);
+                        break;
+                }
+            }
+        } catch (SQLException e) {
+            Main.exceptionPrint(e);
+        }
+        
+        //while ()
+        
+        /*dataset.addValue(1.0, series1, category1);
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         dataset.addValue(4.0, series1, category2);
         dataset.addValue(3.0, series1, category3);
         dataset.addValue(5.0, series1, category4);
@@ -86,7 +403,11 @@ public class ManagerGraph extends ApplicationFrame {
         dataset.addValue(4.0, series4, category1);
         dataset.addValue(3.0, series4, category2);
         dataset.addValue(2.0, series4, category3);
+<<<<<<< HEAD
         dataset.addValue(3.0, series4, category4);
+=======
+        dataset.addValue(3.0, series4, category4);*/
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         
         return dataset;
         
@@ -163,6 +484,7 @@ public class ManagerGraph extends ApplicationFrame {
         return chart;
         
     }
+<<<<<<< HEAD
     
     /**
      * Starting point for the demonstration application.
@@ -177,6 +499,8 @@ public class ManagerGraph extends ApplicationFrame {
         demo.setVisible(true);
 
     }
+=======
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
 }
 

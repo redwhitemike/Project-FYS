@@ -602,6 +602,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="296" pref="965" max="32767" attributes="0"/>
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
@@ -614,6 +615,20 @@
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="352" max="32767" attributes="0"/>
               </Group>
+=======
+          <Component id="TopBar1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                      <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
           </Group>
       </Group>
     </DimensionLayout>
@@ -622,6 +637,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="TopBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="512" max="32767" attributes="0"/>
           </Group>
@@ -631,6 +647,15 @@
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
+=======
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
           </Group>
       </Group>
     </DimensionLayout>
@@ -1180,6 +1205,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="CustomerID">
+<<<<<<< HEAD
+=======
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CustomerIDActionPerformed"/>
+          </Events>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel38">
           <Properties>
@@ -1213,5 +1244,16 @@
         </Component>
       </SubComponents>
     </Container>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Change password"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+>>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
   </SubComponents>
 </Form>
