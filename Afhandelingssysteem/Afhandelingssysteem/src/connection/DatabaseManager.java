@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class DatabaseManager {
     private Connection Connection;

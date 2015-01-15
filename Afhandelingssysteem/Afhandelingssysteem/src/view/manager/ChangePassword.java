@@ -1,4 +1,4 @@
-package view.desk;
+package view.manager;
 import Main.Main;
 import Main.Session;
 import Main.Validator;
@@ -16,7 +16,7 @@ public class ChangePassword extends javax.swing.JPanel {
     PasswordManager passwordManager = new PasswordManager();
 
     /**
-     * Creates new form login
+     * Creates new form changepassword
      */
     public ChangePassword() {
         initComponents();
@@ -69,14 +69,12 @@ public class ChangePassword extends javax.swing.JPanel {
         PasswordField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         LogoutButton = new javax.swing.JButton();
-        TopBar1 = new java.awt.Panel();
-        jButton67 = new javax.swing.JButton();
-        jButton68 = new javax.swing.JButton();
-        jButton69 = new javax.swing.JButton();
-        jButton70 = new javax.swing.JButton();
-        jLabel26 = new javax.swing.JLabel();
-        jButton71 = new javax.swing.JButton();
-        jButton72 = new javax.swing.JButton();
+        MenuOverview2 = new java.awt.Panel();
+        List2 = new javax.swing.JButton();
+        logocorendon2 = new javax.swing.JButton();
+        Graphs = new javax.swing.JButton();
+        help2 = new javax.swing.JButton();
+        loggedinas2 = new javax.swing.JLabel();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
 
@@ -255,149 +253,113 @@ public class ChangePassword extends javax.swing.JPanel {
             }
         });
 
-        TopBar1.setBackground(new java.awt.Color(187, 29, 20));
-        TopBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TopBar1.setName(""); // NOI18N
-        TopBar1.setPreferredSize(new java.awt.Dimension(1044, 55));
+        MenuOverview2.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview2.setName(""); // NOI18N
+        MenuOverview2.setPreferredSize(new java.awt.Dimension(1044, 55));
 
-        jButton67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        jButton67.setBorder(null);
-        jButton67.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton67.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton67.setInheritsPopupMenu(true);
-        jButton67.addActionListener(new java.awt.event.ActionListener() {
+        List2.setBackground(new java.awt.Color(157, 11, 15));
+        List2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        List2.setForeground(new java.awt.Color(255, 255, 255));
+        List2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        List2.setText("List luggage");
+        List2.setBorder(null);
+        List2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        List2.setInheritsPopupMenu(true);
+        List2.setPreferredSize(new java.awt.Dimension(145, 25));
+        List2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton67ActionPerformed(evt);
+                List2ActionPerformed(evt);
             }
         });
 
-        jButton68.setBackground(new java.awt.Color(157, 11, 15));
-        jButton68.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton68.setForeground(new java.awt.Color(255, 255, 255));
-        jButton68.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton68.setText("Add luggage");
-        jButton68.setBorder(null);
-        jButton68.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton68.setInheritsPopupMenu(true);
-        jButton68.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton68.addActionListener(new java.awt.event.ActionListener() {
+        logocorendon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon2.setBorder(null);
+        logocorendon2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon2.setInheritsPopupMenu(true);
+        logocorendon2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton68ActionPerformed(evt);
+                logocorendon2ActionPerformed(evt);
             }
         });
 
-        jButton69.setBackground(new java.awt.Color(157, 11, 15));
-        jButton69.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton69.setForeground(new java.awt.Color(255, 255, 255));
-        jButton69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton69.setText("Find luggage");
-        jButton69.setBorder(null);
-        jButton69.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton69.setInheritsPopupMenu(true);
-        jButton69.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton69.addActionListener(new java.awt.event.ActionListener() {
+        Graphs.setBackground(new java.awt.Color(157, 11, 15));
+        Graphs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Graphs.setForeground(new java.awt.Color(255, 255, 255));
+        Graphs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        Graphs.setText("Graphs");
+        Graphs.setToolTipText("");
+        Graphs.setBorder(null);
+        Graphs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Graphs.setInheritsPopupMenu(true);
+        Graphs.setPreferredSize(new java.awt.Dimension(145, 25));
+        Graphs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton69ActionPerformed(evt);
+                GraphsActionPerformed(evt);
             }
         });
 
-        jButton70.setBackground(new java.awt.Color(187, 29, 20));
-        jButton70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
-        jButton70.setBorder(null);
-        jButton70.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton70.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton70.setInheritsPopupMenu(true);
-        jButton70.addActionListener(new java.awt.event.ActionListener() {
+        help2.setBackground(new java.awt.Color(187, 29, 20));
+        help2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help2.setBorder(null);
+        help2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help2.setInheritsPopupMenu(true);
+        help2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton70ActionPerformed(evt);
+                help2ActionPerformed(evt);
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText(Main.getLoggedLabel());
-        jLabel26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas2.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setText(Main.getLoggedLabel());
+        loggedinas2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jButton71.setBackground(new java.awt.Color(157, 11, 15));
-        jButton71.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton71.setForeground(new java.awt.Color(255, 255, 255));
-        jButton71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton71.setText("Add customer");
-        jButton71.setBorder(null);
-        jButton71.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton71.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton71.setInheritsPopupMenu(true);
-        jButton71.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton71.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton71ActionPerformed(evt);
-            }
-        });
-
-        jButton72.setBackground(new java.awt.Color(157, 11, 15));
-        jButton72.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton72.setForeground(new java.awt.Color(255, 255, 255));
-        jButton72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        jButton72.setText("Find customer");
-        jButton72.setBorder(null);
-        jButton72.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton72.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton72.setInheritsPopupMenu(true);
-        jButton72.setPreferredSize(new java.awt.Dimension(145, 25));
-        jButton72.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton72ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TopBar1Layout = new javax.swing.GroupLayout(TopBar1);
-        TopBar1.setLayout(TopBar1Layout);
-        TopBar1Layout.setHorizontalGroup(
-            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopBar1Layout.createSequentialGroup()
+        javax.swing.GroupLayout MenuOverview2Layout = new javax.swing.GroupLayout(MenuOverview2);
+        MenuOverview2.setLayout(MenuOverview2Layout);
+        MenuOverview2Layout.setHorizontalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuOverview2Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
-                .addComponent(jButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
-                .addComponent(jLabel26)
-                .addGap(54, 54, 54)
-                .addComponent(jButton70)
+                .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(help2)
                 .addContainerGap())
         );
-        TopBar1Layout.setVerticalGroup(
-            TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TopBar1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel26))
-                    .addComponent(jButton70, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        MenuOverview2Layout.setVerticalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOverview2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas2)
+                        .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help2)
+                    .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MenuOverview2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LogoutButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutButton)
+                    .addComponent(jButton1))
+                .addGap(23, 23, 23))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(371, Short.MAX_VALUE)
@@ -407,12 +369,12 @@ public class ChangePassword extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MenuOverview2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton)
-                .addContainerGap(613, Short.MAX_VALUE))
+                .addContainerGap(622, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(275, Short.MAX_VALUE)
@@ -454,60 +416,48 @@ public class ChangePassword extends javax.swing.JPanel {
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
-        Main.getInstance().showPanel(new LoginPanel());
+        Main.getInstance().showPanel(new view.desk.LoginPanel());
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
 
-    private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
-        Main.getInstance().showPanel(new UserMenu());
-    }//GEN-LAST:event_jButton67ActionPerformed
-
-    private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-        Main.getInstance().showPanel(new view.desk.AddLuggage());
-    }//GEN-LAST:event_jButton68ActionPerformed
-
-    private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
-        Main.getInstance().showPanel(new FindLuggageUser());
-    }//GEN-LAST:event_jButton69ActionPerformed
-
-    private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton70ActionPerformed
-
-    private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        Main.getInstance().showPanel(new view.desk.AddCustomer());
-    }//GEN-LAST:event_jButton71ActionPerformed
-
-    private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
-        Main.getInstance().showPanel(new FindCustomer());
-    }//GEN-LAST:event_jButton72ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.admin.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void List2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_List2ActionPerformed
+        Main.getInstance().showPanel(new view.manager.Lists());
+    }//GEN-LAST:event_List2ActionPerformed
+
+    private void logocorendon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendon2ActionPerformed
+        Main.getInstance().showPanel(new view.admin.AdminMenu());
+    }//GEN-LAST:event_logocorendon2ActionPerformed
+
+    private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
+        Main.getInstance().showPanel(new view.manager.Graph());
+    }//GEN-LAST:event_GraphsActionPerformed
+
+    private void help2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help2ActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+    }//GEN-LAST:event_help2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelButton;
     private javax.swing.JPasswordField CurrentPasswordField;
+    private javax.swing.JButton Graphs;
+    private javax.swing.JButton List2;
     private javax.swing.JButton LogoutButton;
+    private java.awt.Panel MenuOverview2;
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JPasswordField RepeatField;
     private javax.swing.JButton SubmitButton;
-    private java.awt.Panel TopBar1;
+    private javax.swing.JButton help2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton67;
-    private javax.swing.JButton jButton68;
-    private javax.swing.JButton jButton69;
-    private javax.swing.JButton jButton70;
-    private javax.swing.JButton jButton71;
-    private javax.swing.JButton jButton72;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -519,5 +469,7 @@ public class ChangePassword extends javax.swing.JPanel {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel loggedinas2;
+    private javax.swing.JButton logocorendon2;
     // End of variables declaration//GEN-END:variables
 }

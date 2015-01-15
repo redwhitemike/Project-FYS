@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 /**
  *
- * @author Youssri
+ * @author IS104_2
  */
 public class GraphManager extends connection.QueryManager {
     

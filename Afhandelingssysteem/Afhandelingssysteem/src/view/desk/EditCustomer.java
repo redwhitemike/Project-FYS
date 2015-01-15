@@ -860,8 +860,12 @@ public class EditCustomer extends javax.swing.JPanel {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton)))
+<<<<<<< HEAD
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470:Afhandelingssysteem/Afhandelingssysteem/src/view/desk/EditCustomer.java
                 .addGap(0, 206, Short.MAX_VALUE))
+=======
+                .addGap(0, 336, Short.MAX_VALUE))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -976,7 +980,7 @@ public class EditCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -992,7 +996,7 @@ public class EditCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed

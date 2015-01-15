@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Youssri
+ * @author IS104_2
  */
 public class FlightManager extends QueryManager {
     /**
@@ -37,6 +37,13 @@ public class FlightManager extends QueryManager {
         return flightData;
     }
     
+    /**
+     * edits the flight data (flightnumber, departedfrom, 
+     * lostat and destination) in the database
+     * @param label
+     * @param flight
+     * @param values 
+     */
     public void editFlightData(int label, String flight, HashMap<String, Object> values) {
         String query = "UPDATE Flight SET flight_number = ?, departed_from = ?, lost_at = ?, destination = ? "
 <<<<<<< HEAD
@@ -93,13 +100,20 @@ public class FlightManager extends QueryManager {
      * @param customer
      * @param label 
      */
-    public void giveOwner(int customer, int label) {
+    public void giveOwner(String customer, int label) {
         String query = "UPDATE Flight SET customer_id = ? WHERE luggage_id = ?";
         ResultSet flightData = null;
         
         try {
+            
             PreparedStatement statement = Connection.prepareStatement(query);
-            statement.setInt(1, customer);
+            
+            if (customer == null) {
+                statement.setString(1, null);
+            } else {
+                statement.setInt(1, Integer.parseInt(customer));
+            }
+            
             statement.setInt(2, label);
             statement.execute();
         } catch (SQLException e) {

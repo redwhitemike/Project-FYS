@@ -28,7 +28,12 @@
               <Component id="OverviewUsersBlock" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="MenuOverview" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
 <<<<<<< HEAD
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="MenuOverview" min="-2" max="-2" attributes="0"/>
@@ -39,15 +44,12 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
 =======
               <EmptySpace pref="20" max="32767" attributes="0"/>
+=======
+              <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="MenuOverview" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <Component id="LogoutButton1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="LogoutButton1" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
@@ -72,7 +74,11 @@
                   <Component id="OverviewUsersBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
                   <Component id="AddUserBlock" alignment="3" min="-2" pref="178" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace pref="248" max="32767" attributes="0"/>
+=======
+              <EmptySpace pref="240" max="32767" attributes="0"/>
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
           </Group>
       </Group>
     </DimensionLayout>

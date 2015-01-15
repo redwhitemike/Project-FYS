@@ -10,7 +10,7 @@ import Main.Session;
 public class ManagerMenu extends javax.swing.JPanel {
 
     /**
-     * Creates new form managermenu1
+     * Creates new form managermenu
      */
     public ManagerMenu() {
         initComponents();
@@ -27,14 +27,14 @@ public class ManagerMenu extends javax.swing.JPanel {
 
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        panel12 = new java.awt.Panel();
-        List = new javax.swing.JButton();
-        Home = new javax.swing.JButton();
-        Graphs = new javax.swing.JButton();
-        help = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         LogoutButton1 = new javax.swing.JButton();
+        MenuOverview2 = new java.awt.Panel();
+        List2 = new javax.swing.JButton();
+        logocorendon2 = new javax.swing.JButton();
+        Graphs = new javax.swing.JButton();
+        help2 = new javax.swing.JButton();
+        loggedinas2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1024, 740));
 
@@ -62,34 +62,48 @@ public class ManagerMenu extends javax.swing.JPanel {
         jLabel4.setToolTipText("");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        panel12.setBackground(new java.awt.Color(187, 29, 20));
-        panel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panel12.setName(""); // NOI18N
-        panel12.setPreferredSize(new java.awt.Dimension(1044, 55));
-
-        List.setBackground(new java.awt.Color(157, 11, 15));
-        List.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        List.setForeground(new java.awt.Color(255, 255, 255));
-        List.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
-        List.setText("List luggage");
-        List.setBorder(null);
-        List.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        List.setInheritsPopupMenu(true);
-        List.setPreferredSize(new java.awt.Dimension(145, 25));
-        List.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ListActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        Home.setBorder(null);
-        Home.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Home.setInheritsPopupMenu(true);
-        Home.addActionListener(new java.awt.event.ActionListener() {
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeActionPerformed(evt);
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
+        MenuOverview2.setBackground(new java.awt.Color(187, 29, 20));
+        MenuOverview2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuOverview2.setName(""); // NOI18N
+        MenuOverview2.setPreferredSize(new java.awt.Dimension(1044, 55));
+
+        List2.setBackground(new java.awt.Color(157, 11, 15));
+        List2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        List2.setForeground(new java.awt.Color(255, 255, 255));
+        List2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
+        List2.setText("List luggage");
+        List2.setBorder(null);
+        List2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        List2.setInheritsPopupMenu(true);
+        List2.setPreferredSize(new java.awt.Dimension(145, 25));
+        List2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                List2ActionPerformed(evt);
+            }
+        });
+
+        logocorendon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logocorendon2.setBorder(null);
+        logocorendon2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logocorendon2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logocorendon2.setInheritsPopupMenu(true);
+        logocorendon2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logocorendon2ActionPerformed(evt);
             }
         });
 
@@ -98,6 +112,7 @@ public class ManagerMenu extends javax.swing.JPanel {
         Graphs.setForeground(new java.awt.Color(255, 255, 255));
         Graphs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/menu_button.png"))); // NOI18N
         Graphs.setText("Graphs");
+        Graphs.setToolTipText("");
         Graphs.setBorder(null);
         Graphs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Graphs.setInheritsPopupMenu(true);
@@ -108,33 +123,35 @@ public class ManagerMenu extends javax.swing.JPanel {
             }
         });
 
-        help.setBackground(new java.awt.Color(187, 29, 20));
-        help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
-        help.setBorder(null);
-        help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        help.setInheritsPopupMenu(true);
-        help.setPreferredSize(new java.awt.Dimension(31, 31));
-        help.addActionListener(new java.awt.event.ActionListener() {
+        help2.setBackground(new java.awt.Color(187, 29, 20));
+        help2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help2.setBorder(null);
+        help2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        help2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        help2.setInheritsPopupMenu(true);
+        help2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpActionPerformed(evt);
+                help2ActionPerformed(evt);
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText(Main.getLoggedLabel());
-        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        loggedinas2.setForeground(new java.awt.Color(255, 255, 255));
+        loggedinas2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loggedinas2.setText(Main.getLoggedLabel());
+        loggedinas2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
-        panel12.setLayout(panel12Layout);
-        panel12Layout.setHorizontalGroup(
-            panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout MenuOverview2Layout = new javax.swing.GroupLayout(MenuOverview2);
+        MenuOverview2.setLayout(MenuOverview2Layout);
+        MenuOverview2Layout.setHorizontalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuOverview2Layout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+<<<<<<< HEAD
                 .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
 <<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -152,16 +169,21 @@ public class ManagerMenu extends javax.swing.JPanel {
 <<<<<<< HEAD
                 .addContainerGap(38, Short.MAX_VALUE))
 =======
+=======
+                .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422)
+                .addComponent(loggedinas2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(help2)
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addContainerGap())
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
-        panel12Layout.setVerticalGroup(
-            panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+        MenuOverview2Layout.setVerticalGroup(
+            MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuOverview2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 <<<<<<< HEAD
                     .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,21 +203,17 @@ public class ManagerMenu extends javax.swing.JPanel {
                         .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(help, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(MenuOverview2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(List2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loggedinas2)
+                        .addComponent(Graphs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(help2)
+                    .addComponent(logocorendon2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
-
-        jButton1.setText("Change password");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        LogoutButton1.setText("Log out");
-        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -213,9 +231,10 @@ public class ManagerMenu extends javax.swing.JPanel {
                 .addGap(85, 85, 85)
                 .addComponent(jLabel4)
                 .addContainerGap(275, Short.MAX_VALUE))
-            .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MenuOverview2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -223,10 +242,17 @@ public class ManagerMenu extends javax.swing.JPanel {
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutButton1)
+                    .addComponent(jButton1))
+                .addGap(25, 25, 25))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(panel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 <<<<<<< HEAD
                 .addGap(213, 213, 213)
@@ -235,14 +261,18 @@ public class ManagerMenu extends javax.swing.JPanel {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(294, Short.MAX_VALUE))
 =======
+=======
+                .addComponent(MenuOverview2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButton1)
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addContainerGap(395, Short.MAX_VALUE))
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
@@ -269,6 +299,12 @@ public class ManagerMenu extends javax.swing.JPanel {
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }//GEN-LAST:event_helpActionPerformed
 
+=======
+                .addContainerGap(320, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         Main.getInstance().showPanel(new view.manager.Graph());
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -276,13 +312,14 @@ public class ManagerMenu extends javax.swing.JPanel {
 <<<<<<< HEAD
 =======
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.manager.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButton1ActionPerformed
 
+<<<<<<< HEAD
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -292,13 +329,40 @@ public class ManagerMenu extends javax.swing.JPanel {
 <<<<<<< HEAD
     private javax.swing.JButton help;
 =======
+=======
+    private void List2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_List2ActionPerformed
+        Main.getInstance().showPanel(new view.manager.Lists());
+    }//GEN-LAST:event_List2ActionPerformed
+
+    private void logocorendon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logocorendon2ActionPerformed
+
+    }//GEN-LAST:event_logocorendon2ActionPerformed
+
+    private void GraphsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraphsActionPerformed
+        Main.getInstance().showPanel(new view.manager.Graph());
+    }//GEN-LAST:event_GraphsActionPerformed
+
+    private void help2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help2ActionPerformed
+        Main.showHelpMenu(new Handleiding.HelpAdmin());
+    }//GEN-LAST:event_help2ActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Graphs;
+    private javax.swing.JButton List2;
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     private javax.swing.JButton LogoutButton1;
-    private javax.swing.JButton help;
+    private java.awt.Panel MenuOverview2;
+    private javax.swing.JButton help2;
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     private javax.swing.JLabel jLabel11;
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private java.awt.Panel panel12;
+    private javax.swing.JLabel loggedinas2;
+    private javax.swing.JButton logocorendon2;
     // End of variables declaration//GEN-END:variables
 }

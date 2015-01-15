@@ -741,7 +741,7 @@ public class EditLuggage extends javax.swing.JPanel {
         jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel35.setText("Flight Number:");
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Found", "Handled", "Insuranced" }));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel36.setText("Status:");
@@ -948,8 +948,12 @@ public class EditLuggage extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LogoutButton)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addGap(0, 29, Short.MAX_VALUE))
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addGap(0, 159, Short.MAX_VALUE))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1030,7 +1034,7 @@ public class EditLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -1046,7 +1050,7 @@ public class EditLuggage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
@@ -1109,11 +1113,17 @@ public class EditLuggage extends javax.swing.JPanel {
             
             if (!isCustomerEmpty) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 //flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
 =======
                 System.out.println("Update the owner");
                 flightManager.giveOwner(Integer.parseInt(CustomerID.getText()), luggage.getLabelNumber());
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                flightManager.giveOwner(CustomerID.getText(), luggage.getLabelNumber());
+            } else {
+                flightManager.giveOwner(null, luggage.getLabelNumber());
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
             }
 
             JOptionPane.showMessageDialog(null, "Luggage has been updated");

@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class CustomerManager extends QueryManager {
     
@@ -30,7 +30,7 @@ public class CustomerManager extends QueryManager {
 
         try {
             String query = 
-                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, postcode, city, country, phone_number, `e-mail`) "
+                    "INSERT INTO Customer (first_name, last_name, home_address, stay_address, zipcode, city, country, phone_number, `e-mail`) "
                     + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());
@@ -48,10 +48,15 @@ public class CustomerManager extends QueryManager {
         }
     }
     
+    /**
+     * this method edits the customer in the database
+     * @param customerId
+     * @param values 
+     */
     public void editCustomer(int customerId, HashMap<String, Object> values) {
         try {
             String query = 
-                    "UPDATE Customer SET first_name = ?, last_name = ?, home_address = ?, stay_address = ?, postcode = ?, city = ?, country = ?, phone_number = ?, `e-mail` = ? "
+                    "UPDATE Customer SET first_name = ?, last_name = ?, home_address = ?, stay_address = ?, zipcode = ?, city = ?, country = ?, phone_number = ?, `e-mail` = ? "
                     + "WHERE customer_id = ?";
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setString(1, values.get("FirstName").toString());
@@ -148,6 +153,11 @@ public class CustomerManager extends QueryManager {
         }
     }
     
+    /**
+     * finds the customer ID
+     * @param id
+     * @return 
+     */
     public boolean findId(int id) {
          String query = "SELECT COUNT(*) as count FROM Customer WHERE customer_id = ?";
         

@@ -51,6 +51,10 @@ public class UserOverview extends javax.swing.JPanel {
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
     }
 
+    /**
+     * Fills the table with user data, based on filter
+     * @param filter 
+     */
     private void fillTable(String filter) {
         DefaultTableModel tableModel = (DefaultTableModel) UserOverviewTable.getModel();
         
@@ -71,16 +75,25 @@ public class UserOverview extends javax.swing.JPanel {
             
             while (employees.next()) {
                 String functionName;
+                String lastName;
                 
                 // Get the function name from the function ID
                 functionName = employee.getFunctionName(employees.getInt("function"));
+                
+                String insertion = employees.getString("insertion");
+                
+                if (insertion == null || insertion.equals("")) {
+                    lastName = employees.getString("last_name");
+                } else {
+                    lastName = employees.getString("last_name") + ", " + employees.getString("insertion");
+                }
                 
                 // Fill the table with information
                 tableModel.addRow(
                         new Object[] {
                             employees.getString("username"),
                             employees.getString("name"),
-                            employees.getString("last_name"),
+                            lastName,
                             employees.getInt("employee_number"), 
                             employees.getString("location"), 
                             functionName
@@ -108,9 +121,14 @@ public class UserOverview extends javax.swing.JPanel {
         EditButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
 <<<<<<< HEAD
+<<<<<<< HEAD
         LogoutButton = new javax.swing.JButton();
 =======
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+        jButton1 = new javax.swing.JButton();
+        LogoutButton1 = new javax.swing.JButton();
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         MenuOverview = new java.awt.Panel();
         overviewusers = new javax.swing.JButton();
         logocorendon = new javax.swing.JButton();
@@ -118,10 +136,13 @@ public class UserOverview extends javax.swing.JPanel {
         help = new javax.swing.JButton();
         loggedinas = new javax.swing.JLabel();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         jButton1 = new javax.swing.JButton();
         LogoutButton1 = new javax.swing.JButton();
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
 
         setPreferredSize(new java.awt.Dimension(1044, 600));
 
@@ -181,6 +202,7 @@ public class UserOverview extends javax.swing.JPanel {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         LogoutButton.setText("Log out");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,6 +212,22 @@ public class UserOverview extends javax.swing.JPanel {
 
 =======
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+        jButton1.setText("Change password");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        LogoutButton1.setText("Log out");
+        LogoutButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButton1ActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         MenuOverview.setBackground(new java.awt.Color(187, 29, 20));
         MenuOverview.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuOverview.setName(""); // NOI18N
@@ -265,13 +303,17 @@ public class UserOverview extends javax.swing.JPanel {
                 .addComponent(addusers, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(overviewusers, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(422, 422, 422)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loggedinas)
+<<<<<<< HEAD
 <<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 =======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addGap(71, 71, 71)
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addComponent(help)
                 .addContainerGap())
         );
@@ -290,6 +332,7 @@ public class UserOverview extends javax.swing.JPanel {
         );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         jButton1.setText("Change password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -306,10 +349,13 @@ public class UserOverview extends javax.swing.JPanel {
         });
 
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -332,9 +378,7 @@ public class UserOverview extends javax.swing.JPanel {
                 .addComponent(LogoutButton)
 =======
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(LogoutButton1)))
+                        .addComponent(LogoutButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -347,14 +391,21 @@ public class UserOverview extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                         .addGap(0, 0, Short.MAX_VALUE)))
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                        .addGap(0, 125, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addContainerGap())
-            .addComponent(MenuOverview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
 <<<<<<< HEAD
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -377,6 +428,14 @@ public class UserOverview extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton1)))
                 .addGap(6, 6, 6)
+=======
+                .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogoutButton1)
+                .addGap(1, 1, 1)
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EditButton)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -386,7 +445,7 @@ public class UserOverview extends javax.swing.JPanel {
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addGap(7, 7, 7)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("");
@@ -440,12 +499,23 @@ public class UserOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         Session.getInstance().logoutUser();
     }//GEN-LAST:event_LogoutButtonActionPerformed
 
 =======
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Main.getInstance().showPanel(new view.admin.ChangePassword());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButton1ActionPerformed
+
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     private void overviewusersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overviewusersActionPerformed
         Main.getInstance().showPanel(new view.admin.UserOverview());
     }//GEN-LAST:event_overviewusersActionPerformed
@@ -467,6 +537,7 @@ public class UserOverview extends javax.swing.JPanel {
         Main.showHelpMenu(new Handleiding.HelpAdmin());
     }//GEN-LAST:event_helpActionPerformed
 
+<<<<<<< HEAD
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Main.getInstance().showPanel(new view.desk.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -476,6 +547,8 @@ public class UserOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_LogoutButton1ActionPerformed
 
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;

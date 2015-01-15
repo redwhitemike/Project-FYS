@@ -61,6 +61,10 @@ public class FindCustomer extends javax.swing.JPanel {
         });
     }
 
+    /**
+     * Fills the table with customer data
+     * @param filter 
+     */
     private void fillTable(String filter) {
         DefaultTableModel tableModel = (DefaultTableModel) FindCustomerTable.getModel();
         
@@ -76,12 +80,21 @@ public class FindCustomer extends javax.swing.JPanel {
             tableModel.setRowCount(0);
             
             while (customers.next()) {
+                String email;
+                
+                if (customers.getString("e-mail") == null || customers.getString("e-mail").equals("")) {
+                    email = "No e-mail";
+                } else {
+                    email = customers.getString("e-mail");
+                }
+                
                 tableModel.addRow(
                         new Object[] {
                             customers.getInt("customer_id"),
                             customers.getString("first_name"), 
                             customers.getString("last_name"), 
-                            customers.getString("home_address")
+                            customers.getString("phone_number"),
+                            email
                     }
                 );
             }
@@ -103,7 +116,6 @@ public class FindCustomer extends javax.swing.JPanel {
         SearchQuery = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         FindCustomerTable = new javax.swing.JTable();
-        LogoutButton1 = new javax.swing.JButton();
         GetLuggage = new javax.swing.JButton();
         DeleteCustomerButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -118,9 +130,13 @@ public class FindCustomer extends javax.swing.JPanel {
 <<<<<<< HEAD
 =======
         jButton1 = new javax.swing.JButton();
+<<<<<<< HEAD
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
         setLayout(null);
+=======
+        LogoutButton = new javax.swing.JButton();
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
 
         SearchButton.setBackground(new java.awt.Color(255, 255, 255));
         SearchButton.setText("Search");
@@ -132,8 +148,6 @@ public class FindCustomer extends javax.swing.JPanel {
                 SearchButtonActionPerformed(evt);
             }
         });
-        add(SearchButton);
-        SearchButton.setBounds(420, 120, 100, 23);
 
         SearchQuery.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         SearchQuery.addActionListener(new java.awt.event.ActionListener() {
@@ -141,19 +155,17 @@ public class FindCustomer extends javax.swing.JPanel {
                 SearchQueryActionPerformed(evt);
             }
         });
-        add(SearchQuery);
-        SearchQuery.setBounds(20, 120, 400, 23);
 
         FindCustomerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "First Name", "Last Name"
+                "ID", "First Name", "Last Name", "Phone", "E-mail"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -165,8 +177,11 @@ public class FindCustomer extends javax.swing.JPanel {
             FindCustomerTable.getColumnModel().getColumn(0).setResizable(false);
             FindCustomerTable.getColumnModel().getColumn(1).setResizable(false);
             FindCustomerTable.getColumnModel().getColumn(2).setResizable(false);
+            FindCustomerTable.getColumnModel().getColumn(3).setResizable(false);
+            FindCustomerTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
+<<<<<<< HEAD
         add(jScrollPane1);
         jScrollPane1.setBounds(20, 200, 1060, 350);
 
@@ -228,6 +243,8 @@ public class FindCustomer extends javax.swing.JPanel {
         add(LogoutButton1);
         LogoutButton1.setBounds(960, 100, 69, 23);
 
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         GetLuggage.setText("Luggage overview");
         GetLuggage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,8 +252,6 @@ public class FindCustomer extends javax.swing.JPanel {
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             }
         });
-        add(GetLuggage);
-        GetLuggage.setBounds(20, 170, 140, 23);
 
 <<<<<<< HEAD
         jButton68.setBackground(new java.awt.Color(157, 11, 15));
@@ -259,8 +274,6 @@ public class FindCustomer extends javax.swing.JPanel {
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
             }
         });
-        add(DeleteCustomerButton);
-        DeleteCustomerButton.setBounds(310, 170, 130, 23);
 
 <<<<<<< HEAD
         jButton69.setBackground(new java.awt.Color(157, 11, 15));
@@ -335,8 +348,6 @@ public class FindCustomer extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(170, 170, 130, 23);
 
         TopBar1.setBackground(new java.awt.Color(187, 29, 20));
         TopBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -517,17 +528,76 @@ public class FindCustomer extends javax.swing.JPanel {
 
 =======
 
-        add(TopBar1);
-        TopBar1.setBounds(0, 0, 1044, 55);
-
         jButton1.setText("Change password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(910, 70, 119, 23);
+
+        LogoutButton.setText("Log out");
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TopBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(SearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LogoutButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(GetLuggage, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(DeleteCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(TopBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SearchQuery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SearchButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GetLuggage)
+                            .addComponent(jButton2)
+                            .addComponent(DeleteCustomerButton))
+                        .addGap(13, 13, 13)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
@@ -559,10 +629,6 @@ public class FindCustomer extends javax.swing.JPanel {
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         this.fillTable(SearchQuery.getText());
     }//GEN-LAST:event_SearchButtonActionPerformed
-
-    private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
-        Session.getInstance().logoutUser();
-    }//GEN-LAST:event_LogoutButton1ActionPerformed
 
     private void GetLuggageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetLuggageActionPerformed
         int selectedRows = FindCustomerTable.getSelectedRows().length;
@@ -624,7 +690,7 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 <<<<<<< HEAD
 
@@ -654,7 +720,7 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
@@ -672,12 +738,16 @@ public class FindCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
+        Session.getInstance().logoutUser();
+    }//GEN-LAST:event_LogoutButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteCustomerButton;
     private javax.swing.JTable FindCustomerTable;
     private javax.swing.JButton GetLuggage;
-    private javax.swing.JButton LogoutButton1;
+    private javax.swing.JButton LogoutButton;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchQuery;
     private java.awt.Panel TopBar1;

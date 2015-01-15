@@ -267,7 +267,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Search" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="LogoutButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" min="-2" pref="865" max="-2" attributes="0"/>
                       </Group>
@@ -302,6 +302,7 @@
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
               <EmptySpace max="32767" attributes="0"/>
+<<<<<<< HEAD
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="SearchQuery" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Search" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -311,6 +312,16 @@
 =======
                   <Component id="LogoutButton1" alignment="3" min="-2" max="-2" attributes="0"/>
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="SearchQuery" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Search" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="EditLuggage" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="DeleteLuggage" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="LogoutButton" alignment="1" min="-2" max="-2" attributes="0"/>
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="427" max="-2" attributes="0"/>
@@ -402,14 +413,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="LogoutButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Log out"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutButton1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="EditLuggage">
@@ -668,6 +671,17 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
+<<<<<<< HEAD
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+    <Component class="javax.swing.JButton" name="LogoutButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Log out"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogoutButtonActionPerformed"/>
+      </Events>
+    </Component>
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
   </SubComponents>
 </Form>

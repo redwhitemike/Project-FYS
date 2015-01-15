@@ -129,10 +129,14 @@ public class LuggageOverview extends javax.swing.JPanel {
         });
         add(LogoutButton1);
 <<<<<<< HEAD
+<<<<<<< HEAD
         LogoutButton1.setBounds(960, 70, 69, 23);
 =======
         LogoutButton1.setBounds(960, 100, 69, 23);
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+        LogoutButton1.setBounds(939, 100, 90, 23);
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
 
         jLabel1.setText("If the table does not show data, the customer has no current luggage data.");
         add(jLabel1);
@@ -282,8 +286,12 @@ public class LuggageOverview extends javax.swing.JPanel {
             }
         });
         add(jButton1);
+<<<<<<< HEAD
         jButton1.setBounds(910, 70, 119, 23);
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+        jButton1.setBounds(879, 70, 150, 23);
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed
@@ -295,7 +303,7 @@ public class LuggageOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -311,7 +319,7 @@ public class LuggageOverview extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
-        // TODO add your handling code here:
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed

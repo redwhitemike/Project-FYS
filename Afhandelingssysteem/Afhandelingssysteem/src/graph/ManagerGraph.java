@@ -32,7 +32,7 @@ import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
 /**
- * A simple demonstration application showing how to create a bar chart.
+ * @author IS104_2
  */
 public class ManagerGraph extends ApplicationFrame {
 
@@ -110,6 +110,7 @@ public class ManagerGraph extends ApplicationFrame {
         
         
         // column keys...
+        String[] months = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
         String monthJanuary = "Jan";
         String monthFebruary = "Feb";
         String monthMarch = "Mar";
@@ -135,56 +136,7 @@ public class ManagerGraph extends ApplicationFrame {
                 // Retrieve the count from the result
                 int count = chartData.get(key).getInt("count");
                 
-                // Show the corresponding count based on month
-                switch (key) {
-                    case 0:
-                        dataset.addValue(count, missingLuggage, monthJanuary);
-                        break;
-                        
-                    case 1:
-                        dataset.addValue(count, missingLuggage, monthFebruary);
-                        break;
-                        
-                    case 2:
-                        dataset.addValue(count, missingLuggage, monthMarch);
-                        break;
-                        
-                    case 3:
-                        dataset.addValue(count, missingLuggage, monthApril);
-                        break;
-                            
-                    case 4:
-                        dataset.addValue(count, missingLuggage, monthMay);
-                        break;
-                                
-                    case 5:
-                        dataset.addValue(count, missingLuggage, monthJune);
-                        break;
-                                    
-                    case 6:
-                        dataset.addValue(count, missingLuggage, monthJuly);
-                        break;
-                        
-                    case 7:
-                        dataset.addValue(count, missingLuggage, monthAugust);
-                        break;
-                        
-                    case 8:
-                        dataset.addValue(count, missingLuggage, monthSeptember);
-                        break;
-                    
-                    case 9:
-                        dataset.addValue(count, missingLuggage, monthOctober);
-                        break;
-                        
-                    case 10:
-                        dataset.addValue(count, missingLuggage, monthNovember);
-                        break;
-                        
-                    case 11:
-                        dataset.addValue(count, missingLuggage, monthDecember);
-                        break;
-                }
+                dataset.addValue(count, missingLuggage, months[key]);
             }
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -198,56 +150,7 @@ public class ManagerGraph extends ApplicationFrame {
                 // Retrieve the count from the result
                 int count = chartData.get(key).getInt("count");
                 
-                // Show the corresponding count based on month
-                switch (key) {
-                    case 0:
-                        dataset.addValue(count, foundLuggage, monthJanuary);
-                        break;
-                        
-                    case 1:
-                        dataset.addValue(count, foundLuggage, monthFebruary);
-                        break;
-                        
-                    case 2:
-                        dataset.addValue(count, foundLuggage, monthMarch);
-                        break;
-                        
-                    case 3:
-                        dataset.addValue(count, foundLuggage, monthApril);
-                        break;
-                            
-                    case 4:
-                        dataset.addValue(count, foundLuggage, monthMay);
-                        break;
-                                
-                    case 5:
-                        dataset.addValue(count, foundLuggage, monthJune);
-                        break;
-                                    
-                    case 6:
-                        dataset.addValue(count, foundLuggage, monthJuly);
-                        break;
-                        
-                    case 7:
-                        dataset.addValue(count, foundLuggage, monthAugust);
-                        break;
-                        
-                    case 8:
-                        dataset.addValue(count, foundLuggage, monthSeptember);
-                        break;
-                    
-                    case 9:
-                        dataset.addValue(count, foundLuggage, monthOctober);
-                        break;
-                        
-                    case 10:
-                        dataset.addValue(count, foundLuggage, monthNovember);
-                        break;
-                        
-                    case 11:
-                        dataset.addValue(count, foundLuggage, monthDecember);
-                        break;
-                }
+                dataset.addValue(count, foundLuggage, months[key]);
             }
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -261,56 +164,7 @@ public class ManagerGraph extends ApplicationFrame {
                 // Retrieve the count from the result
                 int count = chartData.get(key).getInt("count");
                 
-                // Show the corresponding count based on month
-                switch (key) {
-                    case 0:
-                        dataset.addValue(count, handledLuggage, monthJanuary);
-                        break;
-                        
-                    case 1:
-                        dataset.addValue(count, handledLuggage, monthFebruary);
-                        break;
-                        
-                    case 2:
-                        dataset.addValue(count, handledLuggage, monthMarch);
-                        break;
-                        
-                    case 3:
-                        dataset.addValue(count, handledLuggage, monthApril);
-                        break;
-                            
-                    case 4:
-                        dataset.addValue(count, handledLuggage, monthMay);
-                        break;
-                                
-                    case 5:
-                        dataset.addValue(count, handledLuggage, monthJune);
-                        break;
-                                    
-                    case 6:
-                        dataset.addValue(count, handledLuggage, monthJuly);
-                        break;
-                        
-                    case 7:
-                        dataset.addValue(count, handledLuggage, monthAugust);
-                        break;
-                        
-                    case 8:
-                        dataset.addValue(count, handledLuggage, monthSeptember);
-                        break;
-                    
-                    case 9:
-                        dataset.addValue(count, handledLuggage, monthOctober);
-                        break;
-                        
-                    case 10:
-                        dataset.addValue(count, handledLuggage, monthNovember);
-                        break;
-                        
-                    case 11:
-                        dataset.addValue(count, handledLuggage, monthDecember);
-                        break;
-                }
+                dataset.addValue(count, handledLuggage, months[key]);
             }
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -324,56 +178,7 @@ public class ManagerGraph extends ApplicationFrame {
                 // Retrieve the count from the result
                 int count = chartData.get(key).getInt("count");
                 
-                // Show the corresponding count based on month
-                switch (key) {
-                    case 0:
-                        dataset.addValue(count, insurancedLuggage, monthJanuary);
-                        break;
-                        
-                    case 1:
-                        dataset.addValue(count, insurancedLuggage, monthFebruary);
-                        break;
-                        
-                    case 2:
-                        dataset.addValue(count, insurancedLuggage, monthMarch);
-                        break;
-                        
-                    case 3:
-                        dataset.addValue(count, insurancedLuggage, monthApril);
-                        break;
-                            
-                    case 4:
-                        dataset.addValue(count, insurancedLuggage, monthMay);
-                        break;
-                                
-                    case 5:
-                        dataset.addValue(count, insurancedLuggage, monthJune);
-                        break;
-                                    
-                    case 6:
-                        dataset.addValue(count, insurancedLuggage, monthJuly);
-                        break;
-                        
-                    case 7:
-                        dataset.addValue(count, insurancedLuggage, monthAugust);
-                        break;
-                        
-                    case 8:
-                        dataset.addValue(count, insurancedLuggage, monthSeptember);
-                        break;
-                    
-                    case 9:
-                        dataset.addValue(count, insurancedLuggage, monthOctober);
-                        break;
-                        
-                    case 10:
-                        dataset.addValue(count, insurancedLuggage, monthNovember);
-                        break;
-                        
-                    case 11:
-                        dataset.addValue(count, insurancedLuggage, monthDecember);
-                        break;
-                }
+                dataset.addValue(count, insurancedLuggage, months[key]);
             }
         } catch (SQLException e) {
             Main.exceptionPrint(e);
@@ -441,10 +246,10 @@ public class ManagerGraph extends ApplicationFrame {
 
         // get a reference to the plot for further customisation...
         CategoryPlot plot = chart.getCategoryPlot();
-        plot.setBackgroundPaint(Color.white); // lightGray is ook mooi!
-        plot.setDomainGridlinePaint(Color.lightGray); //Hier dan white.
-        plot.setDomainGridlinesVisible(true); //False als je geen lijnen wilt.
-        plot.setRangeGridlinePaint(Color.lightGray); //Hier dan ook white.
+        plot.setBackgroundPaint(Color.white); // lightGray is also nice!
+        plot.setDomainGridlinePaint(Color.lightGray); //here white.
+        plot.setDomainGridlinesVisible(true); //False if you don't want lines.
+        plot.setRangeGridlinePaint(Color.lightGray); //Here also white.
 
         // set the range axis to display integers only...
         final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();

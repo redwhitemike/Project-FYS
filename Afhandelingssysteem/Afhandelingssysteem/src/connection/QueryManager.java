@@ -4,16 +4,23 @@ import java.sql.*;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class QueryManager {
     DatabaseManager Database = new DatabaseManager();
     public Connection Connection;
 
+    /**
+     * makes a connection with the database
+     */
     public QueryManager() {
         Connection = Database.getConnection();
     }
-
+/**
+ * searches for an username in the database
+ * @param query
+ * @return 
+ */
     public ResultSet searchCustomer(String query) {
         ResultSet result = null;
         String sql = "SELECT * FROM Customer WHERE username LIKE ?";
@@ -33,6 +40,11 @@ public class QueryManager {
         return result;
     }
     
+    /**
+     * searches for a label number in the database
+     * @param labelNumber
+     * @return 
+     */
     public ResultSet searchLuggage(int labelNumber) {
         ResultSet result = null;
         String sql = "SELECT * FROM Luggage WHERE label_number = ?";

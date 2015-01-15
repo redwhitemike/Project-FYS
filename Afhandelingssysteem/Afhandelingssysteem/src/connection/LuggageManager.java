@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class LuggageManager extends QueryManager {
     
@@ -112,6 +112,38 @@ public class LuggageManager extends QueryManager {
             PreparedStatement statement = Connection.prepareStatement(query);
             statement.setInt(1, Integer.parseInt(filter));
             statement.setInt(2, Integer.parseInt(filter));
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
+    public ResultSet getLuggagesManager(String query) {
+        ResultSet result = null;
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.execute();
+            
+            result = statement.getResultSet();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        
+        return result;
+    }
+    
+    public ResultSet getLuggagesManager(String query, String filter) {
+        ResultSet result = null;
+        
+        try {
+            PreparedStatement statement = Connection.prepareStatement(query);
+            statement.setInt(1, Integer.parseInt(filter));
+            statement.setString(2, filter);
             statement.execute();
             
             result = statement.getResultSet();

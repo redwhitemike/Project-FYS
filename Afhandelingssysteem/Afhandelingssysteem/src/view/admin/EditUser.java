@@ -31,6 +31,9 @@ public class EditUser extends javax.swing.JPanel {
         setDefaultValues();
     }
     
+    /**
+     * Sets the values of the text fields, so the administrator can edit them
+     */
     private void setDefaultValues() {
         try {
             Username.setText(employee.getUsername());
@@ -79,7 +82,7 @@ public class EditUser extends javax.swing.JPanel {
     }
     
     /**
-     * Validates the fields based on the table column settings.
+     * Validates the fields.
      */
     private void fieldsValidator()  {
         if (!Validator.betweenLength(Username, 3, 45)) {
@@ -1092,7 +1095,7 @@ public class EditUser extends javax.swing.JPanel {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LogoutButton1)))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1210,11 +1213,14 @@ public class EditUser extends javax.swing.JPanel {
             values.put("Function", function);
             
 <<<<<<< HEAD
+<<<<<<< HEAD
             // Apply changes to the employee
             manager.editEmployee(employee.getId(), values);
 =======
             System.out.println(getPassword());
             
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
             // Apply changes to the employee
             manager.editEmployee(employee.getUserId(), values);
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
@@ -1308,7 +1314,7 @@ public class EditUser extends javax.swing.JPanel {
     }//GEN-LAST:event_helpActionPerformed
 =======
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.admin.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed

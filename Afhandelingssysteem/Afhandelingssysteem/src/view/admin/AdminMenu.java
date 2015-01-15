@@ -243,7 +243,11 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addGap(85, 85, 85)
                 .addComponent(OverviewUsersBlock)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
 <<<<<<< HEAD
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(MenuOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,13 +257,12 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addGap(35, 35, 35))
 =======
                 .addContainerGap(20, Short.MAX_VALUE)
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MenuOverview, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(LogoutButton1))
-                        .addGap(19, 19, 19)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LogoutButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
         );
@@ -283,8 +286,12 @@ public class AdminMenu extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OverviewUsersBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddUserBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addContainerGap(250, Short.MAX_VALUE))
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addContainerGap(240, Short.MAX_VALUE))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -335,7 +342,7 @@ public class AdminMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_helpActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Main.getInstance().showPanel(new view.desk.ChangePassword());
+        Main.getInstance().showPanel(new view.admin.ChangePassword());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LogoutButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButton1ActionPerformed

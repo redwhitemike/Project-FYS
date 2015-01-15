@@ -57,7 +57,7 @@
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="149" max="32767" attributes="0"/>
+              <EmptySpace pref="279" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

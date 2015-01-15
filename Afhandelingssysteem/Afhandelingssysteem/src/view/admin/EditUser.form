@@ -649,8 +649,12 @@
                       <Component id="LogoutButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+<<<<<<< HEAD
               <EmptySpace pref="211" max="32767" attributes="0"/>
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+              <EmptySpace pref="341" max="32767" attributes="0"/>
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
           </Group>
       </Group>
     </DimensionLayout>

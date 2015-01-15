@@ -40,8 +40,6 @@ public class LoginPanel extends javax.swing.JPanel {
             }
             });
         
-        
-        
     }
 
     /**
@@ -176,6 +174,7 @@ public class LoginPanel extends javax.swing.JPanel {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         jButton7.setBackground(new java.awt.Color(187, 29, 20));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
         jButton7.setBorder(null);
@@ -186,15 +185,20 @@ public class LoginPanel extends javax.swing.JPanel {
         jButton7.addActionListener(new java.awt.event.ActionListener() {
 =======
 
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         help.setBackground(new java.awt.Color(187, 29, 20));
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/questionmark.png"))); // NOI18N
+        help.setBorder(null);
         help.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         help.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         help.setInheritsPopupMenu(true);
-        help.setPreferredSize(new java.awt.Dimension(31, 31));
         help.addActionListener(new java.awt.event.ActionListener() {
+<<<<<<< HEAD
 
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpActionPerformed(evt);
             }
@@ -207,6 +211,7 @@ public class LoginPanel extends javax.swing.JPanel {
             .addGroup(panel3Layout.createSequentialGroup()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 818, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -217,6 +222,11 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addContainerGap(31, Short.MAX_VALUE))
 
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                .addGap(797, 797, 797)
+                .addComponent(help)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,6 +234,7 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
 <<<<<<< HEAD
                     .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
 =======
@@ -233,6 +244,11 @@ public class LoginPanel extends javax.swing.JPanel {
                         .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
 
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(help))))
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(183, 183, 183), new java.awt.Color(85, 85, 85)));
@@ -332,20 +348,20 @@ public class LoginPanel extends javax.swing.JPanel {
             .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 370, Short.MAX_VALUE)
+                    .addGap(0, 371, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 371, Short.MAX_VALUE)))
+                    .addGap(0, 370, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(545, Short.MAX_VALUE))
+                .addContainerGap(675, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 210, Short.MAX_VALUE)
+                    .addGap(0, 275, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 209, Short.MAX_VALUE)))
+                    .addGap(0, 274, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -361,7 +377,6 @@ public class LoginPanel extends javax.swing.JPanel {
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpGeneral());
         Main.pressHelpKey(help);
-        
     }//GEN-LAST:event_helpActionPerformed
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
 
@@ -378,7 +393,7 @@ public class LoginPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        Main.pressEnterPassword(PasswordField,jButton2);
+       
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed

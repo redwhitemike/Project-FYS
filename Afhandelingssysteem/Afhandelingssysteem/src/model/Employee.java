@@ -79,26 +79,56 @@ public class Employee extends Main {
         return data.getString("insertion");
     }
     
+    /**
+     * gets the last name of the employee
+     * @return
+     * @throws SQLException 
+     */
     public String getLastName() throws SQLException {
         return data.getString("last_name");
     }
     
+    /**
+     * gets the working location of the employee
+     * @return
+     * @throws SQLException 
+     */
     public String getLocation() throws SQLException {
         return data.getString("location");
     }
     
+    /**
+     * gets the employee number
+     * @return
+     * @throws SQLException 
+     */
     public int getEmployeeNumber() throws SQLException { 
         return data.getInt("employee_number");
     }
     
+    /**
+     * gets the function of the employee
+     * @return
+     * @throws SQLException 
+     */
     public int getFunction() throws SQLException {
         return data.getInt("function");
     }
     
+    /**
+     * finds out if the username is already used
+     * @param username
+     * @return 
+     */
     public boolean usernameInUse(String username) {
         return manager.findUsername(username);
     }
     
+    /**
+     * gets what function the employee has
+     * @param functionId
+     * @return functionName
+     */
     public String getFunctionName(int functionId) {
         String functionName = "";
         

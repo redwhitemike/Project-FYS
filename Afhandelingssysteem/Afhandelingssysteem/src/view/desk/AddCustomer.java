@@ -463,7 +463,7 @@ public class AddCustomer extends javax.swing.JPanel {
                 .addGap(37, 37, 37)
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(279, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -531,7 +531,7 @@ public class AddCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton67ActionPerformed
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
-
+        Main.getInstance().showPanel(new view.desk.AddLuggage());
     }//GEN-LAST:event_jButton68ActionPerformed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
@@ -547,8 +547,12 @@ public class AddCustomer extends javax.swing.JPanel {
         // TODO add your handling code here:
 =======
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
 >>>>>>> 453ec5a2e2e6fecf2f1ae237a3c80af816e53470
+=======
+        Main.getInstance().showPanel(new view.desk.AddCustomer());
+>>>>>>> 7027aaa1caae9aa171ca87e960bfaae977e12cef
     }//GEN-LAST:event_jButton71ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
