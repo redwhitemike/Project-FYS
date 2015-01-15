@@ -13,7 +13,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
- * @author Youssri
+ * @author IS104_2
  */
 public class PasswordManager extends QueryManager {
     /**

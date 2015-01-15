@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Team 2
+ * @author IS104_2
  */
 public class CustomerManager extends QueryManager {
     
@@ -48,6 +48,11 @@ public class CustomerManager extends QueryManager {
         }
     }
     
+    /**
+     * this method edits the customer in the database
+     * @param customerId
+     * @param values 
+     */
     public void editCustomer(int customerId, HashMap<String, Object> values) {
         try {
             String query = 
@@ -148,6 +153,11 @@ public class CustomerManager extends QueryManager {
         }
     }
     
+    /**
+     * finds the customer ID
+     * @param id
+     * @return 
+     */
     public boolean findId(int id) {
          String query = "SELECT COUNT(*) as count FROM Customer WHERE customer_id = ?";
         

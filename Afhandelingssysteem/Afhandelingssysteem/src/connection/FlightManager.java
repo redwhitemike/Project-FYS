@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author Youssri
+ * @author IS104_2
  */
 public class FlightManager extends QueryManager {
     /**
@@ -37,6 +37,13 @@ public class FlightManager extends QueryManager {
         return flightData;
     }
     
+    /**
+     * edits the flight data (flightnumber, departedfrom, 
+     * lostat and destination) in the database
+     * @param label
+     * @param flight
+     * @param values 
+     */
     public void editFlightData(int label, String flight, HashMap<String, Object> values) {
         String query = "UPDATE Flight SET flight_number = ?, departed_from = ?, lost_at = ?, destination = ? "
                 + "WHERE luggage_id = ? AND flight_number = ?";

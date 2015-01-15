@@ -40,8 +40,6 @@ public class LoginPanel extends javax.swing.JPanel {
             }
             });
         
-        
-        
     }
 
     /**
@@ -335,7 +333,6 @@ public class LoginPanel extends javax.swing.JPanel {
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         Main.showHelpMenu(new Handleiding.HelpGeneral());
         Main.pressHelpKey(help);
-        
     }//GEN-LAST:event_helpActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -351,7 +348,7 @@ public class LoginPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        Main.pressEnterPassword(PasswordField,jButton2);
+       
     }//GEN-LAST:event_PasswordFieldActionPerformed
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed

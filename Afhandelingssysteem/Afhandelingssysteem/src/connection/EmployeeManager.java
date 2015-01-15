@@ -136,6 +136,11 @@ public class EmployeeManager extends QueryManager {
         }
     }
     
+    /**
+     * finds a username from the database
+     * @param name
+     * @return 
+     */
     public boolean findUsername(String name) {
          String query = "SELECT COUNT(*) as count FROM User WHERE username = ?";
         

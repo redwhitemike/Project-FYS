@@ -22,6 +22,7 @@ public class AddUser extends javax.swing.JPanel {
      */
     public AddUser() {
         initComponents();
+        
     }
     
     private void fieldsValidator() {

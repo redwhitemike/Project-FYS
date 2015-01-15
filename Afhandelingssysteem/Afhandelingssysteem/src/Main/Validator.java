@@ -8,10 +8,15 @@ package Main;
 import javax.swing.*;
 
 /**
- *
- * @author Youssri
+ * this class validates certain objects if they meet the criteria 
+ * @author IS104_2
  */
 public class Validator {
+    /**
+     * this method look if the object is empty
+     * @param object
+     * @return 
+     */
     public static boolean isEmpty(Object object) {
         if (object instanceof JTextField) {
             JTextField textField = (JTextField) object;
@@ -22,6 +27,14 @@ public class Validator {
         return true;
     }
     
+    /**
+     * this method look if the object is a certain length and if it meets the
+     * criteria
+     * @param object
+     * @param minLength
+     * @param maxLength
+     * @return 
+     */
     public static boolean betweenLength(Object object, int minLength, int maxLength) {
         if (object instanceof JTextField) {
             JTextField textField = (JTextField) object;
@@ -33,6 +46,11 @@ public class Validator {
         return false;
     }
     
+    /**
+     * this method looks if the method only exists out of numbers
+     * @param object
+     * @return 
+     */
     public static boolean numbersOnly(Object object) {
         if (object instanceof JTextField) {
             JTextField textField = (JTextField) object;

@@ -55,6 +55,10 @@ public class Main {
     public static final int TYPE_HAND_LUGGAGE = 2;
     public static final int TYPE_OTHER = 3;
     
+    /**
+     * this constructor returns an instance
+     * @return instance
+     */
     public static Main getInstance() {    
         return instance;
     }
@@ -74,12 +78,21 @@ public class Main {
         });
     }
 
+    /**
+     * this method catches exceptions that have accured and prints
+     * @param exception 
+     */
     public static void exceptionPrint(Exception exception) {
         System.err.println("-- Exception catched --");
         System.err.println("Name: " + exception.getClass().getName());
         System.err.println("Message: " + exception.getMessage());
     }
     
+    /**
+     * this methode gets the username that someone has used to login with 
+     * and displays it
+     * @return null 
+     */
     public static String getLoggedLabel() {
         try {
             return "Logged in as " + Main.Employee.getUsername();
@@ -89,7 +102,10 @@ public class Main {
         
         return null;
     }
-    
+    /**
+     * this methode opens a new Jframe where the manual is printed
+     * @param panel 
+     */
     public static void showHelpMenu(JPanel panel) {
        JFrame x = new JFrame();
        x.setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -100,29 +116,10 @@ public class Main {
        x.setVisible(true);
     }
     
-    public static void pressEnterPassword(JPasswordField textfield,final JButton button){
-        textfield.addKeyListener(new KeyListener() {
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent ke) {
-                int key = ke.getKeyCode();
-                if (key == KeyEvent.VK_ENTER) {
-                    button.requestFocus();
-                    button.doClick(0);
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent ke) {
-            }
-
-        });
-    }
-    
+    /**
+     * this methode makes it possible to push the F1 key to open the manual
+     * @param button 
+     */
     public static void pressHelpKey(final JButton button){
        button.addKeyListener(new KeyListener() {
 
@@ -133,8 +130,8 @@ public class Main {
             @Override
             public void keyPressed(KeyEvent ke) {
                 int key = ke.getKeyCode();
-                if (key == KeyEvent.VK_ENTER) {
-                    button.doClick(5);
+                if (key == KeyEvent.VK_F1) {
+                    button.doClick(0);
                 }
             }
 
@@ -146,6 +143,11 @@ public class Main {
 
     }
     
+    /**
+     * this method makes sure that text that is written is only in numbers
+     * @param text
+     * @return true or false
+     */
     public boolean onlyNumbers(String text) {
         for (char c : text.toCharArray()) {
             if (!Character.isDigit(c)) {
@@ -156,6 +158,11 @@ public class Main {
         return true;
     }
     
+    /**
+     * this method makes sure that only letters are used in a piece of text
+     * @param text
+     * @return true or false
+     */
     public boolean hasText(String text) {
         for (char c : text.toCharArray()) {
             if (Character.isAlphabetic(c)) {

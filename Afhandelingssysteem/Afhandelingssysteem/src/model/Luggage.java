@@ -24,38 +24,83 @@ public class Luggage extends Main {
         data = manager.getLuggage(labelNumber);
     }
     
+    /**
+     * gets the owner of the luggage via labelnumber
+     * @return
+     * @throws SQLException 
+     */
     public int getOwner() throws SQLException {
         return flightManager.getOwnerByLabel(this.getLabelNumber());
     }
     
+    /**
+     * gets the labelnumber
+     * @return
+     * @throws SQLException 
+     */
     public int getLabelNumber() throws SQLException {
         return data.getInt("label_number");
     }
     
+    /**
+     * gets the flightnumber
+     * @return
+     * @throws SQLException 
+     */
     public String getFlightNumber() throws SQLException {
         return data.getString("flight_number");
     }
     
+    /**
+     * gets the weight
+     * @return
+     * @throws SQLException 
+     */
     public double getWeight() throws SQLException {
         return data.getDouble("weight");
     }
     
+    /**
+     * gets the color
+     * @return
+     * @throws SQLException 
+     */
     public String getColor() throws SQLException {
         return data.getString("color");
     }
     
+    /**
+     * gets the type 
+     * @return
+     * @throws SQLException 
+     */
     public int getType() throws SQLException {
         return data.getInt("type");
     }
     
+    /**
+     * gets teh description
+     * @return
+     * @throws SQLException 
+     */
     public String getDescription() throws SQLException {
         return data.getString("description");
     }
     
+    /**
+     * gets the status
+     * @return
+     * @throws SQLException 
+     */
     public int getStatus() throws SQLException {
         return data.getInt("status");
     }
     
+    /**
+     * sets a number for every type of luggage
+     * @param type
+     * @return 
+     */
     public int typeToInt(String type) {
         switch (type) {
             case "Bag":
@@ -75,6 +120,11 @@ public class Luggage extends Main {
         }
     }
     
+    /**
+     * sets a string for every int 
+     * @param type
+     * @return 
+     */
     public String typeToString(int type) {
         switch (type) {
             case Main.TYPE_BAG:
@@ -94,6 +144,11 @@ public class Luggage extends Main {
         }
     }
     
+    /**
+     * gets the status
+     * @param status
+     * @return 
+     */
     public String getStatusText(int status) {
         String statusText;
                 
@@ -114,6 +169,11 @@ public class Luggage extends Main {
         return statusText;
     }
     
+    /**
+     * gets status but in int 
+     * @param status
+     * @return 
+     */
     public int getStatusInteger(String status) {
         int statusValue = -1;
                 

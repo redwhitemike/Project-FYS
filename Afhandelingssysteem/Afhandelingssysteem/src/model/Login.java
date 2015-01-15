@@ -22,22 +22,43 @@ public class Login {
         manager = new QueryManager();
     }
 
+    /**
+     * sets the username to the input from the user
+     * @param inputUser 
+     */
     public void setUsername(String inputUser) {
         username = inputUser;
     }
 
+    /**
+     * gets username
+     * @return 
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * sets the password that he user had put in
+     * @param inputPass 
+     */
     public void setPassword(String inputPass) {
         password = inputPass;
     }
 
+    /**
+     * it returns empty username and password
+     * @return 
+     */
     public boolean isEmpty() {
         return username.isEmpty() || password.isEmpty();
     }
 
+    /**
+     * looks if user input of  the username and the password match with the 
+     * database
+     * @return 
+     */
     public boolean usernamePasswordMatch() {
         String query = "SELECT COUNT(*) as count FROM User WHERE username = ? AND password = ?";
         ResultSet result;
@@ -60,6 +81,10 @@ public class Login {
         return false;
     }
 
+    /**
+     * looks if the username is found in the database
+     * @return 
+     */
     public boolean isFound() {
         String query = "SELECT COUNT(*) as count FROM User WHERE username = ?";
         ResultSet result = null;
@@ -80,6 +105,10 @@ public class Login {
         return false;
     }
 
+    /**
+     * gets te employee number
+     * @return 
+     */
     public Employee getEmployee() {
         String query = "SELECT employee_number FROM User WHERE username = ?";
         ResultSet result = null;

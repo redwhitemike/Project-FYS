@@ -26,7 +26,7 @@ import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
 /**
- * A simple demonstration application showing how to create a bar chart.
+ * @author IS104_2
  */
 public class ManagerGraph extends ApplicationFrame {
 
@@ -394,10 +394,10 @@ public class ManagerGraph extends ApplicationFrame {
 
         // get a reference to the plot for further customisation...
         CategoryPlot plot = chart.getCategoryPlot();
-        plot.setBackgroundPaint(Color.white); // lightGray is ook mooi!
-        plot.setDomainGridlinePaint(Color.lightGray); //Hier dan white.
-        plot.setDomainGridlinesVisible(true); //False als je geen lijnen wilt.
-        plot.setRangeGridlinePaint(Color.lightGray); //Hier dan ook white.
+        plot.setBackgroundPaint(Color.white); // lightGray is also nice!
+        plot.setDomainGridlinePaint(Color.lightGray); //here white.
+        plot.setDomainGridlinesVisible(true); //False if you don't want lines.
+        plot.setRangeGridlinePaint(Color.lightGray); //Here also white.
 
         // set the range axis to display integers only...
         final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
